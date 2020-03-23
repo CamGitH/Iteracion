@@ -147,7 +147,7 @@ public class PersistenciaIter
 	 */
 	private PersistenciaIter()
 	{
-		pmf = JDOHelper.getPersistenceManagerFactory("Parranderos");		
+		pmf = JDOHelper.getPersistenceManagerFactory("Tablas");
 		crearClasesSQL ();
 		
 		// Define los nombres por defecto de las tablas de la base de datos

@@ -1,6 +1,6 @@
 package uniandes.isis2304.parranderos.negocio;
 
-public class TipoOperador {
+public class TipoOperador implements VOOperador {
 
 
     private long id;
