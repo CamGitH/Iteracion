@@ -124,24 +124,24 @@ public class PersistenciaIter
 	private SQLVisitan sqlVisitan;
 
 //TABALS ITER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//	private SQLHotel sqlHotel;
-//	private SQLHostal sqlHostal;
-//	private SQLApartamento sqlApartamento;
-//	private SQLCliente sqlCliente;
-//	private SQLEmpresaViviendaUniversitaria sqlEmpresaViviendaUniversitaria ;
-//	private SQLHabitacion sqlHabitacion;
-//	private SQLHabitacionVivienda sqlHabitacionVivienda;
-// 	private SQLHabitacionVUni sqlHabitacionVUni;
-//	private SQLMiembroComunidad sqlMiembroComunidad;
-//	private SQLOferta sqlOferta;
-// 	private SQLOperador sqlOperador;
-//	private SQLPersonaNatural sqlPersonaNatural;
-// 	private SQLReservas sqlReservas;
-// 	private SQLServiciosHabitacion sqlServiciosHabitacion;
-// 	private SQLServiciosHotel sqlServiciosHotel;
-//	private SQLVecino sqlVecino;
-//	private SQLVivienda sqlVivienda;
-//
+	private SQLHotel sqlHotel;
+	private SQLHostal sqlHostal;
+	private SQLApartamento sqlApartamento;
+	private SQLCliente sqlCliente;
+	private SQLEmpresaViviendaUniversitaria sqlEmpresaViviendaUniversitaria ;
+	private SQLHabitacion sqlHabitacion;
+	private SQLHabitacionVivienda sqlHabitacionVivienda;
+ 	private SQLHabitacionVUni sqlHabitacionVUni;
+	private SQLMiembroComunidad sqlMiembroComunidad;
+	private SQLOferta sqlOferta;
+ 	private SQLOperador sqlOperador;
+	private SQLPersonaNatural sqlPersonaNatural;
+ 	private SQLReservas sqlReservas;
+ 	private SQLServiciosHabitacion sqlServiciosHabitacion;
+ 	private SQLServiciosHotel sqlServiciosHotel;
+	private SQLVecino sqlVecino;
+	private SQLVivienda sqlVivienda;
+
 
 
 	/* ****************************************************************
@@ -274,23 +274,23 @@ public class PersistenciaIter
 
 //		ITER
 
-		sqlHotel= new SQLTipoHotel(this);
-		sqlHostal= new SQLTipoBebida(this);
-		sqlApartamento= new SQLTipoBebida(this);
-		sqlCliente= new SQLTipoBebida(this);
-		sqlEmpresaViviendaUniversitaria = new SQLTipoBebida(this);
-		sqlHabitacion= new SQLTipoBebida(this);
-		sqlHabitacionVivienda= new SQLTipoBebida(this);
- 		sqlHabitacionVUni= new SQLTipoBebida(this);
-		sqlMiembroComunidad= new SQLTipoBebida(this);
-		sqlOfert= new SQLTipoBebida(this);
-		sqlOperador= new SQLTipoBebida(this);
-		sqlPersonaNatural= new SQLTipoBebida(this);
-		sqlReservas= new SQLTipoBebida(this);
-		sqlServiciosHabitacion= new SQLTipoBebida(this);
-		sqlServiciosHotel= new SQLTipoBebida(this);
-		sqlVecino= new SQLTipoBebida(this);
-		sqlVivienda= new SQLTipoBebida(this);
+		sqlHotel= new SQLHotel(this);
+		sqlHostal= new SQLHostal(this);
+		sqlApartamento= new SQLApartamento(this);
+		sqlCliente= new SQLCliente(this);
+		sqlEmpresaViviendaUniversitaria = new SQLEmpresaViviendaUniversitaria(this);
+		sqlHabitacion= new SQLHabitacion(this);
+		sqlHabitacionVivienda= new SQLHabitacionVivienda(this);
+ 		sqlHabitacionVUni= new SQLHabitacionVUni(this);
+		sqlMiembroComunidad= new SQLMiembroComunidad(this);
+		sqlOferta= new SQLOferta(this);
+		sqlOperador= new SQLOperador(this);
+		sqlPersonaNatural= new SQLPersonaNatural(this);
+		sqlReservas= new SQLReservas(this);
+		sqlServiciosHabitacion= new SQLServiciosHabitacion(this);
+		sqlServiciosHotel= new SQLServiciosHotel(this);
+		sqlVecino= new SQLVecino(this);
+		sqlVivienda= new SQLVivienda(this);
 
 	}
 
@@ -301,7 +301,6 @@ public class PersistenciaIter
 	{
 		return tablas.get (0);
 	}
-
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de TipoBebida de parranderos
 	 */
@@ -309,7 +308,6 @@ public class PersistenciaIter
 	{
 		return tablas.get (1);
 	}
-
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Bebida de parranderos
 	 */
@@ -317,15 +315,10 @@ public class PersistenciaIter
 	{
 		return tablas.get (2);
 	}
-
-	/**
+	/*
 	 * @return La cadena de caracteres con el nombre de la tabla de Bar de parranderos
 	 */
-	public String darTablaBar ()
-	{
-		return tablas.get (3);
-	}
-
+	public String darTablaBar () {return tablas.get (3); }
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Bebedor de parranderos
 	 */
@@ -333,7 +326,6 @@ public class PersistenciaIter
 	{
 		return tablas.get (4);
 	}
-
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Gustan de parranderos
 	 */
@@ -341,7 +333,6 @@ public class PersistenciaIter
 	{
 		return tablas.get (5);
 	}
-
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Sirven de parranderos
 	 */
@@ -349,7 +340,6 @@ public class PersistenciaIter
 	{
 		return tablas.get (6);
 	}
-
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Visitan de parranderos
 	 */
@@ -357,7 +347,80 @@ public class PersistenciaIter
 	{
 		return tablas.get (7);
 	}
-	
+
+//	iter
+	public String darTablaHotel ()
+{
+	return tablas.get (8);
+}
+	public String darTablaHostal ()
+	{
+		return tablas.get (9);
+	}
+	public String darTablaApartamento ()
+	{
+		return tablas.get (10);
+	}
+	public String darTablaCliente ()
+	{
+		return tablas.get (11);
+	}
+	public String darTablaEmpresaViviendaUniversitaria ()
+	{
+		return tablas.get (12);
+	}
+	public String darTablaHabitacion ()
+	{
+		return tablas.get (13);
+	}
+	public String darTablaHabitacionvivienda ()
+	{
+		return tablas.get (14);
+	}
+	public String darTablaHabitacionvuni ()
+	{
+		return tablas.get (15);
+	}
+	public String darTablaMiembrocomunidad ()
+	{
+		return tablas.get (16);
+	}
+	public String darTablaOferta ()
+	{
+		return tablas.get (17);
+	}
+	public String darTablaOperador ()
+	{
+		return tablas.get (18);
+	}
+	public String darTablaPersonanatural ()
+	{
+		return tablas.get (19);
+	}
+	public String darTablaReservas ()
+	{
+		return tablas.get (20);
+	}
+	public String darTablaServicioshabitacion ()
+	{
+		return tablas.get (21);
+	}
+	public String darTablaServicioshotel ()
+	{
+		return tablas.get (22);
+	}
+	public String darTablaVecino ()
+	{
+		return tablas.get (23);
+	}
+	public String darTablaVivienda ()
+	{
+		return tablas.get (24);
+	}
+
+
+
+
 	/**
 	 * Transacción para el generador de secuencia de Parranderos
 	 * Adiciona entradas al log de la aplicación
