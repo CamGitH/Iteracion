@@ -1,6 +1,6 @@
 {
 	"title": "Aplicación transaccional de Parranderos Uniandes",
-	"frameH": 600,
+	"frameH": 900,
 	"frameW": 800,
 	"bannerPath": "./src/main/resources/config/logo.png",
 	"menuBar":
