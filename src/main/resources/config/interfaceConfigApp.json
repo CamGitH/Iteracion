@@ -14,11 +14,11 @@
 				},
 				{
 					"label": "Clientes",
-					"event": "getClientes"
+					"event": "listarTipoBebida"
 				},
 				{
 					"label": "Reservas",
-					"event": "getReservas"
+					"event": "eliminarTipoBebidaPorId"
 				}
 			]
 		},

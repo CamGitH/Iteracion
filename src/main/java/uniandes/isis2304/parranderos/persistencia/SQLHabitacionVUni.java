@@ -41,16 +41,10 @@ public class SQLHabitacionVUni
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un BAR a la base de datos de Parranderos
 	 * @param pm - El manejador de persistencia
-	 * @param idBar - El identificador del bar
-	 * @param nombre - El nombre del bar
-	 * @param ciudad - La ciudad del bar
-	 * @param presupuesto - El presupuesto del bar (ALTO, MEDIO, BAJO)
-	 * @param sedes - El número de sedes del bar
-	 * @return El número de tuplas insertadas
 	 */
 	public long adicionarHabitacionVUni  (PersistenceManager pm, long num, long individual, String duracion, int menaje) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaBar () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaHabitacionvuni () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
         q.setParameters(num,individual,duracion,menaje);
         return (long) q.executeUnique();
 	}
@@ -59,12 +53,11 @@ public class SQLHabitacionVUni
 	/**
 	 * Crea y ejecuta la sentencia SQL para eliminar UN BAR de la base de datos de Parranderos, por su identificador
 	 * @param pm - El manejador de persistencia
-	 * @param idBar - El identificador del bar
 	 * @return EL número de tuplas eliminadas
 	 */
 	public long eliminarHabitacionVUniPorNumero (PersistenceManager pm, long num)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaBar () + " WHERE id = ?");
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaHabitacionvuni () + " WHERE id = ?");
         q.setParameters(num);
         return (long) q.executeUnique();
 	}
@@ -73,12 +66,11 @@ public class SQLHabitacionVUni
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de UN BAR de la 
 	 * base de datos de Parranderos, por su identificador
 	 * @param pm - El manejador de persistencia
-	 * @param idBar - El identificador del bar
 	 * @return El objeto BAR que tiene el identificador dado
 	 */
 	public Bar darHabitacionVUniPorNumero (PersistenceManager pm, long num) 
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaBar () + " WHERE id = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaHabitacionvuni () + " WHERE id = ?");
 		q.setResultClass(Bar.class);
 		q.setParameters(num);
 		return (Bar) q.executeUnique();

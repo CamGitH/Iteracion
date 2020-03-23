@@ -50,7 +50,7 @@ public class SQLOperador
 	 */
 	public long adicionarOperador (PersistenceManager pm, long id, String tipo, String nombre) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaBar () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaOperador () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
         q.setParameters(id,tipo, nombre);
         return (long) q.executeUnique();
 	}
@@ -63,7 +63,7 @@ public class SQLOperador
 	 */
 	public long eliminarOperadorPorId (PersistenceManager pm, long id)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaBar () + " WHERE id = ?");
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaOperador () + " WHERE id = ?");
         q.setParameters(id);
         return (long) q.executeUnique();
 	}
