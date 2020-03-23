@@ -40,7 +40,7 @@ class SQLVisitan
 	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
 	 * Se renombra acá para facilitar la escritura de las sentencias
 	 */
-	private final static String SQL = PersistenciaParranderos.SQL;
+	private final static String SQL = PersistenciaIter.SQL;
 
 	/* ****************************************************************
 	 * 			Atributos
@@ -48,7 +48,7 @@ class SQLVisitan
 	/**
 	 * El manejador de persistencia general de la aplicación
 	 */
-	private PersistenciaParranderos pp;
+	private PersistenciaIter pp;
 
 	/* ****************************************************************
 	 * 			Métodos
@@ -57,7 +57,7 @@ class SQLVisitan
 	 * Constructor
 	 * @param pp - El Manejador de persistencia de la aplicación
 	 */
-	public SQLVisitan (PersistenciaParranderos pp)
+	public SQLVisitan (PersistenciaIter pp)
 	{
 		this.pp = pp;
 	}

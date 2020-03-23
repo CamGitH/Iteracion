@@ -87,6 +87,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
      * Asociación a la clase principal del negocio.
      */
     private Parranderos parranderos;
+    private Parranderos iter;
     
 	/* ****************************************************************
 	 * 			Atributos de interfaz
@@ -126,7 +127,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
         }
         
         tableConfig = openConfig ("Tablas BD", CONFIG_TABLAS);
-        parranderos = new Parranderos (tableConfig);
+        iter = new Parranderos (tableConfig);
         
     	String path = guiConfig.get("bannerPath").getAsString();
         panelDatos = new PanelDatos ( );
@@ -235,8 +236,29 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
         }        
         setJMenuBar ( menuBar );	
     }
-    
-	/* ****************************************************************
+    /* EVENTOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    */
+    public void getOperadores(){
+		try
+		{
+			List <VOTipoBebida> lista = iter.darVOTiposBebida();
+
+			String resultado = "Operadores:";
+			resultado +=  "\n" + listarTiposBebida (lista);
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		}
+		catch (Exception e)
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+
+
+	 /* ****************************************************************
 	 * 			CRUD de TipoBebida
 	 *****************************************************************/
     /**

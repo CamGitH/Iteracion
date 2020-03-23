@@ -5,24 +5,20 @@
 	"bannerPath": "./src/main/resources/config/logo.png",
 	"menuBar":
 	[
-		{ "menuTitle": "TipoBebida",
+		{ "menuTitle": "Mostrar (BD)",
 		  "options":
 			[
 				{
-					"label": "Adicionar",
-					"event": "adicionarTipoBebida"
+					"label": "Operadores",
+					"event": "getOperadores"
 				},
 				{
-					"label": "Listar",
-					"event": "listarTipoBebida"
+					"label": "Clientes",
+					"event": "getClientes"
 				},
 				{
-					"label": "Borrar por Id",
-					"event": "eliminarTipoBebidaPorId"
-				},
-				{
-					"label": "Buscar por Nombre",
-					"event": "buscarTipoBebidaPorNombre"
+					"label": "Reservas",
+					"event": "getReservas"
 				}
 			]
 		},

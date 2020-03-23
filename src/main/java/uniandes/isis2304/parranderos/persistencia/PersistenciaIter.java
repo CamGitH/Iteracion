@@ -49,7 +49,7 @@ import uniandes.isis2304.parranderos.negocio.Visitan;
  * 
  * @author Germán Bravo
  */
-public class PersistenciaParranderos 
+public class PersistenciaIter
 {
 	/* ****************************************************************
 	 * 			Constantes
@@ -57,7 +57,7 @@ public class PersistenciaParranderos
 	/**
 	 * Logger para escribir la traza de la ejecución
 	 */
-	private static Logger log = Logger.getLogger(PersistenciaParranderos.class.getName());
+	private static Logger log = Logger.getLogger(PersistenciaIter.class.getName());
 	
 	/**
 	 * Cadena para indicar el tipo de sentencias que se va a utilizar en una consulta
@@ -70,7 +70,7 @@ public class PersistenciaParranderos
 	/**
 	 * Atributo privado que es el único objeto de la clase - Patrón SINGLETON
 	 */
-	private static PersistenciaParranderos instance;
+	private static PersistenciaIter instance;
 	
 	/**
 	 * Fábrica de Manejadores de persistencia, para el manejo correcto de las transacciones
@@ -122,7 +122,28 @@ public class PersistenciaParranderos
 	 * Atributo para el acceso a la tabla VISITAN de la base de datos
 	 */
 	private SQLVisitan sqlVisitan;
-	
+
+//TABALS ITER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//	private SQLHotel sqlHotel;
+//	private SQLHostal sqlHostal;
+//	private SQLApartamento sqlApartamento;
+//	private SQLCliente sqlCliente;
+//	private SQLEmpresaViviendaUniversitaria sqlEmpresaViviendaUniversitaria ;
+//	private SQLHabitacion sqlHabitacion;
+//	private SQLHabitacionVivienda sqlHabitacionVivienda;
+// 	private SQLHabitacionVUni sqlHabitacionVUni;
+//	private SQLMiembroComunidad sqlMiembroComunidad;
+//	private SQLOferta sqlOferta;
+// 	private SQLOperador sqlOperador;
+//	private SQLPersonaNatural sqlPersonaNatural;
+// 	private SQLReservas sqlReservas;
+// 	private SQLServiciosHabitacion sqlServiciosHabitacion;
+// 	private SQLServiciosHotel sqlServiciosHotel;
+//	private SQLVecino sqlVecino;
+//	private SQLVivienda sqlVivienda;
+//
+
+
 	/* ****************************************************************
 	 * 			Métodos del MANEJADOR DE PERSISTENCIA
 	 *****************************************************************/
@@ -130,7 +151,7 @@ public class PersistenciaParranderos
 	/**
 	 * Constructor privado con valores por defecto - Patrón SINGLETON
 	 */
-	private PersistenciaParranderos ()
+	private PersistenciaIter()
 	{
 		pmf = JDOHelper.getPersistenceManagerFactory("Parranderos");		
 		crearClasesSQL ();
@@ -145,13 +166,36 @@ public class PersistenciaParranderos
 		tablas.add ("GUSTAN");
 		tablas.add ("SIRVEN");
 		tablas.add ("VISITAN");
+//		ITER
+		tablas.add("HOTEL");
+		tablas.add("HOSTAL");
+		tablas.add("APARTAMENTO");
+		tablas.add("CLIENTE");
+		tablas.add("EMPRESAVIVIENDAUNIVERCITARIA");
+		tablas.add("HABITACION");
+		tablas.add("HABITACIONVIVIENVDA");
+		tablas.add("HABITACIONVUNI");
+		tablas.add("MIEMBROCOMUNIDAD");
+		tablas.add("OFERTA");
+		tablas.add("OPERADOR");
+		tablas.add("PERSONANATURAL");
+		tablas.add("RESERVAS");
+		tablas.add("SERVICIOSHABITACION");
+		tablas.add("SERVICIOSHOTEL");
+		tablas.add("VECINO");
+		tablas.add("VIVIENDA");
+
+
+
+
+
 }
 
 	/**
 	 * Constructor privado, que recibe los nombres de las tablas en un objeto Json - Patrón SINGLETON
 	 * @param tableConfig - Objeto Json que contiene los nombres de las tablas y de la unidad de persistencia a manejar
 	 */
-	private PersistenciaParranderos (JsonObject tableConfig)
+	private PersistenciaIter(JsonObject tableConfig)
 	{
 		crearClasesSQL ();
 		tablas = leerNombresTablas (tableConfig);
@@ -164,11 +208,11 @@ public class PersistenciaParranderos
 	/**
 	 * @return Retorna el único objeto PersistenciaParranderos existente - Patrón SINGLETON
 	 */
-	public static PersistenciaParranderos getInstance ()
+	public static PersistenciaIter getInstance ()
 	{
 		if (instance == null)
 		{
-			instance = new PersistenciaParranderos ();
+			instance = new PersistenciaIter();
 		}
 		return instance;
 	}
@@ -178,11 +222,11 @@ public class PersistenciaParranderos
 	 * @param tableConfig - El objeto JSON con los nombres de las tablas
 	 * @return Retorna el único objeto PersistenciaParranderos existente - Patrón SINGLETON
 	 */
-	public static PersistenciaParranderos getInstance (JsonObject tableConfig)
+	public static PersistenciaIter getInstance (JsonObject tableConfig)
 	{
 		if (instance == null)
 		{
-			instance = new PersistenciaParranderos (tableConfig);
+			instance = new PersistenciaIter(tableConfig);
 		}
 		return instance;
 	}
@@ -227,6 +271,27 @@ public class PersistenciaParranderos
 		sqlSirven = new SQLSirven (this);
 		sqlVisitan = new SQLVisitan(this);		
 		sqlUtil = new SQLUtil(this);
+
+//		ITER
+
+		sqlHotel= new SQLTipoHotel(this);
+		sqlHostal= new SQLTipoBebida(this);
+		sqlApartamento= new SQLTipoBebida(this);
+		sqlCliente= new SQLTipoBebida(this);
+		sqlEmpresaViviendaUniversitaria = new SQLTipoBebida(this);
+		sqlHabitacion= new SQLTipoBebida(this);
+		sqlHabitacionVivienda= new SQLTipoBebida(this);
+ 		sqlHabitacionVUni= new SQLTipoBebida(this);
+		sqlMiembroComunidad= new SQLTipoBebida(this);
+		sqlOfert= new SQLTipoBebida(this);
+		sqlOperador= new SQLTipoBebida(this);
+		sqlPersonaNatural= new SQLTipoBebida(this);
+		sqlReservas= new SQLTipoBebida(this);
+		sqlServiciosHabitacion= new SQLTipoBebida(this);
+		sqlServiciosHotel= new SQLTipoBebida(this);
+		sqlVecino= new SQLTipoBebida(this);
+		sqlVivienda= new SQLTipoBebida(this);
+
 	}
 
 	/**
@@ -1511,8 +1576,7 @@ public class PersistenciaParranderos
 //        	e.printStackTrace();
         	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
         	return new long[] {-1, -1, -1, -1, -1, -1, -1};
-        }
-        finally
+        }        finally
         {
             if (tx.isActive())
             {
