@@ -31,13 +31,7 @@ import org.apache.log4j.Logger;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import uniandes.isis2304.parranderos.negocio.Bar;
-import uniandes.isis2304.parranderos.negocio.Bebedor;
-import uniandes.isis2304.parranderos.negocio.Bebida;
-import uniandes.isis2304.parranderos.negocio.Gustan;
-import uniandes.isis2304.parranderos.negocio.Sirven;
-import uniandes.isis2304.parranderos.negocio.TipoBebida;
-import uniandes.isis2304.parranderos.negocio.Visitan;
+import uniandes.isis2304.parranderos.negocio.*;
 
 /**
  * Clase para el manejador de persistencia del proyecto Parranderos
@@ -564,7 +558,13 @@ public class PersistenciaIter
 	{
 		return sqlTipoBebida.darTiposBebida (pmf.getPersistenceManager());
 	}
- 
+
+	public List<TipoOperador> darOperadores ()
+	{
+		//return sqlTipoBebida.darTiposBebida (pmf.getPersistenceManager());
+		return sqlOperador.darOperadores (pmf.getPersistenceManager());
+	}
+
 	/**
 	 * Método que consulta todas las tuplas en la tabla TipoBebida que tienen el nombre dado
 	 * @param nombre - El nombre del tipo de bebida

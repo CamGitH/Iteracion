@@ -46,7 +46,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import uniandes.isis2304.parranderos.negocio.Iter;
 import uniandes.isis2304.parranderos.negocio.Parranderos;
+import uniandes.isis2304.parranderos.negocio.VOOperador;
 import uniandes.isis2304.parranderos.negocio.VOTipoBebida;
 
 /**
@@ -87,7 +89,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
      * Asociación a la clase principal del negocio.
      */
     private Parranderos parranderos;
-    private Parranderos iter;
+    private Iter iter;
     
 	/* ****************************************************************
 	 * 			Atributos de interfaz
@@ -127,7 +129,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
         }
         
         tableConfig = openConfig ("Tablas BD", CONFIG_TABLAS);
-        iter = new Parranderos (tableConfig);
+        iter = new Iter (tableConfig);
         
     	String path = guiConfig.get("bannerPath").getAsString();
         panelDatos = new PanelDatos ( );
@@ -236,15 +238,14 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
         }        
         setJMenuBar ( menuBar );	
     }
-    /* EVENTOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    /* EVENTOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     */
     public void getOperadores(){
 		try
 		{
-			List <VOTipoBebida> lista = iter.darVOTiposBebida();
+			List <VOOperador> lista = iter.darVOOperadores();
 
 			String resultado = "Operadores:";
-			resultado +=  "\n" + listarTiposBebida (lista);
 			panelDatos.actualizarInterfaz(resultado);
 			resultado += "\n Operación terminada";
 		}
@@ -550,7 +551,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
      * @param lista - La lista con los tipos de bebida
      * @return La cadena con una líea para cada tipo de bebida recibido
      */
-    private String listarTiposBebida(List<VOTipoBebida> lista) 
+    private String listarTiposBebida(List<VOTipoBebida> lista)
     {
     	String resp = "Los tipos de bebida existentes son:\n";
     	int i = 1;
