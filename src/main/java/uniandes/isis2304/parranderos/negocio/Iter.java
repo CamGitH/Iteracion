@@ -53,26 +53,26 @@ public class Iter {
 
     public List<VOOperador> darVOOperadores()
     {
-        log.info ("Generando los VO de Tipos de operador");
+        log.info ("Generando los VO de operador");
         List<VOOperador> voOp = new LinkedList<VOOperador> ();
         for (Operador to : pp.darOperadores ())
         {
             voOp.add (to);
         }
-        log.info ("Generando los VO de ops: " + voOp.size() + " existentes");
+        log.info ("Generando los VO de operadores: " + voOp.size() + " existentes");
         return voOp;
     }
 
-    public List<VOOperador> darVOClientes()
+    public List<VOCliente> darVOClientes()
     {
-        log.info ("Generando los VO de Tipos de operador");
-        List<VOOperador> voOp = new LinkedList<VOOperador> ();
-        for (Operador to : pp.darOperadores ())
+        log.info ("Generando los VO de cliente");
+        List<VOCliente> voCli = new LinkedList<VOCliente> ();
+        for (Cliente to : pp.darClientes ())
         {
-            voOp.add (to);
+            voCli.add (to);
         }
-        log.info ("Generando los VO de ops: " + voOp.size() + " existentes");
-        return voOp;
+        log.info ("Generando los VO de clientes: " + voCli.size() + " existentes");
+        return voCli;
     }
 
 }

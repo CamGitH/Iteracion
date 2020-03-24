@@ -253,22 +253,22 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
-//	public void getClientes(){
-//		try
-//		{
-//			List <VOCliente> lista = iter.darVOClientes();
-//			String l = darLista(lista);
-//			String resultado = "Clientes:" + l;
-//			panelDatos.actualizarInterfaz(resultado);
-//			resultado += "\n Operación terminada";
-//		}
-//		catch (Exception e)
-//		{
-//			e.printStackTrace();
-//			String resultado = generarMensajeError(e);
-//			panelDatos.actualizarInterfaz(resultado);
-//		}
-//	}
+	public void getClientes(){
+		try
+		{
+			List <VOCliente> lista = iter.darVOClientes();
+			String l = darLista(lista);
+			String resultado = "Clientes:" + l;
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
 
 	public String darLista(List lista)
 	{
@@ -551,15 +551,15 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		String resultado = "\n\n ************************************\n\n";
 		resultado += " * Universidad	de	los	Andes	(Bogotá	- Colombia)\n";
 		resultado += " * Departamento	de	Ingeniería	de	Sistemas	y	Computación\n";
-		resultado += " * Licenciado	bajo	el	esquema	Academic Free License versión 2.1\n";
-		resultado += " * \n";		
-		resultado += " * Curso: isis2304 - Sistemas Transaccionales\n";
-		resultado += " * Proyecto: Parranderos Uniandes\n";
-		resultado += " * @version 1.0\n";
-		resultado += " * @author Germán Bravo\n";
-		resultado += " * Julio de 2018\n";
 		resultado += " * \n";
-		resultado += " * Revisado por: Claudia Jiménez, Christian Ariza\n";
+		resultado += " * \n";		
+		resultado += " * Curso:  Sistemas Transaccionales\n";
+		resultado += " * Proyecto: Iteracion\n";
+		resultado += " * \n";
+		resultado += " * \n";
+		resultado += " * \n";
+		resultado += " * \n";
+		resultado += " * c.otalora & mg.torres\n";
 		resultado += "\n ************************************\n\n";
 
 		panelDatos.actualizarInterfaz(resultado);		
