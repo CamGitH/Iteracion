@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parranderos.log" beforeDir="false" afterPath="$PROJECT_DIR$/parranderos.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/interfaceConfigApp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/interfaceConfigApp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config/interfaceConfigApp.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/interfaceConfigApp.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +52,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RunManager" selected="Application.InterfazAlohandesApp">
     <configuration name="InterfazAlohandesApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -115,22 +116,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585000256490" />
-    <state width="1493" height="82" key="GridCell.Tab.0.bottom" timestamp="1585085504203">
+    <state width="1493" height="82" key="GridCell.Tab.0.bottom" timestamp="1585086575333">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="82" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585085504203" />
-    <state width="1493" height="82" key="GridCell.Tab.0.center" timestamp="1585085504203">
+    <state width="1493" height="82" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585086575333" />
+    <state width="1493" height="82" key="GridCell.Tab.0.center" timestamp="1585086575333">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="82" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585085504203" />
-    <state width="1493" height="82" key="GridCell.Tab.0.left" timestamp="1585085504203">
+    <state width="1493" height="82" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585086575333" />
+    <state width="1493" height="82" key="GridCell.Tab.0.left" timestamp="1585086575333">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="82" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585085504203" />
-    <state width="1493" height="82" key="GridCell.Tab.0.right" timestamp="1585085504203">
+    <state width="1493" height="82" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585086575333" />
+    <state width="1493" height="82" key="GridCell.Tab.0.right" timestamp="1585086575333">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="82" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585085504203" />
+    <state width="1493" height="82" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585086575333" />
     <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1585006959520">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -147,6 +148,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="239" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585006959520" />
+    <state x="277" y="55" key="SettingsEditor" timestamp="1585086168523">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585086168523" />
     <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1585064102558">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

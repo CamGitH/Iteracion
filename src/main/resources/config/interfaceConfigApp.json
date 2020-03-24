@@ -14,11 +14,24 @@
 				},
 				{
 					"label": "Clientes",
-					"event": "listarTipoBebida"
+					"event": "getClientes"
 				},
 				{
-					"label": "Reservas",
-					"event": "eliminarTipoBebidaPorId"
+					"label": "Ofertas",
+					"event": "getOfertas"
+				}
+			]
+		},
+		{ "menuTitle": "Crear y borrar",
+			"options":
+			[
+				{
+					"label": "Crear Reserva",
+					"event": "createReserva"
+				},
+				{
+					"label": "Borrar Reserva",
+					"event": "deleteReserva"
 				}
 			]
 		},
@@ -26,7 +39,7 @@
 		  "options":
 			[
 				{
-					"label": "Mostrar log Parranderos",
+					"label": "Mostrar log ",
 					"event": "mostrarLogParranderos"
 				},
 				{
@@ -34,16 +47,12 @@
 					"event": "mostrarLogDatanuecleus"
 				},
 				{
-					"label": "Limpiar log de parranderos",
+					"label": "Limpiar log ",
 					"event": "limpiarLogParranderos"
 				},
 				{
 					"label": "Limpiar log de datanucleus",
 					"event": "limpiarLogDatanucleus"
-				},
-				{
-					"label": "Limpiar Base de Datos",
-					"event": "limpiarBD"
 				}
 			]
 		},		
