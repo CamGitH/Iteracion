@@ -566,6 +566,11 @@ public class PersistenciaIter
 	{
 		return sqlCliente.darClientes(pmf.getPersistenceManager());
 	}
+
+	public List<Cliente> darOfertas ()
+	{
+		return sqlOferta.darOfertas(pmf.getPersistenceManager());
+	}
 //
 //	/**
 //	 * Método que consulta todas las tuplas en la tabla TipoBebida que tienen el nombre dado

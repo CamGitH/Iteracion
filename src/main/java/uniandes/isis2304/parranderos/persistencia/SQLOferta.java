@@ -4,6 +4,9 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.Bar;
+import uniandes.isis2304.parranderos.negocio.Cliente;
+
+import java.util.List;
 
 public class SQLOferta 
 {
@@ -75,6 +78,14 @@ public class SQLOferta
 		q.setParameters(num);
 		return (Bar) q.executeUnique();
 	}
-	
+
+	public List<Oferta> darOfertas (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOferta ());
+		q.setResultClass(Cliente.class);
+		return (List<Oferta>) q.executeList();
+	}
+
+
 
 }

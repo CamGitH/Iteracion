@@ -253,12 +253,31 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
+
+
 	public void getClientes(){
 		try
 		{
 			List <VOCliente> lista = iter.darVOClientes();
 			String l = darLista(lista);
 			String resultado = "Clientes:" + l;
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+	public void getOfertas(){
+		try
+		{
+			List <VOOferta> lista = iter.darVOOfertas();
+			String l = darLista(lista);
+			String resultado = "Ofertas:" + l;
 			panelDatos.actualizarInterfaz(resultado);
 			resultado += "\n Operación terminada";
 		}
