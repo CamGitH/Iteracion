@@ -19,9 +19,7 @@ package uniandes.isis2304.parranderos.persistencia;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.jdo.JDODataStoreException;
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.*;
 
 import org.apache.log4j.Logger;
 import com.google.gson.JsonArray;
@@ -566,6 +564,80 @@ public class PersistenciaIter
 	{
 		return sqlCliente.darClientes(pmf.getPersistenceManager());
 	}
+
+	public List<Oferta> darOfertas ()
+	{
+		return sqlOferta.darOfertas(pmf.getPersistenceManager());
+	}
+
+	public List<Reservas> darReservas ()
+	{
+		return sqlReservas.darReservas(pmf.getPersistenceManager());
+	}
+
+
+
+
+	public Reservas ceateReserva(String idCliente, long idOferta)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlReservas.creaarReserva(pm, idCliente, idOferta);
+            tx.commit();
+
+            log.trace ("Inserción reserva: " + idCliente+" & "+idOferta + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new Reservas (idCliente, idOferta);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+
+	public long deleteReserva (String idCiente, long idOferta)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlReservas.deleteReserva(pm, idCiente, idOferta);
+            tx.commit();
+
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+
+
 //
 //	/**
 //	 * Método que consulta todas las tuplas en la tabla TipoBebida que tienen el nombre dado

@@ -29,14 +29,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
+import javax.swing.*;
 
 import org.apache.log4j.Logger;
 
@@ -253,12 +246,48 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
+
+
 	public void getClientes(){
 		try
 		{
 			List <VOCliente> lista = iter.darVOClientes();
 			String l = darLista(lista);
 			String resultado = "Clientes:" + l;
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+	public void getOfertas(){
+		try
+		{
+			List <VOOferta> lista = iter.darVOOfertas();
+			String l = darLista(lista);
+			String resultado = "Ofertas:" + l;
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+	public void getReservas(){
+		try
+		{
+			List <VOReservas> lista = iter.darVOReservas();
+			String l = darLista(lista);
+			String resultado = "Reservas:" + l;
 			panelDatos.actualizarInterfaz(resultado);
 			resultado += "\n Operación terminada";
 		}
@@ -281,7 +310,66 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		return l;
 	}
 
+	public void createReserva(){
+		try
+    	{
+    		String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
 
+			if (clienteid != null && ofertaid != null)
+    		{
+    			long oferta = Long.valueOf(ofertaid);
+        		VOReservas tb = iter.ceateReserva (clienteid, oferta);
+        		if (tb == null)
+        		{
+        			throw new Exception ("No se pudo crear la reserva, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
+        		}
+        		String resultado = "Reservas:\n\n";
+        		resultado += "La reserva se ha creado exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		}
+    	catch (Exception e)
+    	{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
+	public void deleteReserva( )
+    {
+    	try
+    	{
+			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+    		if (clienteid != null && ofertaid != null)
+    		{
+    			long oferta = Long.valueOf (ofertaid);
+    			long tbEliminados = iter.deleteReserva (clienteid, oferta);
+
+    			String resultado = "En Reservas\n\n";
+    			resultado += tbEliminados + " reserva eliminada\n";
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		}
+    	catch (Exception e)
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
 	 /* ****************************************************************
 	 * 			CRUD de TipoBebida
 	 *****************************************************************/
