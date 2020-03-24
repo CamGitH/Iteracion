@@ -19,9 +19,7 @@ package uniandes.isis2304.parranderos.persistencia;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.jdo.JDODataStoreException;
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.*;
 
 import org.apache.log4j.Logger;
 import com.google.gson.JsonArray;
@@ -567,9 +565,41 @@ public class PersistenciaIter
 		return sqlCliente.darClientes(pmf.getPersistenceManager());
 	}
 
-	public List<Cliente> darOfertas ()
+	public List<Oferta> darOfertas ()
 	{
 		return sqlOferta.darOfertas(pmf.getPersistenceManager());
+	}
+
+
+
+	public Bebida ceateReserva(String idCliente, String idOferta)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long idBebida = nextval ();
+            long tuplasInsertadas = sqlBebida.adicionarBebida(pm, idBebida, nombre, idTipoBebida, gradoAlcohol);
+            tx.commit();
+
+            log.trace ("Inserción bebida: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new Bebida (idBebida,nombre, idTipoBebida, gradoAlcohol);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
 	}
 //
 //	/**

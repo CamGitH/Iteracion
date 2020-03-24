@@ -79,12 +79,29 @@ public class Iter {
     {
         log.info ("Generando los VO de oferta");
         List<VOOferta> voOf = new LinkedList<VOOferta> ();
-        for (Cliente to : pp.darOdertas ())
+        for (Oferta to : pp.darOfertas ())
         {
             voOf.add (to);
         }
         log.info ("Generando los VO de ofertas: " + voOf.size() + " existentes");
         return voOf;
     }
+
+    public Bebida ceateReserva (String IdCliente, String IdOferta)
+	{
+		log.info ("Creando reserva " + IdCliente + " & " +IdOferta);
+		Bebida reserva = pp.ceateReserva (IdCliente, IdOferta);
+        log.info ("Creando reserva : " + reserva);
+        return reserva;
+	}
+
+
+	public void eliminarBebidaPorNombre (String nombre)
+	{
+        log.info ("Eliminando bebida por nombre: " + nombre);
+       // long resp = pp.eliminarBebidaPorNombre (nombre);
+       // log.info ("Eliminando bebida por nombre: " + resp + " tuplas eliminadas");
+       // return resp;
+	}
 
 }
