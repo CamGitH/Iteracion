@@ -87,21 +87,36 @@ public class Iter {
         return voOf;
     }
 
-    public Bebida ceateReserva (String IdCliente, String IdOferta)
+    public List<VOReservas> darVOReservas()
+    {
+        log.info ("Generando los VO de reserva");
+        List<VOReservas> voRe = new LinkedList<VOReservas> ();
+        for (Reservas to : pp.darReservas ())
+        {
+            voRe.add (to);
+        }
+        log.info ("Generando los VO de reservas: " + voRe.size() + " existentes");
+        return voRe;
+    }
+
+
+
+
+    public Reservas ceateReserva (String IdCliente, long IdOferta)
 	{
 		log.info ("Creando reserva " + IdCliente + " & " +IdOferta);
-		Bebida reserva = pp.ceateReserva (IdCliente, IdOferta);
+        Reservas reserva = pp.ceateReserva (IdCliente, IdOferta);
         log.info ("Creando reserva : " + reserva);
         return reserva;
 	}
 
 
-	public void eliminarBebidaPorNombre (String nombre)
+	public long deleteReserva (String idcliente, long idOferta)
 	{
-        log.info ("Eliminando bebida por nombre: " + nombre);
-       // long resp = pp.eliminarBebidaPorNombre (nombre);
-       // log.info ("Eliminando bebida por nombre: " + resp + " tuplas eliminadas");
-       // return resp;
+        log.info ("Eliminando Reserva: " + idcliente+" & "+idOferta);
+         long resp = pp.deleteReserva (idcliente, idOferta);
+        log.info ("Eliminando bebida por nombre: " + resp + " tuplas eliminadas");
+        return resp;
 	}
 
 }

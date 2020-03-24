@@ -570,21 +570,26 @@ public class PersistenciaIter
 		return sqlOferta.darOfertas(pmf.getPersistenceManager());
 	}
 
+	public List<Reservas> darReservas ()
+	{
+		return sqlReservas.darReservas(pmf.getPersistenceManager());
+	}
 
 
-	public Bebida ceateReserva(String idCliente, String idOferta)
+
+
+	public Reservas ceateReserva(String idCliente, long idOferta)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long idBebida = nextval ();
-            long tuplasInsertadas = sqlBebida.adicionarBebida(pm, idBebida, nombre, idTipoBebida, gradoAlcohol);
+            long tuplasInsertadas = sqlReservas.creaarReserva(pm, idCliente, idOferta);
             tx.commit();
 
-            log.trace ("Inserción bebida: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas");
-            return new Bebida (idBebida,nombre, idTipoBebida, gradoAlcohol);
+            log.trace ("Inserción reserva: " + idCliente+" & "+idOferta + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new Reservas (idCliente, idOferta);
         }
         catch (Exception e)
         {
@@ -601,6 +606,38 @@ public class PersistenciaIter
             pm.close();
         }
 	}
+
+
+	public long deleteReserva (String idCiente, long idOferta)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlReservas.deleteReserva(pm, idCiente, idOferta);
+            tx.commit();
+
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+
+
 //
 //	/**
 //	 * Método que consulta todas las tuplas en la tabla TipoBebida que tienen el nombre dado

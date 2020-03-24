@@ -4,6 +4,10 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.Bar;
+import uniandes.isis2304.parranderos.negocio.Oferta;
+import uniandes.isis2304.parranderos.negocio.Reservas;
+
+import java.util.List;
 
 public class SQLReservas 
 {
@@ -45,7 +49,7 @@ public class SQLReservas
 	 */
 	public long adicionarReservas (PersistenceManager pm, String idCliente, long ofertaId) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaReservas () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaReservas () + "(idcliente, ofertaid) values (?, ?)");
         q.setParameters(idCliente, ofertaId);
         return (long) q.executeUnique();
 	}
@@ -69,13 +73,31 @@ public class SQLReservas
 	 * @param pm - El manejador de persistencia
 	 * @return El objeto BAR que tiene el identificador dado
 	 */
-	public Bar darReservasPorIdDeOferta (PersistenceManager pm, long id) 
+	public Reservas darReservasPorIdDeOferta (PersistenceManager pm, long id) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaReservas () + " WHERE id = ?");
-		q.setResultClass(Bar.class);
+		q.setResultClass(Reservas.class);
 		q.setParameters(id);
-		return (Bar) q.executeUnique();
+		return (Reservas) q.executeUnique();
 	}
-	
 
+	public long creaarReserva (PersistenceManager pm, String idCliente, long idOferta)
+	{
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaReservas () + "(idcliente, ofertaid) values (?, ?)");
+        q.setParameters(idCliente, idOferta);
+        return (long) q.executeUnique();
+	}
+
+	public long deleteReserva (PersistenceManager pm, String idcliente, long ofertaid)
+	{
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaReservas () + " WHERE idcliente = ? AND ofertaid = ?");
+        q.setParameters(idcliente, ofertaid);
+        return (long) q.executeUnique();
+	}
+	public List<Reservas> darReservas (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaReservas ());
+		q.setResultClass(Reservas.class);
+		return (List<Reservas>) q.executeList();
+	}
 }

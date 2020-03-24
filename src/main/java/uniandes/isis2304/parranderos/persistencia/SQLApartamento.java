@@ -3,7 +3,7 @@ package uniandes.isis2304.parranderos.persistencia;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import uniandes.isis2304.parranderos.negocio.Bar;
+import uniandes.isis2304.parranderos.negocio.Apartamento;
 
 public class SQLApartamento 
 {
@@ -39,20 +39,20 @@ public class SQLApartamento
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para adicionar un BAR a la base de datos de Parranderos
+	 * Crea y ejecuta la sentencia SQL para adicionar un Apartamento a la base de datos de Parranderos
 	 * @param pm - El manejador de pe
 	 * @return El número de tuplas insertadas
 	 */
 	public long adicionarApartamento (PersistenceManager pm, long numero, String contrato,String precioNum, int esAmoblado) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaApartamento () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaApartamento () + "(numero,contrato, precionumero,esamoblado) values (?, ?, ?, ?)");
         q.setParameters(numero, contrato, precioNum, esAmoblado);
         return (long) q.executeUnique();
 	}
 
 
 	/**
-	 * Crea y ejecuta la sentencia SQL para eliminar UN BAR de la base de datos de Parranderos, por su identificador
+	 * Crea y ejecuta la sentencia SQL para eliminar UN Apartamento de la base de datos de Parranderos, por su identificador
 	 * @param pm - El manejador de persistencia
 	 * @return EL número de tuplas eliminadas
 	 */
@@ -64,17 +64,17 @@ public class SQLApartamento
 	}
 
 	/**
-	 * Crea y ejecuta la sentencia SQL para encontrar la información de UN BAR de la 
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de UN Apartamento de la 
 	 * base de datos de Parranderos, por su identificador
 	 * @param pm - El manejador de persistencia
-	 * @return El objeto BAR que tiene el identificador dado
+	 * @return El objeto Apartamento que tiene el identificador dado
 	 */
-	public Bar darApartamentoPorId (PersistenceManager pm, long id) 
+	public Apartamento darApartamentoPorId (PersistenceManager pm, long id) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaApartamento () + " WHERE id = ?");
-		q.setResultClass(Bar.class);
+		q.setResultClass(Apartamento.class);
 		q.setParameters(id);
-		return (Bar) q.executeUnique();
+		return (Apartamento) q.executeUnique();
 	}
 	
 

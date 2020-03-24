@@ -21,7 +21,7 @@ public interface VOApartamento
 	/**
 	 * @return 1 si el apartamento es amoblado, 0 en caso contrario
 	 */
-	public int getEsAmoblado();
+	public long getEsAmoblado();
 	
 	@Override
 	/**

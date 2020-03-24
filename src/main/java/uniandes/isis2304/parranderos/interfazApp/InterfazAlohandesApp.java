@@ -282,6 +282,23 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		}
 	}
 
+	public void getReservas(){
+		try
+		{
+			List <VOReservas> lista = iter.darVOReservas();
+			String l = darLista(lista);
+			String resultado = "Reservas:" + l;
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
 	public String darLista(List lista)
 	{
 		String l = "\n";
@@ -301,7 +318,8 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 
 			if (clienteid != null && ofertaid != null)
     		{
-        		VOReservas tb = iter.ceateReserva (clienteid, ofertaid);
+    			long oferta = Long.valueOf(ofertaid);
+        		VOReservas tb = iter.ceateReserva (clienteid, oferta);
         		if (tb == null)
         		{
         			throw new Exception ("No se pudo crear la reserva, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
@@ -324,6 +342,34 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		}
 	}
 
+	public void deleteReserva( )
+    {
+    	try
+    	{
+			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+    		if (clienteid != null && ofertaid != null)
+    		{
+    			long oferta = Long.valueOf (ofertaid);
+    			long tbEliminados = iter.deleteReserva (clienteid, oferta);
+
+    			String resultado = "En Reservas\n\n";
+    			resultado += tbEliminados + " reserva eliminada\n";
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		}
+    	catch (Exception e)
+    	{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+    }
 	 /* ****************************************************************
 	 * 			CRUD de TipoBebida
 	 *****************************************************************/

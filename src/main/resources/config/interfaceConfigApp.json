@@ -19,6 +19,10 @@
 				{
 					"label": "Ofertas",
 					"event": "getOfertas"
+				},
+				{
+					"label": "Reservas",
+					"event": "getReservas"
 				}
 			]
 		},
