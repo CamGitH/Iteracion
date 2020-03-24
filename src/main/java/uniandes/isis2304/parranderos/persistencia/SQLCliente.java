@@ -4,6 +4,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.Bar;
+import uniandes.isis2304.parranderos.negocio.Cliente;
 
 public class SQLCliente 
 {
@@ -46,7 +47,7 @@ public class SQLCliente
 	 */
 	public long adicionarCliente (PersistenceManager pm, String direccion, String tipoId, String id, String relacionUA ) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCliente () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaCliente () + "(direccion, tipoid,id,relacionuniandes) values (?, ?, ?, ?)");
         q.setParameters(direccion,tipoId,id,relacionUA);
         return (long) q.executeUnique();
 	}
@@ -70,12 +71,12 @@ public class SQLCliente
 	 * @param pm - El manejador de persistencia
 	 * @return El objeto BAR que tiene el identificador dado
 	 */
-	public Bar darHotelPorId (PersistenceManager pm, long id) 
+	public Cliente darHotelPorId (PersistenceManager pm, long id) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaCliente () + " WHERE id = ?");
-		q.setResultClass(Bar.class);
+		q.setResultClass(Cliente.class);
 		q.setParameters(id);
-		return (Bar) q.executeUnique();
+		return (Cliente) q.executeUnique();
 	}
 	
 
