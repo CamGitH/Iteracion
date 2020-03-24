@@ -4,6 +4,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.Bar;
+import uniandes.isis2304.parranderos.negocio.PersonaNatural;
 
 public class SQLPersonaNatural 
 {
@@ -45,7 +46,7 @@ public class SQLPersonaNatural
 	 */
 	public long adicionarPersonaNatural (PersistenceManager pm, String contrato, long numId, String nombre) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPersonanatural () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPersonanatural () + "(contrato, numeroidentificacion,nombre) values (?, ?, ?)");
         q.setParameters(contrato, numId, nombre);
         return (long) q.executeUnique();
 	}
@@ -69,12 +70,12 @@ public class SQLPersonaNatural
 	 * @param pm - El manejador de
 	 * @return El objeto BAR que tiene el identificador dado
 	 */
-	public Bar darPersonaNaturalPorId (PersistenceManager pm, long id) 
+	public PersonaNatural darPersonaNaturalPorId (PersistenceManager pm, long id) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPersonanatural () + " WHERE id = ?");
-		q.setResultClass(Bar.class);
+		q.setResultClass(PersonaNatural.class);
 		q.setParameters(id);
-		return (Bar) q.executeUnique();
+		return (PersonaNatural) q.executeUnique();
 	}
 	
 

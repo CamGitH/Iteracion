@@ -4,6 +4,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.parranderos.negocio.Bar;
+import uniandes.isis2304.parranderos.negocio.EmpresaViviendaUniversitaria;
 
 public class SQLEmpresaViviendaUniversitaria 
 {
@@ -43,9 +44,9 @@ public class SQLEmpresaViviendaUniversitaria
 	 * @param pm - El manejador de persistencia
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarEmpresaViviendaUniversitaria (PersistenceManager pm, String id, String nombre, int registroCamara,int tieneSalaE, int tieneEsparcimiento, int tieneGimnasio, int tieneRestaurante ) 
+	public long adicionarEmpresaViviendaUniversitaria (PersistenceManager pm, String id, String nombre, long registroCamara,long tieneSalaE, long tieneEsparcimiento, long tieneGimnasio, long tieneRestaurante ) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEmpresaViviendaUniversitaria () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaEmpresaViviendaUniversitaria () + "(id, nombre, registrocamaracomercio,tienesalaestudio,tienesalaesparcimiento,tienegimnasio,tienerestaurante) values (?, ?, ?, ?, ?,?,?)");
         q.setParameters(id,nombre,registroCamara, tieneSalaE, tieneEsparcimiento,tieneGimnasio,tieneRestaurante);
         return (long) q.executeUnique();
 	}
@@ -69,12 +70,12 @@ public class SQLEmpresaViviendaUniversitaria
 	 * @param pm - El manejador de persistencia
 	 * @return El objeto BAR que tiene el identificador dado
 	 */
-	public Bar darEmpresaViviendaUniversitariaPorId (PersistenceManager pm, String id) 
+	public EmpresaViviendaUniversitaria darEmpresaViviendaUniversitariaPorId (PersistenceManager pm, String id) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaEmpresaViviendaUniversitaria () + " WHERE id = ?");
-		q.setResultClass(Bar.class);
+		q.setResultClass(EmpresaViviendaUniversitaria.class);
 		q.setParameters(id);
-		return (Bar) q.executeUnique();
+		return (EmpresaViviendaUniversitaria) q.executeUnique();
 	}
 	
 
