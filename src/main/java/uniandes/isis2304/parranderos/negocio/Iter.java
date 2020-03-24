@@ -63,4 +63,16 @@ public class Iter {
         return voOp;
     }
 
+    public List<VOOperador> darVOClientes()
+    {
+        log.info ("Generando los VO de Tipos de operador");
+        List<VOOperador> voOp = new LinkedList<VOOperador> ();
+        for (Operador to : pp.darOperadores ())
+        {
+            voOp.add (to);
+        }
+        log.info ("Generando los VO de ops: " + voOp.size() + " existentes");
+        return voOp;
+    }
+
 }

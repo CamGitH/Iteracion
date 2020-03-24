@@ -46,10 +46,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
-import uniandes.isis2304.parranderos.negocio.Iter;
-import uniandes.isis2304.parranderos.negocio.Parranderos;
-import uniandes.isis2304.parranderos.negocio.VOOperador;
-import uniandes.isis2304.parranderos.negocio.VOTipoBebida;
+import uniandes.isis2304.parranderos.negocio.*;
 
 /**
  * Clase principal de la interfaz
@@ -244,19 +241,45 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		try
 		{
 			List <VOOperador> lista = iter.darVOOperadores();
-
-			String resultado = "Operadores:";
+			String l = darLista(lista);
+			String resultado = "Operadores:" + l;
 			panelDatos.actualizarInterfaz(resultado);
 			resultado += "\n Operación terminada";
 		}
 		catch (Exception e)
 		{
-//			e.printStackTrace();
+			e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
+//	public void getClientes(){
+//		try
+//		{
+//			List <VOCliente> lista = iter.darVOClientes();
+//			String l = darLista(lista);
+//			String resultado = "Clientes:" + l;
+//			panelDatos.actualizarInterfaz(resultado);
+//			resultado += "\n Operación terminada";
+//		}
+//		catch (Exception e)
+//		{
+//			e.printStackTrace();
+//			String resultado = generarMensajeError(e);
+//			panelDatos.actualizarInterfaz(resultado);
+//		}
+//	}
 
+	public String darLista(List lista)
+	{
+		String l = "\n";
+		int cont = 1;
+		for(int i=0;i<lista.size();i++){
+			l = l + cont++ +":   ";
+			l = l + lista.get(i) + "\n";
+		}
+		return l;
+	}
 
 
 	 /* ****************************************************************

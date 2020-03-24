@@ -1,0 +1,24 @@
+{
+	"title": "Nombres de las tablas de Parranderos Uniandes para la aplicación A",
+	"unidadPersistencia": "Parranderos",
+	"tablas":
+	[
+		"HOTEL",
+		"HOSTAL",
+		"APARTAMENTO",
+		"CLIENTE",
+		"EMPRESAVIVIENDAUNIVERCITARIA",
+		"HABITACION",
+		"HABITACIONVIVIENDA",
+		"HABITACIONVUNI",
+		"MIEMBROCOMUNIDAD",
+		"OFERTA",
+		"OPERADOR",
+		"PERSONANATURAL",
+		"RESERVAS",
+		"SERVICIOSHABITACION",
+		"SERVICIOSHOTEL",
+		"VECINO",
+		"VIVIENDA"
+	]
+}
