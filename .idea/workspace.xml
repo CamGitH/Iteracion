@@ -5,51 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parranderos.log" beforeDir="false" afterPath="$PROJECT_DIR$/parranderos.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazDemo/InterfazParranderosDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazDemo/InterfazParranderosDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Parranderos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Parranderos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/TipoOperador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Operador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLApartamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLApartamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLBebedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLBebedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLBebida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLBebida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLEmpresaViviendaUniversitaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLEmpresaViviendaUniversitaria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLGustan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLGustan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHabitacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHabitacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHabitacionVUni.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHabitacionVUni.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHabitacionVivienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHabitacionVivienda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHostal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHostal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLHotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLMiembroComunidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLMiembroComunidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLOferta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLOferta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLOperador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLOperador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLPersonaNatural.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLPersonaNatural.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLReservas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLServiciosHabitacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLServiciosHabitacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLServiciosHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLServiciosHotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLSirven.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLSirven.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLTipoBebida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLTipoBebida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLVecino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLVecino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLVisitan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLVisitan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLVivienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLVivienda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/interfaceConfigApp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/interfaceConfigApp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uniandes/isis2304/parranderos/test/ConexionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniandes/isis2304/parranderos/test/ConexionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/uniandes/isis2304/parranderos/test/TipoBebidaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uniandes/isis2304/parranderos/test/TipoBebidaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/interfaceConfigApp.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config/interfaceConfigApp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/interfazDemo/InterfazParranderosDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/negocio/Parranderos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/negocio/Parranderos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLBebedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLBebedor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLBebida.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLBebida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLGustan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLGustan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLSirven.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLSirven.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLTipoBebida.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLTipoBebida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLVisitan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLVisitan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/test/ConexionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/test/ConexionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/test/TipoBebidaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/test/TipoBebidaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/TablasBD_A.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/TablasBD_A.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +102,7 @@
       <updated>1584988355581</updated>
       <workItem from="1584988365921" duration="959000" />
       <workItem from="1584990315851" duration="15337000" />
+      <workItem from="1585064102244" duration="1369000" />
     </task>
     <servers />
   </component>
@@ -157,22 +118,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585000256490" />
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom" timestamp="1585006959520">
+    <state width="1493" height="83" key="GridCell.Tab.0.bottom" timestamp="1585065488219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585006959520" />
-    <state width="1493" height="239" key="GridCell.Tab.0.center" timestamp="1585006959520">
+    <state width="1493" height="83" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585065488219" />
+    <state width="1493" height="83" key="GridCell.Tab.0.center" timestamp="1585065488219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585006959520" />
-    <state width="1493" height="239" key="GridCell.Tab.0.left" timestamp="1585006959520">
+    <state width="1493" height="83" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585065488219" />
+    <state width="1493" height="83" key="GridCell.Tab.0.left" timestamp="1585065488219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585006959520" />
-    <state width="1493" height="239" key="GridCell.Tab.0.right" timestamp="1585006959520">
+    <state width="1493" height="83" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585065488219" />
+    <state width="1493" height="83" key="GridCell.Tab.0.right" timestamp="1585065488219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585006959520" />
+    <state width="1493" height="83" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585065488219" />
     <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1585006959520">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -189,10 +150,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="239" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585006959520" />
-    <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1584990316231">
+    <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1585064102558">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="444" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584990316231" />
+    <state x="444" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585064102558" />
     <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585004372440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -3,9 +3,7 @@ package uniandes.isis2304.parranderos.persistencia;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import uniandes.isis2304.parranderos.negocio.Bar;
-import uniandes.isis2304.parranderos.negocio.TipoBebida;
-import uniandes.isis2304.parranderos.negocio.TipoOperador;
+import uniandes.isis2304.parranderos.negocio.Operador;
 
 import java.util.List;
 
@@ -50,7 +48,7 @@ public class SQLOperador
 	 */
 	public long adicionarOperador (PersistenceManager pm, long id, String tipo, String nombre) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaOperador () + "(id, nombre, ciudad, presupuesto, cantsedes) values (?, ?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaOperador () + "(id, tipo, nombre) values (?, ?, ?)");
         q.setParameters(id,tipo, nombre);
         return (long) q.executeUnique();
 	}
@@ -74,19 +72,19 @@ public class SQLOperador
 	 * @param pm - El manejador de persistencia
 	 * @return El objeto BAR que tiene el identificador dado
 	 */
-	public TipoOperador darOperadorPorId (PersistenceManager pm, long id)
+	public Operador darOperadorPorId (PersistenceManager pm, long id)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOperador () + " WHERE id = ?");
-		q.setResultClass(TipoOperador.class);
+		q.setResultClass(Operador.class);
 		q.setParameters(id);
-		return (TipoOperador) q.executeUnique();
+		return (Operador) q.executeUnique();
 	}
 
-	public List<TipoOperador> darOperadores (PersistenceManager pm)
+	public List<Operador> darOperadores (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOperador ());
-		q.setResultClass(TipoOperador.class);
-		return (List<TipoOperador>) q.executeList();
+		q.setResultClass(Operador.class);
+		return (List<Operador>) q.executeList();
 	}
 	
 

@@ -1,6 +1,6 @@
 package uniandes.isis2304.parranderos.negocio;
 
-public class TipoOperador implements VOOperador {
+public class Operador implements VOOperador {
 
 
     private long id;
@@ -13,7 +13,7 @@ public class TipoOperador implements VOOperador {
     /**
      * Constructor por defecto
      */
-    public TipoOperador()
+    public Operador()
     {
         this.id = 0;
         this.tipo = "Default";
@@ -25,7 +25,7 @@ public class TipoOperador implements VOOperador {
      * @param id - El identificador del tipo de bebida
      * @param nombre - El nombre del tipo de bebida
      */
-    public TipoOperador(long id, String tipo, String nombre)
+    public Operador(long id, String tipo, String nombre)
     {
         this.id = id;
         this.tipo=tipo;

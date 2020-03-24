@@ -16,16 +16,12 @@
 package uniandes.isis2304.parranderos.persistencia;
 
 
-import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
 import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
-import javax.jdo.Transaction;
 
 import org.apache.log4j.Logger;
 import com.google.gson.JsonArray;
@@ -152,14 +148,14 @@ public class PersistenciaIter
 		
 		// Define los nombres por defecto de las tablas de la base de datos
 		tablas = new LinkedList<String> ();
-		tablas.add ("Parranderos_sequence");
-		tablas.add ("TIPOBEBIDA");
-		tablas.add ("BEBIDA");
-		tablas.add ("BAR");
-		tablas.add ("BEBEDOR");
-		tablas.add ("GUSTAN");
-		tablas.add ("SIRVEN");
-		tablas.add ("VISITAN");
+//		tablas.add ("Parranderos_sequence");
+//		tablas.add ("TIPOBEBIDA");
+//		tablas.add ("BEBIDA");
+//		tablas.add ("BAR");
+//		tablas.add ("BEBEDOR");
+//		tablas.add ("GUSTAN");
+//		tablas.add ("SIRVEN");
+//		tablas.add ("VISITAN");
 //		ITER
 		tablas.add("HOTEL");
 		tablas.add("HOSTAL");
@@ -343,6 +339,7 @@ public class PersistenciaIter
 //	}
 
 //	iter
+
 	public String darTablaHotel ()
 {
 	return tablas.get (0);
@@ -357,11 +354,11 @@ public class PersistenciaIter
 	}
 	public String darTablaCliente ()
 	{
-		return tablas.get (4);
+		return tablas.get (3);
 	}
 	public String darTablaEmpresaViviendaUniversitaria ()
 	{
-		return tablas.get (3);
+		return tablas.get (4);
 	}
 	public String darTablaHabitacion ()
 	{
@@ -559,7 +556,7 @@ public class PersistenciaIter
 //		return sqlTipoBebida.darTiposBebida (pmf.getPersistenceManager());
 //	}
 //
-	public List<TipoOperador> darOperadores ()
+	public List<Operador> darOperadores ()
 	{
 		//return sqlTipoBebida.darTiposBebida (pmf.getPersistenceManager());
 		return sqlOperador.darOperadores (pmf.getPersistenceManager());

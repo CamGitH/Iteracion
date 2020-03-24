@@ -5,7 +5,6 @@ import com.google.gson.JsonObject;
 import org.apache.log4j.Logger;
 import uniandes.isis2304.parranderos.persistencia.PersistenciaIter;
 
-import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -56,7 +55,7 @@ public class Iter {
     {
         log.info ("Generando los VO de Tipos de operador");
         List<VOOperador> voOp = new LinkedList<VOOperador> ();
-        for (TipoOperador to : pp.darOperadores ())
+        for (Operador to : pp.darOperadores ())
         {
             voOp.add (to);
         }
