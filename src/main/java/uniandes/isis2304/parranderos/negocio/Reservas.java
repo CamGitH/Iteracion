@@ -42,7 +42,7 @@ public class Reservas implements VOReservas
 	public long getOfertaId() {
 		return ofertaid;
 	}
-	
+
 	public String toString() 
 	{
 		return "Reservas [idcliente=" + idcliente + ", ofertaid=" + ofertaid + "]";

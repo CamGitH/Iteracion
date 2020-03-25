@@ -554,8 +554,7 @@ public class PersistenciaIter
 //		return sqlTipoBebida.darTiposBebida (pmf.getPersistenceManager());
 //	}
 //
-	public List<Operador> darOperadores ()
-	{
+	public List<Operador> darOperadores () {
 		//return sqlTipoBebida.darTiposBebida (pmf.getPersistenceManager());
 		return sqlOperador.darOperadores (pmf.getPersistenceManager());
 	}
@@ -570,11 +569,16 @@ public class PersistenciaIter
 		return sqlOferta.darOfertas(pmf.getPersistenceManager());
 	}
 
+	public List<Oferta> darOfertasPop ()
+	{
+		return sqlOferta.darOfertasPop(pmf.getPersistenceManager());
+	}
+
+
 	public List<Reservas> darReservas ()
 	{
 		return sqlReservas.darReservas(pmf.getPersistenceManager());
 	}
-
 
 
 

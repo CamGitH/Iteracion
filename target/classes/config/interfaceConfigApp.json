@@ -9,20 +9,16 @@
 		  "options":
 			[
 				{
-					"label": "Operadores",
+					"label": "Operadores (RF1)",
 					"event": "getOperadores"
 				},
 				{
-					"label": "Clientes",
+					"label": "Clientes (RF2)",
 					"event": "getClientes"
 				},
 				{
-					"label": "Ofertas",
+					"label": "Ofertas (RF3)",
 					"event": "getOfertas"
-				},
-				{
-					"label": "Reservas",
-					"event": "getReservas"
 				}
 			]
 		},
@@ -30,15 +26,15 @@
 			"options":
 			[
 				{
-					"label": "Crear Reserva",
+					"label": "Crear Reserva (RF4)",
 					"event": "createReserva"
 				},
 				{
-					"label": "Borrar Reserva",
+					"label": "Borrar Reserva (RF5)",
 					"event": "deleteReserva"
 				},
 				{
-					"label": "Borrar Oferta",
+					"label": "Borrar Oferta (RF6)",
 					"event": "deleteOferta"
 				}
 			]

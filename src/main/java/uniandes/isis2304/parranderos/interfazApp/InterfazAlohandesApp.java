@@ -282,6 +282,23 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		}
 	}
 
+	public void getOfertasPop(){
+		try
+		{
+			List <VOOferta> lista = iter.darVOOfertasPop();
+			String l = darLista(lista);
+			String resultado = "Ofertas:" + l;
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
 	public void getReservas(){
 		try
 		{
@@ -298,6 +315,8 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
+
+
 
 	public String darLista(List lista)
 	{
@@ -382,8 +401,9 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 				long tbEliminados = iter.deleteOferta (oferta);
 
 				String resultado = "En Ofertas\n\n";
-				resultado += tbEliminados + " oderta eliminada\n";
+				resultado += tbEliminados + " oferta eliminada\n";
 				resultado += "\n Operación terminada";
+
 				if (tbEliminados == -1){
 					resultado = "La oferta no se puede eliminar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
 				}

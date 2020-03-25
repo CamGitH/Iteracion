@@ -85,8 +85,22 @@ public class SQLOferta
 		return (List<Oferta>) q.executeList();
 	}
 
-
-
-	
+	public List<Oferta> darOfertasPop (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT *\n" +
+				"FROM OFERTA,\n" +
+				"(\n" +
+				"SELECT OFERTAID \n" +
+				"FROM RESERVAS \n" +
+				"GROUP BY OFERTAID\n" +
+				"HAVING COUNT (OFERTAID) >1 \n" +
+				")  ofertas\n" +
+				"\n" +
+				"WHERE ofertas.ofertaid=OFERTA.numoferta\n" +
+				"\n" +
+				";");
+		q.setResultClass(Oferta.class);
+		return (List<Oferta>) q.executeList();
+	}
 
 }

@@ -11,7 +11,7 @@ public interface VOReservas
 	 * @return id de la oferta sobre la que realiza la reserva
 	 */
 	public long getOfertaId();
-	
+
 	@Override
 	/**
 	 * @return Una cadena de caracteres con todos los atributos del bar

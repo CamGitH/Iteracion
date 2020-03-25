@@ -87,17 +87,33 @@ public class Iter {
         return voOf;
     }
 
+    public List<VOOferta> darVOOfertasPop()
+    {
+        log.info ("Generando los VO de oferta");
+        List<VOOferta> voOf = new LinkedList<VOOferta> ();
+        for (Oferta to : pp.darOfertasPop ())
+        {
+            voOf.add (to);
+        }
+        log.info ("Generando los VO de ofertas: " + voOf.size() + " existentes");
+        return voOf;
+    }
+
     public List<VOReservas> darVOReservas()
     {
         log.info ("Generando los VO de reserva");
         List<VOReservas> voRe = new LinkedList<VOReservas> ();
+        System.out.print("voRe");
+        System.out.print(voRe);
         for (Reservas to : pp.darReservas ())
         {
             voRe.add (to);
         }
         log.info ("Generando los VO de reservas: " + voRe.size() + " existentes");
+        System.out.print(voRe);
         return voRe;
     }
+
 
 
 
