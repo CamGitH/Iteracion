@@ -346,7 +346,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
     {
     	try
     	{
-			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
+			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que TIENE la reserva", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
 			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
     		if (clienteid != null && ofertaid != null)
     		{
@@ -384,6 +384,9 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 				String resultado = "En Ofertas\n\n";
 				resultado += tbEliminados + " oderta eliminada\n";
 				resultado += "\n Operación terminada";
+				if (tbEliminados == -1){
+					resultado = "La oferta no se puede eliminar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
+				}
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else

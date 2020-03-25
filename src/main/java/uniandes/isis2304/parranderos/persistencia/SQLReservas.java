@@ -94,6 +94,8 @@ public class SQLReservas
         q.setParameters(idcliente, ofertaid);
         return (long) q.executeUnique();
 	}
+
+
 	public List<Reservas> darReservas (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaReservas ());

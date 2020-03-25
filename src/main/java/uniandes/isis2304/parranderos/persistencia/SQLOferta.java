@@ -73,7 +73,7 @@ public class SQLOferta
 	 */
 	public long darOfertaPorNumero (PersistenceManager pm, long num)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOferta () + " WHERE id = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOferta () + " WHERE NUMOFERTA = ?");
 		q.setParameters(num);
 		return (long) q.executeUnique();
 	}
