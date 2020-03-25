@@ -26,7 +26,7 @@ public class EmpresaViviendaUniversitaria implements VOEmpresaViviendaUniversita
 	
 	/**
      * Constructor por defecto
-     */
+     */   
 	public EmpresaViviendaUniversitaria() 
     {
     	this.id="Default";

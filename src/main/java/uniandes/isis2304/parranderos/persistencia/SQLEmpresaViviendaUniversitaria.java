@@ -29,7 +29,7 @@ public class SQLEmpresaViviendaUniversitaria
 	/* ****************************************************************
 	 * 			Métodos
 	 *****************************************************************/
-
+   
 	/**
 	 * Constructor
 	 * @param pp - El Manejador de persistencia de la aplicación
