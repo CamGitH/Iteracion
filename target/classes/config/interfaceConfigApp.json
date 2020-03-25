@@ -19,6 +19,10 @@
 				{
 					"label": "Ofertas (RF3)",
 					"event": "getOfertas"
+				},
+				{
+					"label": "Cuanto gana: (RFC1)",
+					"event": "getGanaid"
 				}
 			]
 		},

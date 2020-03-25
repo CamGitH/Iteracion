@@ -129,7 +129,7 @@ public class PersistenciaIter
  	private SQLServiciosHotel sqlServiciosHotel;
 	private SQLVecino sqlVecino;
 	private SQLVivienda sqlVivienda;
-
+	private SQLGananciaOperador sqlGananciaOperador;
 
 
 	/* ****************************************************************
@@ -172,6 +172,7 @@ public class PersistenciaIter
 		tablas.add("SERVICIOSHOTEL");
 		tablas.add("VECINO");
 		tablas.add("VIVIENDA");
+		tablas.add("GANANCIAOPERADOR");
 
 
 
@@ -279,7 +280,7 @@ public class PersistenciaIter
 		sqlServiciosHotel= new SQLServiciosHotel(this);
 		sqlVecino= new SQLVecino(this);
 		sqlVivienda= new SQLVivienda(this);
-
+		sqlGananciaOperador= new SQLGananciaOperador(this);
 	}
 
 //	/**
@@ -406,7 +407,10 @@ public class PersistenciaIter
 	{
 		return tablas.get (16);
 	}
-
+	public String darTablaGananciaOperador ()
+	{
+		return tablas.get (17);
+	}
 
 
 
@@ -578,6 +582,11 @@ public class PersistenciaIter
 	public List<Reservas> darReservas ()
 	{
 		return sqlReservas.darReservas(pmf.getPersistenceManager());
+	}
+
+	public GananciaOperador darOperadorgana (long idoperador)
+	{
+		return sqlGananciaOperador.darOperadorgana(pmf.getPersistenceManager(), idoperador );
 	}
 
 

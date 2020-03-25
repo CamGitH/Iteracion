@@ -63,6 +63,7 @@ public class Iter {
         return voOp;
     }
 
+
     public List<VOCliente> darVOClientes()
     {
         log.info ("Generando los VO de cliente");
@@ -115,7 +116,13 @@ public class Iter {
     }
 
 
-
+    public GananciaOperador cuantogana (long idoperador)
+    {
+        log.info ("bucabndo Oferta: " + idoperador);
+        GananciaOperador resp = pp.darOperadorgana (idoperador);
+        log.info ("buscando Oferta: " + resp + " ");
+        return resp;
+    }
 
 
     public Reservas ceateReserva (String IdCliente, long IdOferta)
