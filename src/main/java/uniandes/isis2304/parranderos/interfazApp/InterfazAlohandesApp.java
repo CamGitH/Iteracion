@@ -346,8 +346,8 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
     {
     	try
     	{
-			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
-			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
+			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
     		if (clienteid != null && ofertaid != null)
     		{
     			long oferta = Long.valueOf (ofertaid);
@@ -365,11 +365,40 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		}
     	catch (Exception e)
     	{
-//			e.printStackTrace();
+			e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
     }
+
+	public void deleteOferta( )
+	{
+		try
+		{
+			String numOferta = JOptionPane.showInputDialog (this, "Numero de la oferta a borrar", "Borrar Oferta", JOptionPane.QUESTION_MESSAGE);
+			if (numOferta != null )
+			{
+				long oferta = Long.valueOf (numOferta);
+				long tbEliminados = iter.deleteOferta (oferta);
+
+				String resultado = "En Ofertas\n\n";
+				resultado += tbEliminados + " oderta eliminada\n";
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
 	 /* ****************************************************************
 	 * 			CRUD de TipoBebida
 	 *****************************************************************/
@@ -527,7 +556,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		boolean resp = limpiarArchivo ("parranderos.log");
 
 		// Generación de la cadena de caracteres con la traza de la ejecución de la demo
-		String resultado = "\n\n************ Limpiando el log de parranderos ************ \n";
+		String resultado = "\n\n************ Limpiando el log  ************ \n";
 		resultado += "Archivo " + (resp ? "limpiado exitosamente" : "NO PUDO ser limpiado !!");
 		resultado += "\nLimpieza terminada";
 

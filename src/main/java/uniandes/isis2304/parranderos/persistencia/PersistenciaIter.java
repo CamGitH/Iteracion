@@ -593,7 +593,7 @@ public class PersistenciaIter
         }
         catch (Exception e)
         {
-//        	e.printStackTrace();
+        	e.printStackTrace();
         	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
         	return null;
         }
@@ -622,7 +622,7 @@ public class PersistenciaIter
         }
         catch (Exception e)
         {
-//        	e.printStackTrace();
+        	e.printStackTrace();
         	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
             return -1;
         }
@@ -636,7 +636,33 @@ public class PersistenciaIter
         }
 	}
 
+	public long deleteOferta (long numoferta)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			long resp = sqlOferta.eliminarOfertaPorNumero(pm, numoferta);
+			tx.commit();
 
+			return resp;
+		}
+		catch (Exception e)
+		{
+        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return -1;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
 
 //
 //	/**

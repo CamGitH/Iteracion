@@ -71,12 +71,11 @@ public class SQLOferta
 	 * base de datos de Parranderos, por su identificador
 	 * @return El objeto Oferta que tiene el identificador dado
 	 */
-	public Oferta darOfertaPorNumero (PersistenceManager pm, long num) 
+	public long darOfertaPorNumero (PersistenceManager pm, long num)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOferta () + " WHERE id = ?");
-		q.setResultClass(Oferta.class);
 		q.setParameters(num);
-		return (Oferta) q.executeUnique();
+		return (long) q.executeUnique();
 	}
 
 	public List<Oferta> darOfertas (PersistenceManager pm)

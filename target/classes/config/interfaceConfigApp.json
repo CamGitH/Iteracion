@@ -36,6 +36,10 @@
 				{
 					"label": "Borrar Reserva",
 					"event": "deleteReserva"
+				},
+				{
+					"label": "Borrar Oferta",
+					"event": "deleteOferta"
 				}
 			]
 		},

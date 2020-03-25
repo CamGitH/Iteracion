@@ -115,8 +115,16 @@ public class Iter {
 	{
         log.info ("Eliminando Reserva: " + idcliente+" & "+idOferta);
          long resp = pp.deleteReserva (idcliente, idOferta);
-        log.info ("Eliminando bebida por nombre: " + resp + " tuplas eliminadas");
+        log.info ("Eliminando Reserva: " + resp + " tuplas eliminadas");
         return resp;
 	}
+
+    public long deleteOferta (long numOferta)
+    {
+        log.info ("Eliminando Oferta: " + numOferta);
+        long resp = pp.deleteOferta (numOferta);
+        log.info ("Eliminando Oferta: " + resp + " tuplas eliminadas");
+        return resp;
+    }
 
 }
