@@ -30,7 +30,7 @@ public class Reservas implements VOReservas
 	public Reservas(String idCl, long ofId)
 	{
 		idcliente=idCl;
-		ofId= ofertaid;
+		ofertaid=ofId;
 	}
 
 	@Override

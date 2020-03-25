@@ -61,7 +61,7 @@ public class SQLOferta
 	 */
 	public long eliminarOfertaPorNumero (PersistenceManager pm, long num)
 	{
-        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaOferta () + " WHERE id = ?");
+        Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaOferta () + " WHERE NUMOFERTA = ?");
         q.setParameters(num);
         return (long) q.executeUnique();
 	}

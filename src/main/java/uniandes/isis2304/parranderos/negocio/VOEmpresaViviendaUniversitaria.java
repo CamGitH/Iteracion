@@ -13,27 +13,27 @@ public interface VOEmpresaViviendaUniversitaria
 	/**
 	 * @return el registro en la cámara de comercio de la empresa de vivienda universitaria
 	 */
-	public int getRegistroCamara();
+	public long getRegistroCamara();
 	
 	/**
 	 * @return 1 si la empresa de vivienda universitaria tiene salas de estudio, 0 en caso contrario.
 	 */
-	public int getTieneSalaE();
+	public long getTieneSalaE();
 	
 	/**
 	 * @return 1 si la empresa de vivienda universitaria tiene salas de esparcimiento, 0 en caso contrario.
 	 */
-	public int getTieneEsparcimiento();
+	public long getTieneEsparcimiento();
 	
 	/**
 	 * @return 1 si la empresa de vivienda universitaria tiene gimnasio, 0 en caso contrario.
 	 */
-	public int getTieneGimnasio();
+	public long getTieneGimnasio();
 	
 	/**
 	 * @return 1 si la empresa de vivienda universitaria tiene restaurante, 0 en caso contrario.
 	 */
-	public int getTieneRestaurante();
+	public long getTieneRestaurante();
 	
 	@Override
 	/**
