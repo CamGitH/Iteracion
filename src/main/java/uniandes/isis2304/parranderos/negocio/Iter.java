@@ -116,12 +116,16 @@ public class Iter {
     }
 
 
-    public GananciaOperador cuantogana (long idoperador)
+    public List<GananciaOperador> cuantogana (long idoperador)
     {
-        log.info ("bucabndo Oferta: " + idoperador);
-        GananciaOperador resp = pp.darOperadorgana (idoperador);
-        log.info ("buscando Oferta: " + resp + " ");
-        return resp;
+        log.info ("Generando cuanto gana VO");
+        List<GananciaOperador> voOf = new LinkedList<GananciaOperador> ();
+        for (GananciaOperador to : pp.darOperadorgana (idoperador))
+        {
+            voOf.add (to);
+        }
+        log.info ("Generando cuanto gana VO: " + voOf.size() + " existentes");
+        return voOf;
     }
 
 

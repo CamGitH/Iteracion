@@ -303,22 +303,13 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		try {
 			String operadorid = JOptionPane.showInputDialog (this, "Id del operador", "Operador", JOptionPane.QUESTION_MESSAGE);
 
-			if ( operadorid != null)
-			{
+			if ( operadorid != null) {
 				long operador = Long.valueOf(operadorid);
-				VOGananciaOperador tb = iter.cuantogana (operador);
-				if (tb == null)
-				{
-					throw new Exception ("asegurese que el id sea correcto");
-				}
-				String resultado = "Reservas:\n\n";
-				resultado += "La reserva se ha creado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
+				List <GananciaOperador> lista = iter.cuantogana(operador);
+				String l = darLista(lista);
+				String resultado = "Ofertas:" + l;
 				panelDatos.actualizarInterfaz(resultado);
-			}
-			else
-			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+				resultado += "\n Operación terminada";
 			}
 		}
 		catch (Exception e)
@@ -327,7 +318,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
-	}
+    }
 
 
 

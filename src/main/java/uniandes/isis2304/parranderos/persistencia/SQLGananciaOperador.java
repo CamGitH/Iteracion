@@ -1,6 +1,7 @@
 package uniandes.isis2304.parranderos.persistencia;
 
 import uniandes.isis2304.parranderos.negocio.GananciaOperador;
+import uniandes.isis2304.parranderos.negocio.Operador;
 import uniandes.isis2304.parranderos.negocio.Reservas;
 
 import javax.jdo.PersistenceManager;
@@ -69,12 +70,12 @@ public class SQLGananciaOperador {
      * @param pm - El manejador de persistencia
      * @return El objeto BAR que tiene el identificador dado
      */
-    public GananciaOperador darOperadorgana (PersistenceManager pm, long id)
+    public List<GananciaOperador> darOperadorgana (PersistenceManager pm, long id)
     {
         Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaGananciaOperador () + " WHERE idoperador = ?");
         q.setResultClass(GananciaOperador.class);
         q.setParameters(id);
-        return (GananciaOperador) q.executeUnique();
+        return (List<GananciaOperador>) q.executeList();
     }
 
     public long creaarReserva (PersistenceManager pm, String idCliente, long idOferta)

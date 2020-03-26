@@ -584,7 +584,7 @@ public class PersistenciaIter
 		return sqlReservas.darReservas(pmf.getPersistenceManager());
 	}
 
-	public GananciaOperador darOperadorgana (long idoperador)
+	public List<GananciaOperador> darOperadorgana (long idoperador)
 	{
 		return sqlGananciaOperador.darOperadorgana(pmf.getPersistenceManager(), idoperador );
 	}
