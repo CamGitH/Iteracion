@@ -72,9 +72,11 @@ public class SQLGananciaOperador {
      */
     public List<GananciaOperador> darOperadorgana (PersistenceManager pm, long id)
     {
+        System.out.print("aaaaaaaaaaaaaaaaaaaa" );
         Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaGananciaOperador () + " WHERE idoperador = ?");
         q.setResultClass(GananciaOperador.class);
         q.setParameters(id);
+        System.out.print("aaaaaaaaaaaaaaaaaaaa" + (List<GananciaOperador>) q.executeList());
         return (List<GananciaOperador>) q.executeList();
     }
 

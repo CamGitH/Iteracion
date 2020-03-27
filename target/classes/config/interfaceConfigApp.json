@@ -23,6 +23,10 @@
 				{
 					"label": "Cuanto gana: (RFC1)",
 					"event": "getGanaid"
+				},
+				{
+					"label": "20mas populasres: (RFC2)",
+					"event": "getOfertaPop"
 				}
 			]
 		},
@@ -63,36 +67,7 @@
 					"event": "limpiarLogDatanucleus"
 				}
 			]
-		},		
-		{ "menuTitle": "Documentación",
-		  "options":
-			[
-				{
-					"label": "Presentación general",
-					"event": "mostrarPresentacionGeneral"
-				},
-				{
-					"label": "Modelo conceptual",
-					"event": "mostrarModeloConceptual"
-				},
-				{
-					"label": "Esquema de la BD",
-					"event": "mostrarEsquemaBD"
-				},
-				{
-					"label": "Script creación de la BD",
-					"event": "mostrarScriptBD"
-				},
-				{
-					"label": "Arquitectura de referencia",
-					"event": "mostrarArqRef"
-				},
-				{
-					"label": "Javadoc Parranderos",
-					"event": "mostrarJavadoc"
-				}
-			]
-		},		
+		},
 		{ "menuTitle": "Acerca de ...",
 		  "options":
 			[
