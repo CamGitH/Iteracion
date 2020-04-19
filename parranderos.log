@@ -82,3 +82,20 @@ ORA-00947: no hay suficientes valores
 ORA-00947: no hay suficientes valores
 
 14:44:03,384 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : null
+14:57:10,483 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+14:57:10,483 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+14:57:10,490 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+14:57:18,153 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva 1 & 1 & 1
+14:57:18,383 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaIter] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO RESERVAS(idcliente, ofertaid, cantidad) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304B232010.RESERVA_PK) violada
+
+14:57:18,403 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : null
+14:57:31,993 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva 3 & 3 & 3
+14:57:32,004 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaIter] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO RESERVAS(idcliente, ofertaid, cantidad) values (?, ?, ?)".
+ORA-00001: restricción única (ISIS2304B232010.RESERVA_PK) violada
+
+14:57:32,024 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : null
+14:58:09,704 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva 1 & 6 & 4
+14:58:09,734 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : Reservas [idcliente=1, ofertaid=6]
+14:58:55,044 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Eliminando Reserva: 1 & 6
+14:58:55,073 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Eliminando Reserva: 1 tuplas eliminadas

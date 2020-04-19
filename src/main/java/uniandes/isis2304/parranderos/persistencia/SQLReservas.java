@@ -83,7 +83,7 @@ public class SQLReservas
 
 	public long creaarReserva (PersistenceManager pm, String idCliente, long idOferta, long cantidad)
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaReservas () + "(idcliente, ofertaid, cantidad) values (?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaReservas () + "(idcliente, ofertaid, cantidad) values (?, ?, ?)");
         q.setParameters(idCliente, idOferta, cantidad);
         return (long) q.executeUnique();
 	}
