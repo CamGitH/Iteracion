@@ -9,6 +9,8 @@ public class Reservas implements VOReservas
 	private String idcliente;
 	
 	private long ofertaid;
+
+	private long cantidad;
 	
 	/* ****************************************************************
 	 * 			Métodos 
@@ -20,6 +22,7 @@ public class Reservas implements VOReservas
     {
     	this.idcliente="Default";
     	this.ofertaid=0;
+    	this.cantidad=0;
 	}
 	
 	/**
@@ -27,10 +30,11 @@ public class Reservas implements VOReservas
 	 * @param idCl
 	 * @param ofId
 	 */
-	public Reservas(String idCl, long ofId)
+	public Reservas(String idCl, long ofId, long cant)
 	{
 		idcliente=idCl;
 		ofertaid=ofId;
+		cantidad= cant;
 	}
 
 	@Override
@@ -42,6 +46,9 @@ public class Reservas implements VOReservas
 	public long getOfertaId() {
 		return ofertaid;
 	}
+
+	@Override
+	public long getCantidad() { return cantidad; }
 
 	public String toString() 
 	{

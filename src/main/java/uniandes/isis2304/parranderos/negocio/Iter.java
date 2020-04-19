@@ -129,10 +129,10 @@ public class Iter {
     }
 
 
-    public Reservas ceateReserva (String IdCliente, long IdOferta)
+    public Reservas ceateReserva (String IdCliente, long IdOferta, long cantidad)
 	{
-		log.info ("Creando reserva " + IdCliente + " & " +IdOferta);
-        Reservas reserva = pp.ceateReserva (IdCliente, IdOferta);
+		log.info ("Creando reserva " + IdCliente + " & " +IdOferta + " & " +cantidad);
+        Reservas reserva = pp.ceateReserva (IdCliente, IdOferta, cantidad);
         log.info ("Creando reserva : " + reserva);
         return reserva;
 	}

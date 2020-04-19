@@ -591,18 +591,18 @@ public class PersistenciaIter
 
 
 
-	public Reservas ceateReserva(String idCliente, long idOferta)
+	public Reservas ceateReserva(String idCliente, long idOferta, long cantidad)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long tuplasInsertadas = sqlReservas.creaarReserva(pm, idCliente, idOferta);
+            long tuplasInsertadas = sqlReservas.creaarReserva(pm, idCliente, idOferta, cantidad);
             tx.commit();
 
-            log.trace ("Inserción reserva: " + idCliente+" & "+idOferta + ": " + tuplasInsertadas + " tuplas insertadas");
-            return new Reservas (idCliente, idOferta);
+            log.trace ("Inserción reserva: " + idCliente+" & "+idOferta +" & "+cantidad + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new Reservas (idCliente, idOferta,cantidad);
         }
         catch (Exception e)
         {

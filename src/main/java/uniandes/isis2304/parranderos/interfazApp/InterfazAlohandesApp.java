@@ -337,12 +337,14 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		try
     	{
     		String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+			String cantidad = JOptionPane.showInputDialog (this, "Cantidad de espacios a reservar", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
 			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
 
 			if (clienteid != null && ofertaid != null)
     		{
     			long oferta = Long.valueOf(ofertaid);
-        		VOReservas tb = iter.ceateReserva (clienteid, oferta);
+				long cant = Long.valueOf(cantidad);
+				VOReservas tb = iter.ceateReserva (clienteid, oferta, cant);
         		if (tb == null)
         		{
         			throw new Exception ("No se pudo crear la reserva, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
