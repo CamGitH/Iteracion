@@ -48,7 +48,7 @@ public class SQLOferta
 	 */
 	public long adicionarOferta (PersistenceManager pm, long numOferta, long idOperador, long idLugar, String tipoLugar) 
 	{
-        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaOferta () + "(numoferta, idoperador, idlugar, tipolugar) values (?, ?, ?, ?)");
+        Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaOferta () + "(numoferta, idoperador, idlugar, tipolugar,habilitada) values (?, ?, ?, ?,?)");
         q.setParameters(numOferta, idOperador, idLugar, tipoLugar);
         return (long) q.executeUnique();
 	}

@@ -12,6 +12,7 @@ public class Oferta implements VOOferta
 	private long idoperador;
 	private long idlugar;
 	private String tipolugar;
+	private boolean habilitada;
 	
 	/* ****************************************************************
 	 * 			Métodos 
@@ -34,12 +35,13 @@ public class Oferta implements VOOferta
 	 * @param idL
 	 * @param tipoL
 	 */
-	public Oferta(long numOf, long idOp, long idL, String tipoL) 
+	public Oferta(long numOf, long idOp, long idL, String tipoL, boolean hab) 
     {
     	this.numoferta=numOf;
     	this.idoperador=idOp;
     	this.idlugar=idL;
     	this.tipolugar=tipoL;
+    	this.habilitada =hab;
 	}
 	
 
@@ -85,7 +87,19 @@ public class Oferta implements VOOferta
 
 	public String toString() 
 	{
-		return "Oferta [numoferta=" + numoferta + ", idoperador=" + idoperador + ", idlugar=" + idlugar + ", tipolugar=" + tipolugar + "]";
+		return "Oferta [numoferta=" + numoferta + ", idoperador=" + idoperador + ", idlugar=" + idlugar + ", tipolugar=" + tipolugar + "está habilitada"+habilitada+ "]";
+	}
+
+	@Override
+	public boolean getHabilitada() 
+	{
+		
+		return habilitada;
+	}
+	
+	public void setHabilita(boolean hab)
+	{
+		this.habilitada=hab;
 	}
 
 }

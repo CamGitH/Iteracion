@@ -28,6 +28,11 @@ public interface VOOferta
 	 */
 	public String toString();
 	
+	/**
+	 * @return 1 si la oferta está habilitada, 0 si está deshabilta
+	 */
+	
+	public boolean getHabilitada();
 
 }
 
