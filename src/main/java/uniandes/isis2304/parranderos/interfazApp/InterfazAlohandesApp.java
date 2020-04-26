@@ -428,6 +428,33 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		}
 	}
 
+	public void usoAlohandes(){
+		try
+		{
+			List <VOCliente> listaCli = iter.darVOClientes();
+			List <VOOperador> listaOp = iter.darVOOperadores();
+			int total = listaCli.size()+listaOp.size();
+			int cli = listaCli.size()*100/total;
+			int op = listaOp.size()*100/total;
+			String l = ("_______________________________________________________________________ \n" +
+						"|TOTAL DE USUARIOS: "+total+"---------->100%____________________________________ \n" +
+						"|_____________________________________________________________________ \n" +
+						"|USUARIOS CLIENTE: "+listaCli.size()+"----------> "+cli+"%___________________________________ \n" +
+						"|_____________________________________________________________________ \n" +
+						"|USUARIOS OPERADORES: "+listaOp.size()+"----------> "+op+"%_________________________ \n" +
+						"|_____________________________________________________________________ \n");
+			String resultado = "Uso alojandes:\n" + l;
+			panelDatos.actualizarInterfaz(resultado);
+			resultado += "\n Operación terminada";
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+
 	 /* ****************************************************************
 	 * 			CRUD de TipoBebida
 	 *****************************************************************/

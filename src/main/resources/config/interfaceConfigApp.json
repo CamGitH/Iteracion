@@ -27,6 +27,10 @@
 				{
 					"label": "20mas populasres: (RFC2)",
 					"event": "getOfertaPop"
+				},
+				{
+					"label": "Uso Alojandes (RFC5)",
+					"event": "usoAlohandes"
 				}
 			]
 		},
