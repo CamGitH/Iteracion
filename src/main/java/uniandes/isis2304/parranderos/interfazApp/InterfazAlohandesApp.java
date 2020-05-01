@@ -573,6 +573,35 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		}
 	}
 
+	public void usoCliente(){
+		try{
+			String idCliente = JOptionPane.showInputDialog (this, "ID del cliente", "ID cliente", JOptionPane.QUESTION_MESSAGE);
+
+			if (idCliente != null) {
+
+				List<VOReservas> r = iter.buscarReservaPorCliente(idCliente);
+				if (r == null) {
+					throw new Exception("No se encontrar este cliente");
+				}
+				String l = darLista(r);
+
+				String resultado = "Reservas:\n\n";
+				resultado += "Las reservas del usuario"+ idCliente+" son: " + l;
+				resultado += "\n Operación terminada";
+
+				if(l.isEmpty()||r.size()==0){
+					resultado = "Este clienete no tiene reservas registradas";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
 	 /* ****************************************************************
 	 * 			CRUD de TipoBebida
 	 *****************************************************************/

@@ -31,6 +31,10 @@
 				{
 					"label": "Uso Alojandes (RFC5)",
 					"event": "usoAlohandes"
+				},
+				{
+					"label": "Uso por Cliente (RFC6)",
+					"event": "usoCliente"
 				}
 			]
 		},

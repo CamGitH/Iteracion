@@ -102,4 +102,10 @@ public class SQLReservas
 		q.setResultClass(Reservas.class);
 		return (List<Reservas>) q.executeList();
 	}
+
+    public List<Reservas> darReservasporCliente(PersistenceManager pm, String idCliente) {
+		Query q = pm.newQuery(SQL, "SELECT * FROM  " + pp.darTablaReservas () + " WHERE idcliente = ? ");
+		q.setParameters(idCliente);
+		return (List<Reservas>) q.executeList();
+    }
 }

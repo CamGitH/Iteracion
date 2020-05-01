@@ -63,6 +63,16 @@ public class Iter {
         return voOp;
     }
 
+    public List<VOReservas> buscarReservaPorCliente( String idCliente){
+        log.info ("Generando los VO de Reservas");
+        List<VOReservas> voRe = new LinkedList<VOReservas> ();
+        for (Reservas to : pp.darReservasPorClientes (idCliente))
+        {
+            voRe.add (to);
+        }
+        log.info ("Generando los VO de clientes: " + voRe.size() + " existentes");
+        return voRe;
+    }
 
     public List<VOCliente> darVOClientes()
     {
