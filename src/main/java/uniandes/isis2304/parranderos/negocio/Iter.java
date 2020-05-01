@@ -86,6 +86,18 @@ public class Iter {
         return voCli;
     }
 
+    public List<VOCliente> darVOClientesFrecuentes()
+    {
+        log.info ("Generando los VO de cliente");
+        List<VOCliente> voCli = new LinkedList<VOCliente> ();
+        for (Cliente to : pp.darClientesFrec ())
+        {
+            voCli.add (to);
+        }
+        log.info ("Generando los VO de clientes: " + voCli.size() + " existentes");
+        return voCli;
+    }
+
     public List<VOOferta> darVOOfertas()
     {
         log.info ("Generando los VO de oferta");

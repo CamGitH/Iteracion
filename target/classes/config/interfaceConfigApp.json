@@ -37,8 +37,12 @@
 					"event": "usoCliente"
 				},
 				{
-					"label": "Índice de ocupación  (RFC6)",
+					"label": "Índice de ocupación  (RFC3)",
 					"event": "darPorcentajeDeOcupacion"
+				},
+				{
+					"label": "Clientes drecuentes de + a - (RFC8)",
+					"event": "getClientesFrecuentes"
 				}
 				
 			]
