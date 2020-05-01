@@ -7932,3 +7932,23 @@ With the Partitioning, OLAP, Advanced Analytics and Real Application Testing opt
 14:30:26,401 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
 14:30:26,401 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
 14:30:26,402 (main) DEBUG [DataNucleus.Persistence] - ================================================
+14:30:41,902 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@7fcd07c5" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@6996b8d7" con transaccion="org.datanucleus.TransactionImpl@2b5b3fc2"
+14:30:41,918 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=-194914165-1, enlisted resources=[]]
+14:30:41,919 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@7fcd07c5 (optimistic=false)
+14:30:41,937 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "UPDATE OFERTA SET HABILITADA=0 WHERE NUMOFERTA=?"
+14:30:42,343 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@41723ae4 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@36b7c155, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+14:30:42,345 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@1ba4268e, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=-194914165-1, enlisted resources=[]]
+14:30:42,426 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@6af53a39" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@36b7c155"
+14:30:42,427 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - UPDATE OFERTA SET HABILITADA=0 WHERE NUMOFERTA=<3>
+14:30:42,462 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Persist] - SQL Tiempo de cumplir = 35 ms (numero de lineas cambiado = 1) con el PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@6af53a39"
+14:30:42,462 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@6af53a39"
+14:30:42,463 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo commit de la transaacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@7fcd07c5
+14:30:42,463 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() empezado con flush ordenado - 0 objetos registrados
+14:30:42,474 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() terminado
+14:30:42,474 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : EMPIEZA
+14:30:42,475 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : TERMINADO
+14:30:42,475 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Committing [DataNucleus Transaction, ID=-194914165-1, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@1ba4268e]]
+14:30:42,475 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@41723ae4 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@36b7c155, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+14:30:42,509 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@41723ae4 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@36b7c155, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+14:30:42,546 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción committed en 83 ms
+14:30:42,548 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@7fcd07c5" se cerró
