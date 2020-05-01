@@ -204,3 +204,8 @@ ORA-00903: nombre de tabla no válido
 14:53:41,499 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
 14:53:53,562 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Deshabilitando Oferta: 3
 14:53:54,285 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Deshabilitando Oferta: 1 tuplas habilitadas
+15:19:19,600 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+15:19:19,600 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+15:19:19,600 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+15:19:26,420 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de Reservas
+15:19:26,520 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes: 0 existentes

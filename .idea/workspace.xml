@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbbd3964-6a43-4c24-bbc1-cc90a9eeb3bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parranderos.log" beforeDir="false" afterPath="$PROJECT_DIR$/parranderos.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLReservas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config/interfaceConfigApp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/interfaceConfigApp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +111,7 @@
       <workItem from="1587323134837" duration="3858000" />
       <workItem from="1587845079882" duration="1562000" />
       <workItem from="1587933943372" duration="2563000" />
-      <workItem from="1588362211259" duration="1730000" />
+      <workItem from="1588362211259" duration="2066000" />
     </task>
     <task id="LOCAL-00001" summary="ITER 3">
       <created>1587325534673</created>
@@ -172,22 +168,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="296" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587326375953" />
-    <state width="1493" height="416" key="GridCell.Tab.0.bottom" timestamp="1588364174190">
+    <state width="1493" height="416" key="GridCell.Tab.0.bottom" timestamp="1588364359270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="416" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588364174190" />
-    <state width="1493" height="416" key="GridCell.Tab.0.center" timestamp="1588364174190">
+    <state width="1493" height="416" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588364359270" />
+    <state width="1493" height="416" key="GridCell.Tab.0.center" timestamp="1588364359270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="416" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588364174190" />
-    <state width="1493" height="416" key="GridCell.Tab.0.left" timestamp="1588364174190">
+    <state width="1493" height="416" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588364359270" />
+    <state width="1493" height="416" key="GridCell.Tab.0.left" timestamp="1588364359270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="416" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588364174190" />
-    <state width="1493" height="416" key="GridCell.Tab.0.right" timestamp="1588364174190">
+    <state width="1493" height="416" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588364359270" />
+    <state width="1493" height="416" key="GridCell.Tab.0.right" timestamp="1588364359270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="416" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588364174190" />
+    <state width="1493" height="416" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588364359270" />
     <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1585006959520">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -204,18 +200,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="239" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585006959520" />
+    <state x="147" y="65" key="MergeDialog" timestamp="1588364347505">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1588364347505" />
+    <state x="473" y="119" key="MultipleFileMergeDialog" timestamp="1588364347510">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="473" y="119" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1588364347510" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1585086168523">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585086168523" />
+    <state x="461" y="171" key="Vcs.Multiple.Commit.Info.Dialog.Key" timestamp="1588364334090">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="461" y="171" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.824@0.0.1536.824" timestamp="1588364334090" />
     <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588362210385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="444" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588362210385" />
-    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587325648584">
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588364238311">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1587325648584" />
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588364238311" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1584992616036">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
