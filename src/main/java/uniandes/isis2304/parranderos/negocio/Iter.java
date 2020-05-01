@@ -189,5 +189,20 @@ public class Iter {
         log.info ("Eliminando Oferta: " + resp + " tuplas eliminadas");
         return resp;
     }
+    
+    public long darIndiceOcupacion()
+    {
+    	long ofertasHabilitadas=0;
+    	for (int i=0; i<pp.darOfertas().size(); i++)
+    	{
+    		if (pp.darOfertas().get(i).getHabilitada()==1)
+    		{
+    			ofertasHabilitadas++;	
+    		}
+    	}
+    	
+    	return(ofertasHabilitadas/50)*100;
+    	
+    }
 
 }

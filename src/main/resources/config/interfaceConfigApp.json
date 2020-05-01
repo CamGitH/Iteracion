@@ -35,7 +35,12 @@
 				{
 					"label": "Uso por Cliente (RFC6)",
 					"event": "usoCliente"
+				},
+				{
+					"label": "Índice de ocupación  (RFC6)",
+					"event": "darPorcentajeDeOcupacion"
 				}
+				
 			]
 		},
 		{ "menuTitle": "Crear y borrar",
