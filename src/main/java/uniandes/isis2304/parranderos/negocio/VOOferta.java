@@ -32,7 +32,7 @@ public interface VOOferta
 	 * @return 1 si la oferta está habilitada, 0 si está deshabilta
 	 */
 	
-	public boolean getHabilitada();
+	public long getHabilitada();
 
 }
 

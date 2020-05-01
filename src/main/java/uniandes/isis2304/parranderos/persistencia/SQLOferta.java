@@ -46,10 +46,10 @@ public class SQLOferta
 	 * @param pm - El manejador de persistencia
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarOferta (PersistenceManager pm, long numOferta, long idOperador, long idLugar, String tipoLugar) 
+	public long adicionarOferta (PersistenceManager pm, long numOferta, long idOperador, long idLugar, String tipoLugar,long habilitada) 
 	{
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaOferta () + "(numoferta, idoperador, idlugar, tipolugar,habilitada) values (?, ?, ?, ?,?)");
-        q.setParameters(numOferta, idOperador, idLugar, tipoLugar);
+        q.setParameters(numOferta, idOperador, idLugar, tipoLugar,habilitada);
         return (long) q.executeUnique();
 	}
 
@@ -101,6 +101,14 @@ public class SQLOferta
 				";");
 		q.setResultClass(Oferta.class);
 		return (List<Oferta>) q.executeList();
+	}
+	
+	public long habilitarOferta(PersistenceManager pm, long num)
+	{
+		Query q= pm.newQuery(SQL, "UPDATE *\n"+ " "+ "OFERTA"+" "+"SET"+" "+"HABILITADA=1"+" "+"WHERE NUMOFERTA=?");
+		q.setParameters(num);
+		return (long) q.executeUnique();
+		
 	}
 
 }

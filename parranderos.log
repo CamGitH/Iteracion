@@ -104,3 +104,45 @@ ORA-00001: restricción única (ISIS2304B232010.RESERVA_PK) violada
 16:44:54,879 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
 16:45:17,446 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva 56 & 2 & 2
 16:45:18,513 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : Reservas [idcliente=56, ofertaid=2]
+16:52:02,876 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:52:02,878 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:52:02,903 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:52:12,276 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de cliente
+16:52:13,060 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes: 75 existentes
+16:52:13,060 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de operador
+16:52:13,471 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de operadores: 51 existentes
+20:31:55,045 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:31:55,050 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+20:31:55,083 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:33:01,646 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:33:01,648 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+20:33:01,682 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:33:33,489 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 2
+20:33:37,216 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaIter] - Exception : Error con la ejecucion de Query de SQL "UPDATE * OFERTASETHABILITADA=1WHERE NUMOFERTA=?".
+ORA-00903: nombre de tabla no válido
+
+20:33:37,489 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: -1 tuplas habilitadas
+20:35:05,933 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:35:05,934 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+20:35:05,959 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:35:21,800 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 2
+20:35:24,028 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaIter] - Exception : Error con la ejecucion de Query de SQL "UPDATE * OFERTASETHABILITADA=1WHERE NUMOFERTA=?".
+ORA-00903: nombre de tabla no válido
+
+20:35:24,405 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: -1 tuplas habilitadas
+20:36:16,667 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:36:16,669 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+20:36:16,693 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:36:44,363 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 2
+20:36:57,400 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaIter] - Exception : Error con la ejecucion de Query de SQL "UPDATE *  OFERTA SET HABILITADA=1 WHERE NUMOFERTA=?".
+ORA-00903: nombre de tabla no válido
+
+20:36:57,791 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: -1 tuplas habilitadas
+20:44:59,768 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:44:59,770 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+20:44:59,798 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:45:13,993 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 2
+20:45:17,613 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaIter] - Exception : Error con la ejecucion de Query de SQL "UPDATE *  OFERTA SET HABILITADA=1 WHERE NUMOFERTA=?".
+ORA-00903: nombre de tabla no válido
+
+20:45:18,242 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: -1 tuplas habilitadas

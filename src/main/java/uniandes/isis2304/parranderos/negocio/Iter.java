@@ -136,6 +136,14 @@ public class Iter {
         log.info ("Creando reserva : " + reserva);
         return reserva;
 	}
+    
+    public Oferta ceateOferta (long numOf, long idOp, long idL, String tipoL, long hab)
+   	{
+   		log.info ("Creando oferta " + numOf + " & " + idOp + " & " +idL+"&"+tipoL+"&"+hab);
+           Oferta oferta = pp.createOferta (numOf, idOp, idL,tipoL,hab);
+           log.info ("Creando oferta : " + oferta);
+           return oferta;
+   	}
 
 
 	public long deleteReserva (String idcliente, long idOferta)
@@ -144,6 +152,15 @@ public class Iter {
          long resp = pp.deleteReserva (idcliente, idOferta);
         log.info ("Eliminando Reserva: " + resp + " tuplas eliminadas");
         return resp;
+	}
+	
+	public long habilitarOferta(long numOferta)
+	{
+		log.info ("Habilitando Oferta: " + numOferta);
+        long resp = pp.habilitarOferta(numOferta);
+        log.info ("Habilitando Oferta: " + resp + " tuplas habilitadas");
+        return resp;
+		
 	}
 
     public long deleteOferta (long numOferta)

@@ -395,6 +395,52 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
     }
+	
+	public void createOferta(){
+		try
+    	{
+    		String numeroOferta = JOptionPane.showInputDialog (this, "Núemro de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+			String idOperador = JOptionPane.showInputDialog (this, "Id del operador que realiza la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+			String idLugar = JOptionPane.showInputDialog (this, "Id del lugar de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+			String lugar = JOptionPane.showInputDialog (this, "Lugar de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+			String habilidad = JOptionPane.showInputDialog (this, "¿La oferta está habilitada? responder si o no ","Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+
+			if (numeroOferta != null && idOperador != null && idLugar!=null)
+    		{
+    			long numoferta = Long.valueOf(numeroOferta);
+				long idOp = Long.valueOf(idOperador);
+				long idL = Long.valueOf(idLugar);
+				long hab=0;
+				
+				if(habilidad.equals("si") && habilidad.equals("sí"))
+				{
+					habilidad="1";
+					hab = Long.valueOf(habilidad);
+					
+				}
+				
+				VOOferta tb = iter.ceateOferta(numoferta,idOp,idL,lugar,hab);
+        		if (tb == null)
+        		{
+        			throw new Exception ("No se pudo crear la oferta, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
+        		}
+        		String resultado = "Oferta:\n\n";
+        		resultado += "La oferta se ha creado exitosamente: " + tb;
+    			resultado += "\n Operación terminada";
+    			panelDatos.actualizarInterfaz(resultado);
+    		}
+    		else
+    		{
+    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+    		}
+		}
+    	catch (Exception e)
+    	{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
 
 	public void deleteOferta( )
 	{
@@ -427,7 +473,78 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
+	//Habilitación y deshabilitación de ofertas
+	public void habilitarOferta()
+	{
+		try 
+		{
+			String numOferta=JOptionPane.showInputDialog (this, "Numero de la oferta que se desa habilitar", "Habilitar Oferta", JOptionPane.QUESTION_MESSAGE);
+			
+			if (numOferta!=null)
+			{
+				long numero =Long.valueOf(numOferta);
+				long habilitada =iter.habilitarOferta(numero);
+				
+				if (numero==1)
+				{
+				String resultado = "En Ofertas\n\n";
+				resultado += habilitada + " oferta habilitada\n";
+				resultado += "\n Operación terminada";
+				
+				
+				if (habilitada == -1){
+					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
+				}
+				else
+				{
+					panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+				}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
 
+	public void deshabilitarOferta()
+	{
+		try 
+		{
+			String numOferta=JOptionPane.showInputDialog (this, "Numero de la oferta que se desa deshabilitar", "Deshabilitar Oferta", JOptionPane.QUESTION_MESSAGE);
+			
+			if (numOferta!=null)
+			{
+				long numero =Long.valueOf(numOferta);
+				long habilitada =iter.habilitarOferta(numero);
+				
+				if (numero==0)
+				{
+				String resultado = "En Ofertas\n\n";
+				resultado += habilitada + " oferta habilitada\n";
+				resultado += "\n Operación terminada";
+				
+				
+				if (habilitada == -1){
+					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
+				}
+				else
+				{
+					panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+				}
+				}
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
 	public void usoAlohandes(){
 		try
 		{

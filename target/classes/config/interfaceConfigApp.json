@@ -27,6 +27,10 @@
 				{
 					"label": "20mas populasres: (RFC2)",
 					"event": "getOfertaPop"
+				},
+				{
+					"label": "Uso Alojandes (RFC5)",
+					"event": "usoAlohandes"
 				}
 			]
 		},
@@ -41,6 +45,16 @@
 					"label": "Borrar Reserva (RF5)",
 					"event": "deleteReserva"
 				},
+				
+				{
+					"label": "Crear Oferta (RF4)",
+					"event": "createReserva"
+				},
+				{
+					"label": "Habilitar Reserva",
+					"event": "habilitarOferta"
+				},
+				
 				{
 					"label": "Borrar Oferta (RF6)",
 					"event": "deleteOferta"

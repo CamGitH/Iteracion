@@ -12,7 +12,7 @@ public class Oferta implements VOOferta
 	private long idoperador;
 	private long idlugar;
 	private String tipolugar;
-	private boolean habilitada;
+	private long habilitada;
 	
 	/* ****************************************************************
 	 * 			Métodos 
@@ -35,7 +35,7 @@ public class Oferta implements VOOferta
 	 * @param idL
 	 * @param tipoL
 	 */
-	public Oferta(long numOf, long idOp, long idL, String tipoL, boolean hab) 
+	public Oferta(long numOf, long idOp, long idL, String tipoL, long hab) 
     {
     	this.numoferta=numOf;
     	this.idoperador=idOp;
@@ -91,13 +91,13 @@ public class Oferta implements VOOferta
 	}
 
 	@Override
-	public boolean getHabilitada() 
+	public long getHabilitada() 
 	{
 		
 		return habilitada;
 	}
 	
-	public void setHabilita(boolean hab)
+	public void setHabilita(long hab)
 	{
 		this.habilitada=hab;
 	}

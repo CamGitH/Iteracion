@@ -648,6 +648,35 @@ public class PersistenciaIter
             pm.close();
         }
 	}
+	
+	public Oferta createOferta(long numOf, long idOp, long idL, String tipoL, long hab)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlOferta.adicionarOferta(pm, numOf, idOp, idL, tipoL,hab);
+            tx.commit();
+
+            log.trace ("Inserción reserva: " + numOf+" & "+idOp +" & "+idL+"&"+tipoL+"&"+hab + ": " + tuplasInsertadas + " tuplas insertadas");
+            return new Oferta (numOf, idOp, idL, tipoL,hab);
+        }
+        catch (Exception e)
+        {
+        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 
 	public long deleteOferta (long numoferta)
 	{
@@ -675,6 +704,37 @@ public class PersistenciaIter
 			}
 			pm.close();
 		}
+	}
+	
+	
+	public long habilitarOferta(long numOf)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			long resp = sqlOferta.habilitarOferta(pm, numOf);
+			tx.commit();
+
+			return resp;
+		}
+		catch (Exception e)
+		{
+        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return -1;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+		
+		
 	}
 
 //
