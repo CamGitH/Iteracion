@@ -181,3 +181,26 @@ ORA-00903: nombre de tabla no válido
 14:30:42,549 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Deshabilitando Oferta: 1 tuplas habilitadas
 14:34:56,292 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva 34 & 67 & 3
 14:34:56,420 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : Reservas [idcliente=34, ofertaid=67]
+14:49:03,463 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+14:49:03,464 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+14:49:03,501 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+14:51:21,734 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+14:51:21,736 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+14:51:21,760 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+14:51:31,044 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 8
+14:51:31,706 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 1 tuplas habilitadas
+14:52:10,802 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+14:52:10,803 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+14:52:10,831 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+14:52:20,406 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 6
+14:52:21,084 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 1 tuplas habilitadas
+14:52:56,899 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+14:52:56,900 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+14:52:56,940 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+14:53:07,186 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Deshabilitando Oferta: 6
+14:53:07,881 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Deshabilitando Oferta: 1 tuplas habilitadas
+14:53:41,460 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+14:53:41,461 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+14:53:41,499 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+14:53:53,562 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Deshabilitando Oferta: 3
+14:53:54,285 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Deshabilitando Oferta: 1 tuplas habilitadas
