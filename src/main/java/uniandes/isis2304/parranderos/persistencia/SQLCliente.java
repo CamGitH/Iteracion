@@ -90,7 +90,7 @@ public class SQLCliente
 	}
 	public List<Cliente> darClientesFrec (PersistenceManager pm)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * from(SELECT idcliente FROM reservas GROUP BY idcliente having count(*)>1)Order BY idcliente DESC" + pp.darTablaCliente ());
+		Query q = pm.newQuery(SQL, "SELECT * from(SELECT idcliente FROM reservas GROUP BY (idcliente) having count(*)>1)Order BY idcliente DESC");
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
 	}
