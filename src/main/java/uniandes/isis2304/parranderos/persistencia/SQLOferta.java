@@ -110,5 +110,13 @@ public class SQLOferta
 		return (long) q.executeUnique();
 		
 	}
+	
+	public long deshabilitarOferta(PersistenceManager pm, long num)
+	{
+		Query q= pm.newQuery(SQL, "UPDATE "+""+ "OFERTA"+" "+"SET"+" "+"HABILITADA=0"+" "+"WHERE NUMOFERTA=?");
+		q.setParameters(num);
+		return (long) q.executeUnique();
+		
+	}
 
 }

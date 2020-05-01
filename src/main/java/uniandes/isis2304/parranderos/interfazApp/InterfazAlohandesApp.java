@@ -490,7 +490,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 				String resultado = "En Ofertas\n\n";
 				resultado += habilitada + " oferta habilitada\n";
 				resultado += "\n Operación terminada";
-				
+				panelDatos.actualizarInterfaz(resultado);
 				
 				if (habilitada == -1){
 					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
@@ -519,14 +519,14 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			if (numOferta!=null)
 			{
 				long numero =Long.valueOf(numOferta);
-				long habilitada =iter.habilitarOferta(numero);
+				long habilitada =iter.deshabilitarOferta(numero);
 				
 				if (numero==0)
 				{
 				String resultado = "En Ofertas\n\n";
 				resultado += habilitada + " oferta habilitada\n";
 				resultado += "\n Operación terminada";
-				
+				panelDatos.actualizarInterfaz(resultado);
 				
 				if (habilitada == -1){
 					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
@@ -544,6 +544,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
+		
 	}
 	public void usoAlohandes(){
 		try

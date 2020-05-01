@@ -57,7 +57,7 @@
 				
 					{
 					"label": "Deshabilitar Oferta",
-					"event": "desHabilitarOferta"
+					"event": "deshabilitarOferta"
 				},
 				
 				{

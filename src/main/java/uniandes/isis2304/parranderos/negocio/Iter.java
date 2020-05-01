@@ -162,6 +162,15 @@ public class Iter {
         return resp;
 		
 	}
+	
+	public long deshabilitarOferta(long numOferta)
+	{
+		log.info ("Deshabilitando Oferta: " + numOferta);
+        long resp = pp.deshabilitarOferta(numOferta);
+        log.info ("Deshabilitando Oferta: " + resp + " tuplas habilitadas");
+        return resp;
+		
+	}
 
     public long deleteOferta (long numOferta)
     {

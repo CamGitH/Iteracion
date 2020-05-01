@@ -736,6 +736,36 @@ public class PersistenciaIter
 		
 		
 	}
+	
+	public long deshabilitarOferta(long numOf)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			long resp = sqlOferta.deshabilitarOferta(pm, numOf);
+			tx.commit();
+
+			return resp;
+		}
+		catch (Exception e)
+		{
+        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return -1;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+		
+		
+	}
 
 //
 //	/**
