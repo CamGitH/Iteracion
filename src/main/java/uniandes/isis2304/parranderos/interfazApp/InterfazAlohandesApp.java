@@ -603,6 +603,31 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
+	
+	
+	/**
+		 * Muestra el porcentaje de ocupación de las ofertas de Alohandes
+		 */
+		
+		public void darPorcentajeDeOcupacion()
+		{ 
+			
+		    try
+			{
+		    	long porcentaje = iter.darIndiceOcupacion();
+				String resultado = "Uso alojandes:\n" + porcentaje;
+			    resultado += "\n Operación terminada";
+			    panelDatos.actualizarInterfaz(resultado);
+			}
+			catch (Exception e)
+			{
+				e.printStackTrace();
+				String resultado = generarMensajeError(e);
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			
+		}
+
 	 /* ****************************************************************
 	 * 			CRUD de TipoBebida
 	 *****************************************************************/
