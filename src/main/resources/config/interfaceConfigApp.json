@@ -51,8 +51,13 @@
 					"event": "createReserva"
 				},
 				{
-					"label": "Habilitar Reserva",
+					"label": "Habilitar Oferta",
 					"event": "habilitarOferta"
+				},
+				
+					{
+					"label": "Deshabilitar Oferta",
+					"event": "desHabilitarOferta"
 				},
 				
 				{

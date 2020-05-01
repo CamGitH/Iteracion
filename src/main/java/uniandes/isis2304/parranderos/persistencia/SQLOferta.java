@@ -105,7 +105,7 @@ public class SQLOferta
 	
 	public long habilitarOferta(PersistenceManager pm, long num)
 	{
-		Query q= pm.newQuery(SQL, "UPDATE *\n"+ " "+ "OFERTA"+" "+"SET"+" "+"HABILITADA=1"+" "+"WHERE NUMOFERTA=?");
+		Query q= pm.newQuery(SQL, "UPDATE "+""+ "OFERTA"+" "+"SET"+" "+"HABILITADA=1"+" "+"WHERE NUMOFERTA=?");
 		q.setParameters(num);
 		return (long) q.executeUnique();
 		
