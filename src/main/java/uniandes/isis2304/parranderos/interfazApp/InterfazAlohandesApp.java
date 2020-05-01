@@ -479,28 +479,29 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 		try 
 		{
 			String numOferta=JOptionPane.showInputDialog (this, "Numero de la oferta que se desa habilitar", "Habilitar Oferta", JOptionPane.QUESTION_MESSAGE);
+			long numero =Long.valueOf(numOferta);
+			
 			
 			if (numOferta!=null)
 			{
-				long numero =Long.valueOf(numOferta);
 				long habilitada =iter.habilitarOferta(numero);
-				
-				if (numero==1)
-				{
 				String resultado = "En Ofertas\n\n";
 				resultado += habilitada + " oferta habilitada\n";
 				resultado += "\n Operación terminada";
 				panelDatos.actualizarInterfaz(resultado);
 				
+				
+				
 				if (habilitada == -1){
 					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
 				}
+			}
 				else
 				{
 					panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
 				}
-				}
-			}
+				
+			
 		}
 		catch (Exception e)
 		{
@@ -519,24 +520,24 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			if (numOferta!=null)
 			{
 				long numero =Long.valueOf(numOferta);
-				long habilitada =iter.deshabilitarOferta(numero);
+				long deshabilitada =iter.deshabilitarOferta(numero);
 				
-				if (numero==0)
-				{
+				
 				String resultado = "En Ofertas\n\n";
-				resultado += habilitada + " oferta habilitada\n";
+				resultado += deshabilitada + " oferta deshabilitada\n";
 				resultado += "\n Operación terminada";
 				panelDatos.actualizarInterfaz(resultado);
 				
-				if (habilitada == -1){
+				if (deshabilitada == -1){
 					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
 				}
+			}
 				else
 				{
 					panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
 				}
-				}
-			}
+				
+			
 		}
 		catch (Exception e)
 		{
