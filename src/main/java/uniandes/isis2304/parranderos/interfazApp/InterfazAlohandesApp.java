@@ -230,7 +230,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
     }
     /* EVENTOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     */
-    public void getOperadores(){
+	public void getOperadores(){
 		try
 		{
 			List <VOOperador> lista = iter.darVOOperadores();
@@ -352,7 +352,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
-    }
+	}
 
 
 
@@ -369,32 +369,32 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 
 	public void createReserva(){
 		try
-    	{
-    		String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+		{
+			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
 			String cantidad = JOptionPane.showInputDialog (this, "Cantidad de espacios a reservar", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
 			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
 
 			if (clienteid != null && ofertaid != null)
-    		{
-    			long oferta = Long.valueOf(ofertaid);
+			{
+				long oferta = Long.valueOf(ofertaid);
 				long cant = Long.valueOf(cantidad);
 				VOReservas tb = iter.ceateReserva (clienteid, oferta, cant);
-        		if (tb == null)
-        		{
-        			throw new Exception ("No se pudo crear la reserva, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
-        		}
-        		String resultado = "Reservas:\n\n";
-        		resultado += "La reserva se ha creado exitosamente: " + tb;
-    			resultado += "\n Operación terminada";
-    			panelDatos.actualizarInterfaz(resultado);
-    		}
-    		else
-    		{
-    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-    		}
+				if (tb == null)
+				{
+					throw new Exception ("No se pudo crear la reserva, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
+				}
+				String resultado = "Reservas:\n\n";
+				resultado += "La reserva se ha creado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
 		}
-    	catch (Exception e)
-    	{
+		catch (Exception e)
+		{
 			e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
@@ -402,74 +402,74 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 	}
 
 	public void deleteReserva( )
-    {
-    	try
-    	{
+	{
+		try
+		{
 			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que TIENE la reserva", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
 			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
-    		if (clienteid != null && ofertaid != null)
-    		{
-    			long oferta = Long.valueOf (ofertaid);
-    			long tbEliminados = iter.deleteReserva (clienteid, oferta);
+			if (clienteid != null && ofertaid != null)
+			{
+				long oferta = Long.valueOf (ofertaid);
+				long tbEliminados = iter.deleteReserva (clienteid, oferta);
 
-    			String resultado = "En Reservas\n\n";
-    			resultado += tbEliminados + " reserva eliminada\n";
-    			resultado += "\n Operación terminada";
-    			panelDatos.actualizarInterfaz(resultado);
-    		}
-    		else
-    		{
-    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-    		}
+				String resultado = "En Reservas\n\n";
+				resultado += tbEliminados + " reserva eliminada\n";
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
 		}
-    	catch (Exception e)
-    	{
+		catch (Exception e)
+		{
 			e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
-    }
-	
+	}
+
 	public void createOferta(){
 		try
-    	{
-    		String numeroOferta = JOptionPane.showInputDialog (this, "Núemro de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+		{
+			String numeroOferta = JOptionPane.showInputDialog (this, "Núemro de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
 			String idOperador = JOptionPane.showInputDialog (this, "Id del operador que realiza la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
 			String idLugar = JOptionPane.showInputDialog (this, "Id del lugar de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
 			String lugar = JOptionPane.showInputDialog (this, "Lugar de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
 			String habilidad = JOptionPane.showInputDialog (this, "¿La oferta está habilitada? responder si o no ","Crear Oferta", JOptionPane.QUESTION_MESSAGE);
 
 			if (numeroOferta != null && idOperador != null && idLugar!=null)
-    		{
-    			long numoferta = Long.valueOf(numeroOferta);
+			{
+				long numoferta = Long.valueOf(numeroOferta);
 				long idOp = Long.valueOf(idOperador);
 				long idL = Long.valueOf(idLugar);
 				long hab=0;
-				
+
 				if(habilidad.equals("si") && habilidad.equals("sí"))
 				{
 					habilidad="1";
 					hab = Long.valueOf(habilidad);
-					
+
 				}
-				
+
 				VOOferta tb = iter.ceateOferta(numoferta,idOp,idL,lugar,hab);
-        		if (tb == null)
-        		{
-        			throw new Exception ("No se pudo crear la oferta, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
-        		}
-        		String resultado = "Oferta:\n\n";
-        		resultado += "La oferta se ha creado exitosamente: " + tb;
-    			resultado += "\n Operación terminada";
-    			panelDatos.actualizarInterfaz(resultado);
-    		}
-    		else
-    		{
-    			panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-    		}
+				if (tb == null)
+				{
+					throw new Exception ("No se pudo crear la oferta, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
+				}
+				String resultado = "Oferta:\n\n";
+				resultado += "La oferta se ha creado exitosamente: " + tb;
+				resultado += "\n Operación terminada";
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
 		}
-    	catch (Exception e)
-    	{
+		catch (Exception e)
+		{
 			e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
@@ -510,12 +510,12 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 	//Habilitación y deshabilitación de ofertas
 	public void habilitarOferta()
 	{
-		try 
+		try
 		{
 			String numOferta=JOptionPane.showInputDialog (this, "Numero de la oferta que se desa habilitar", "Habilitar Oferta", JOptionPane.QUESTION_MESSAGE);
 			long numero =Long.valueOf(numOferta);
-			
-			
+
+
 			if (numOferta!=null)
 			{
 				long habilitada =iter.habilitarOferta(numero);
@@ -523,19 +523,19 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 				resultado += habilitada + " oferta habilitada\n";
 				resultado += "\n Operación terminada";
 				panelDatos.actualizarInterfaz(resultado);
-				
-				
-				
+
+
+
 				if (habilitada == -1){
 					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
 				}
 			}
-				else
-				{
-					panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-				}
-				
-			
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
+
+
 		}
 		catch (Exception e)
 		{
@@ -547,31 +547,31 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 
 	public void deshabilitarOferta()
 	{
-		try 
+		try
 		{
 			String numOferta=JOptionPane.showInputDialog (this, "Numero de la oferta que se desa deshabilitar", "Deshabilitar Oferta", JOptionPane.QUESTION_MESSAGE);
-			
+
 			if (numOferta!=null)
 			{
 				long numero =Long.valueOf(numOferta);
 				long deshabilitada =iter.deshabilitarOferta(numero);
-				
-				
+
+
 				String resultado = "En Ofertas\n\n";
 				resultado += deshabilitada + " oferta deshabilitada\n";
 				resultado += "\n Operación terminada";
 				panelDatos.actualizarInterfaz(resultado);
-				
+
 				if (deshabilitada == -1){
 					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
 				}
 			}
-				else
-				{
-					panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-				}
-				
-			
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+			}
+
+
 		}
 		catch (Exception e)
 		{
@@ -579,7 +579,7 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
-		
+
 	}
 	public void usoAlohandes(){
 		try
@@ -590,12 +590,12 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			int cli = listaCli.size()*100/total;
 			int op = listaOp.size()*100/total;
 			String l = ("_______________________________________________________________________ \n" +
-						"|TOTAL DE USUARIOS: "+total+"---------->100%____________________________________ \n" +
-						"|_____________________________________________________________________ \n" +
-						"|USUARIOS CLIENTE: "+listaCli.size()+"----------> "+cli+"%___________________________________ \n" +
-						"|_____________________________________________________________________ \n" +
-						"|USUARIOS OPERADORES: "+listaOp.size()+"----------> "+op+"%_________________________ \n" +
-						"|_____________________________________________________________________ \n");
+					"|TOTAL DE USUARIOS: "+total+"---------->100%____________________________________ \n" +
+					"|_____________________________________________________________________ \n" +
+					"|USUARIOS CLIENTE: "+listaCli.size()+"----------> "+cli+"%___________________________________ \n" +
+					"|_____________________________________________________________________ \n" +
+					"|USUARIOS OPERADORES: "+listaOp.size()+"----------> "+op+"%_________________________ \n" +
+					"|_____________________________________________________________________ \n");
 			String resultado = "Uso alojandes:\n" + l;
 			panelDatos.actualizarInterfaz(resultado);
 			resultado += "\n Operación terminada";
@@ -637,30 +637,30 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
-	
-	
+
+
 	/**
-		 * Muestra el porcentaje de ocupación de las ofertas de Alohandes
-		 */
-		
-		public void darPorcentajeDeOcupacion()
-		{ 
-			
-		    try
-			{
-		    	long porcentaje = iter.darIndiceOcupacion();
-				String resultado = "Uso alojandes:\n" + porcentaje;
-			    resultado += "\n Operación terminada";
-			    panelDatos.actualizarInterfaz(resultado);
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
-				String resultado = generarMensajeError(e);
-				panelDatos.actualizarInterfaz(resultado);
-			}
-			
+	 * Muestra el porcentaje de ocupación de las ofertas de Alohandes
+	 */
+
+	public void darPorcentajeDeOcupacion()
+	{
+
+		try
+		{
+			long porcentaje = iter.darIndiceOcupacion();
+			String resultado = "Uso alojandes:\n" + porcentaje;
+			resultado += "\n Operación terminada";
+			panelDatos.actualizarInterfaz(resultado);
 		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+
+	}
 
 	 /* ****************************************************************
 	 * 			CRUD de TipoBebida
