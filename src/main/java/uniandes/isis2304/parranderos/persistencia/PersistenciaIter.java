@@ -580,6 +580,11 @@ public class PersistenciaIter
 		return sqlOferta.darOfertas(pmf.getPersistenceManager());
 	}
 
+	public List<Oferta> darOfertasNod ()
+	{
+		return sqlOferta.darOfertasNod(pmf.getPersistenceManager());
+	}
+
 	public List<Reservas> darReservasPorClientes(String idCliente){
 			return sqlReservas.darReservasporCliente(pmf.getPersistenceManager(), idCliente);
 	}

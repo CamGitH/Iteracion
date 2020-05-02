@@ -41,8 +41,12 @@
 					"event": "darPorcentajeDeOcupacion"
 				},
 				{
-					"label": "Clientes drecuentes de + a - (RFC8)",
+					"label": "Clientes frecuentes de + a - (RFC8)",
 					"event": "getClientesFrecuentes"
+				},
+				{
+					"label": "Ofertas con poca demanda (RFC9)",
+					"event": "getOfertasNoDemandadas"
 				}
 				
 			]

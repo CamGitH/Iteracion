@@ -110,6 +110,18 @@ public class Iter {
         return voOf;
     }
 
+    public List<VOOferta> darVOOfertasNoDemandadas()
+    {
+        log.info ("Generando los VO de oferta");
+        List<VOOferta> voOf = new LinkedList<VOOferta> ();
+        for (Oferta to : pp.darOfertasNod ())
+        {
+            voOf.add (to);
+        }
+        log.info ("Generando los VO de ofertas: " + voOf.size() + " existentes");
+        return voOf;
+    }
+
     public List<VOOferta> darVOOfertasPop()
     {
         log.info ("Generando los VO de oferta");
