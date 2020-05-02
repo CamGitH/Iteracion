@@ -87,7 +87,7 @@ public class SQLOferta
 	public List<Oferta> darOfertasNod (PersistenceManager pm)
 	{
 //		Select * FROM Oferta WHERE numoferta not in (SELECT ofertaid FROM reservas)
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOferta () +" WHERE numoferta not in (SELECT ofertaid FROM reservas");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaOferta () +" WHERE numoferta not in (SELECT ofertaid FROM reservas)");
 		q.setResultClass(Oferta.class);
 		return (List<Oferta>) q.executeList();
 	}

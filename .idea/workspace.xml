@@ -5,11 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parranderos.log" beforeDir="false" afterPath="$PROJECT_DIR$/parranderos.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/negocio/Iter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/negocio/Iter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLOferta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLOferta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLOferta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/SQLOferta.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588378012088</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;datanucleus.log&#10;#&#9;parranderos.log&#10;#&#9;src/main/java/uniandes/isis2304/parranderos/persistencia/SQLCliente.java&#10;#&#9;target/classes/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.class&#10;#&#9;target/classes/uniandes/isis2304/parranderos/negocio/Iter.class&#10;#&#9;target/classes/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.class&#10;#&#9;target/classes/uniandes/isis2304/parranderos/persistencia/SQLCliente.class">
+      <created>1588378342088</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588378342088</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,26 +188,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585000256490" />
-    <state x="296" y="0" key="CommitChangelistDialog2" timestamp="1588378219767">
+    <state x="296" y="0" key="CommitChangelistDialog2" timestamp="1588378341488">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="296" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588378219767" />
-    <state width="1493" height="99" key="GridCell.Tab.0.bottom" timestamp="1588378235793">
+    <state x="296" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588378341488" />
+    <state width="1493" height="99" key="GridCell.Tab.0.bottom" timestamp="1588378827897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588378235793" />
-    <state width="1493" height="99" key="GridCell.Tab.0.center" timestamp="1588378235793">
+    <state width="1493" height="99" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588378827897" />
+    <state width="1493" height="99" key="GridCell.Tab.0.center" timestamp="1588378827897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588378235793" />
-    <state width="1493" height="99" key="GridCell.Tab.0.left" timestamp="1588378235793">
+    <state width="1493" height="99" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588378827897" />
+    <state width="1493" height="99" key="GridCell.Tab.0.left" timestamp="1588378827897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588378235793" />
-    <state width="1493" height="99" key="GridCell.Tab.0.right" timestamp="1588378235793">
+    <state width="1493" height="99" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588378827897" />
+    <state width="1493" height="99" key="GridCell.Tab.0.right" timestamp="1588378827897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588378235793" />
+    <state width="1493" height="99" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588378827897" />
     <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1585006959520">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -236,10 +240,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="461" y="171" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.824@0.0.1536.824" timestamp="1588364334090" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1588378015838">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1588378346548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588378015838" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588378346548" />
     <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588362210385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
