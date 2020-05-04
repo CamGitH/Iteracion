@@ -335,3 +335,11 @@ ORA-00001: restricción única (ISIS2304B232010.RESERVA_PK) violada
 17:19:31,307 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : Reservas [idcliente=2, ofertaid=4]
 17:19:37,027 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Eliminando Reserva: 2 & 3
 17:19:37,197 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Eliminando Reserva: 1 tuplas eliminadas
+18:58:23,104 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:58:23,104 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:58:23,113 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:58:53,633 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva 1 & 7 & 9
+18:58:54,433 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : Reservas [idcliente=1, ofertaid=7]
+19:23:03,377 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:23:03,377 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+19:23:03,393 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
