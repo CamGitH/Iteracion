@@ -321,3 +321,83 @@ ORA-00001: restricción única (ISIS2304B232010.RESERVA_PK) violada
 20:07:49,802 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
 20:07:49,812 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
 20:07:54,022 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de oferta
+13:22:20,510 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:22:20,512 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+13:22:20,540 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:23:01,878 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Eliminando Reserva: 3 & 7
+13:23:13,277 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Eliminando Reserva: 1 tuplas eliminadas
+13:28:00,233 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva 1 & 4 & 100
+13:28:02,446 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : Reservas [idcliente=1, ofertaid=4]
+13:31:22,286 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Eliminando Reserva: 1 & 4
+13:31:22,903 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Eliminando Reserva: 1 tuplas eliminadas
+13:49:56,976 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 14
+13:49:56,998 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaIter] - Exception : Error con la ejecucion de Query de SQL "UPDATE OFERTA SET HABILITADA=1 WHERE NUMOFERTA=?".
+Conexión cerrada
+13:49:57,001 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: -1 tuplas habilitadas
+13:50:22,854 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 13
+13:50:27,885 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Habilitando Oferta: 1 tuplas habilitadas
+16:01:05,705 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:01:05,707 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:01:05,738 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:03:53,911 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:03:53,912 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:03:53,933 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:06:59,643 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:06:59,644 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:06:59,664 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:08:47,382 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:08:47,383 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:08:47,401 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:15:43,181 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de cliente
+16:19:42,260 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de cliente
+16:24:14,442 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+16:24:14,443 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+16:24:14,463 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+16:24:32,671 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de Reservas
+16:24:44,147 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de cliente
+16:24:44,516 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes: 76 existentes
+16:24:44,516 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de operador
+16:24:44,863 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de operadores: 51 existentes
+16:25:51,196 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de Reservas
+16:25:51,301 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes: 0 existentes
+16:27:42,892 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de Reservas
+16:50:03,731 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de operador
+16:50:04,298 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de operadores: 51 existentes
+16:50:15,338 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando cuanto gana VO
+17:24:57,821 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:24:57,823 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:24:57,847 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:25:53,145 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:25:53,146 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:25:53,168 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:27:05,456 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:27:05,457 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:27:05,479 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:28:39,540 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:28:39,541 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:28:39,561 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:28:50,692 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de Reservas
+17:29:07,381 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:29:07,382 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:29:07,401 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:48:57,089 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:48:57,089 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:48:57,113 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:54:22,776 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:54:22,777 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:54:22,797 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:54:44,767 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva 2 & 4 & 3&Thu May 14 00:00:00 COT 2020&Sat May 16 00:00:00 COT 2020
+18:54:45,291 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaIter] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO RESERVAS(idcliente, ofertaid, cantidad,fechainicial,fechafinal) values (?, ?, ?,?,?)".
+Tipo de columna no válido
+18:54:45,370 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : null
+18:57:35,187 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:57:35,188 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:57:35,210 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:57:56,510 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva 2 & 2 & 3&14/05/2020&14/05/2020
+18:57:57,273 (AWT-EventQueue-0) ERROR [uniandes.isis2304.parranderos.persistencia.PersistenciaIter] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO RESERVAS(idcliente, ofertaid, cantidad,fechainicial,fechafinal) values (?, ?, ?,?,?)".
+ORA-01843: mes no válido
+
+18:57:57,347 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Creando reserva : null
+19:03:42,762 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:03:42,763 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+19:03:42,784 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
