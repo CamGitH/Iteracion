@@ -97,20 +97,19 @@ public class SQLCliente
 
 	public List<Cliente> darClientesRef1 (PersistenceManager pm, String fechai, String fechaf)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * from CLIENTE, reservas WHERE reservas.idcliente=cliente.id AND"+" " +"reservas.fechainicial >= '1-DIC-2018'"+" "+ "AND" + " "+"reservas.fechafinal <='31-DIC-2020'" );
+		Query q = pm.newQuery(SQL, "SELECT * from CLIENTE, reservas WHERE reservas.idcliente=cliente.id AND reservas.fechainicial >= '1-DIC-2018' AND reservas.fechafinal <='31-DIC-2020'\r\n" );
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
 	}
 	public List<Cliente> darClientesRef2 (PersistenceManager pm, String fechai, String fechaf)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * from CLIENTE, reservas WHERE reservas.idcliente=cliente.id AND"+" "+ "reservas.fechainicial >= '1-DIC-2018' "+" "+ "AND"+" "+ "reservas.fechafinal <='31-DIC-2020' ORDER BY \r\n" + 
-				"RESERVAS.IDCLIENTE");
+		Query q = pm.newQuery(SQL, "SELECT * from CLIENTE, oferta, reservas WHERE reservas.idcliente=cliente.id AND reservas.fechainicial >= '1-DIC-2018' AND reservas.fechafinal <='31-DIC-2020' ORDER BY RESERVAS.IDCLIENTE" );
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
 	}
 	public List<Cliente> darClientesRef3 (PersistenceManager pm, String fechai, String fechaf)
 	{
-		Query q = pm.newQuery(SQL, "SELECT OFERTA.TIPOLUGAR, cliente.id, cliente.direccion, cliente.tipoId, cliente.relacionuniandes FROM OFERTA, CLIENTE, RESERVAS  WHERE reservas.idcliente=cliente.id AND"+" reservas.fechainicial >= '1-DIC-2018'"+" AND"+" reservas.fechafinal <='31-DIC-2020'");
+		Query q = pm.newQuery(SQL, "SELECT OFERTA.TIPOLUGAR, cliente.id, cliente.direccion, cliente.tipoId, cliente.relacionuniandes FROM OFERTA, CLIENTE, RESERVAS WHERE reservas.idcliente=cliente.id");
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
 	}
