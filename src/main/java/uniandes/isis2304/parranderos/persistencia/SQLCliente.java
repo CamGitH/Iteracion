@@ -116,7 +116,14 @@ public class SQLCliente
 
 	public List<Cliente> darClientesr11 (PersistenceManager pm)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * from CLIENTE, RESERVAS WHERE reservas.idcliente = cliente.id\r\n");
+		Query q = pm.newQuery(SQL, "SELECT * from CLIENTE, RESERVAS WHERE reservas.idcliente = cliente.id");
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+
+	public List<Cliente> darClientesr13 (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, " ");
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
 	}

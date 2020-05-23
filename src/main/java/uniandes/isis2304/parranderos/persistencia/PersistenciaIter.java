@@ -592,6 +592,15 @@ public class PersistenciaIter
 		return sqlCliente.darClientesr11(pmf.getPersistenceManager());
 	}
 
+	public List<Operador> darOpr12()
+	{
+		return sqlOperador.darOpr12(pmf.getPersistenceManager());
+	}
+	public List<Cliente> darClientesr13()
+	{
+		return sqlCliente.darClientesr13(pmf.getPersistenceManager());
+	}
+
 	public List<Oferta> darOfertas ()
 	{
 		return sqlOferta.darOfertas(pmf.getPersistenceManager());

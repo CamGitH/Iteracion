@@ -98,4 +98,12 @@ public class SQLOperador
 		q.setResultClass(Operador.class);
 		return (List<Operador>) q.executeList();
 	}
+
+	public List<Operador> darOpr12 (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, " ");
+		q.setResultClass(Operador.class);
+		return (List<Operador>) q.executeList();
+	}
+
 }

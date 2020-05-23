@@ -583,8 +583,6 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener {
 		}
 	}
 
-
-
     public void r11() {
         try {
 
@@ -595,6 +593,42 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener {
                 String resultado = "Clientes: " + "\n" + a ;
                 panelDatos.actualizarInterfaz(resultado);
                 resultado += "\n Operación terminada";
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void r12() {
+        try {
+
+            List<VOOperador> lista1 = iter.darOpsr12();
+
+            String a = darLista(lista1);
+
+            String resultado = "Operadores: " + "\n" + a ;
+            panelDatos.actualizarInterfaz(resultado);
+            resultado += "\n Operación terminada";
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void r13() {
+        try {
+
+            List<VOCliente> lista1 = iter.darClientesr13();
+
+            String a = darLista(lista1);
+
+            String resultado = "Clientes: " + "\n" + a ;
+            panelDatos.actualizarInterfaz(resultado);
+            resultado += "\n Operación terminada";
 
         } catch (Exception e) {
             e.printStackTrace();
