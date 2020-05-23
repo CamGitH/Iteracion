@@ -450,3 +450,7 @@ ORA-01843: mes no válido
 13:16:16,955 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
 13:16:16,982 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
 13:16:32,738 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes referidos por cliente
+13:19:10,627 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:19:10,628 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+13:19:10,646 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:20:43,805 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes referidos por cliente

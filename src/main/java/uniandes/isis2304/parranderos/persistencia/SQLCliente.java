@@ -114,4 +114,11 @@ public class SQLCliente
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
 	}
+
+	public List<Cliente> darClientesr11 (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, " ");
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
 }

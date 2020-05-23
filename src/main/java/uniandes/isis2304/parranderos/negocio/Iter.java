@@ -132,6 +132,18 @@ public class Iter {
         return voCli;
     }
 
+    public List<VOCliente> darClientesr11()
+    {
+        log.info ("Generando los VO de clientes r11");
+        List<VOCliente> voCli = new LinkedList<VOCliente> ();
+        for (Cliente to : pp.darClientesr11 ())
+        {
+            voCli.add (to);
+        }
+        log.info ("Generando los VO de clientes r11 : " + voCli.size() + " existentes");
+        return voCli;
+    }
+
     public List<VOOferta> darVOOfertas()
     {
         log.info ("Generando los VO de oferta");
