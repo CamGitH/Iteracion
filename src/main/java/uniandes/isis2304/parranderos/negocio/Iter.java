@@ -214,19 +214,19 @@ public class Iter {
         return resp;
     }
     
-    public long darIndiceOcupacion()
-    {
-    	long ofertasHabilitadas=0;
-    	for (int i=0; i<pp.darOfertas().size(); i++)
-    	{
-    		if (pp.darOfertas().get(i).getHabilitada()==1)
-    		{
-    			ofertasHabilitadas++;	
-    		}
-    	}
-    	
-    	return(ofertasHabilitadas/50)*100;
-    	
-    }
+  public long darIndiceOcupacion()
+  {
+	  int ocupacion=0;
+	  for(int i=0; i<pp.darReservas().size(); i++)
+	  {
+		  ocupacion+=pp.darReservas().get(i).getCantidad();
+		  
+	  }
+	  
+	  return ocupacion /1000 *100;
+	  
+  }
+    
+   
 
 }
