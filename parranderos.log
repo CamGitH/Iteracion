@@ -430,3 +430,23 @@ ORA-01843: mes no válido
 12:58:20,300 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
 12:58:37,539 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes referidos por cliente
 12:59:22,701 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes referidos por cliente
+12:59:37,316 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:59:37,317 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+12:59:37,335 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:59:57,587 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes referidos por cliente
+13:06:48,524 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:06:48,526 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+13:06:48,552 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:08:12,190 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes referidos por cliente
+13:09:53,904 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:09:53,904 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+13:09:53,923 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:10:14,650 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes referidos por cliente
+13:11:59,594 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:11:59,595 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+13:11:59,613 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:12:19,160 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes referidos por cliente
+13:16:16,954 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:16:16,955 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+13:16:16,982 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:16:32,738 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Iter] - Generando los VO de clientes referidos por cliente
