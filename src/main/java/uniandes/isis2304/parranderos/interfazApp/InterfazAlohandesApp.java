@@ -583,6 +583,25 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener {
 		}
 	}
 
+
+
+    public void r11() {
+        try {
+
+                List<VOCliente> lista1 = iter.darClientesr11();
+
+                String a = darLista(lista1);
+
+                String resultado = "Clientes: " + "\n" + a ;
+                panelDatos.actualizarInterfaz(resultado);
+                resultado += "\n Operación terminada";
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
 	/**
 	 * Muestra el porcentaje de ocupación de las ofertas de Alohandes
 	 */

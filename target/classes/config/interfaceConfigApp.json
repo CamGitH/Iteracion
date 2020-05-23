@@ -56,7 +56,11 @@
 				{
 				"label": "Consultar consumo en Alohandes (RF10)",
 					"event": "r10"
+				},
 				
+				{
+				"label": "R11",
+				"event": "r11"
 				}
 				
 				
