@@ -1,14 +1,16 @@
-/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * Universidad	de	los	Andes	(Bogotá	- Colombia)
  * Departamento	de	Ingeniería	de	Sistemas	y	Computación
  * Licenciado	bajo	el	esquema	Academic Free License versión 2.1
- * 		
+ * <p>
  * Curso: isis2304 - Sistemas Transaccionales
  * Proyecto: Parranderos Uniandes
+ *
  * @version 1.0
  * @author Germán Bravo
  * Julio de 2018
- * 
+ * <p>
  * Revisado por: Claudia Jiménez, Christian Ariza
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
@@ -47,91 +49,90 @@ import uniandes.isis2304.parranderos.negocio.*;
  */
 @SuppressWarnings("serial")
 
-public class InterfazAlohandesApp extends JFrame implements ActionListener
-{
-	/* ****************************************************************
-	 * 			Constantes
-	 *****************************************************************/
-	/**
-	 * Logger para escribir la traza de la ejecución
-	 */
-	private static Logger log = Logger.getLogger(InterfazAlohandesApp.class.getName());
-	
-	/**
-	 * Ruta al archivo de configuración de la interfaz
-	 */
-	private static final String CONFIG_INTERFAZ = "./src/main/resources/config/interfaceConfigApp.json"; 
-	
-	/**
-	 * Ruta al archivo de configuración de los nombres de tablas de la base de datos
-	 */
-	private static final String CONFIG_TABLAS = "./src/main/resources/config/TablasBD_A.json"; 
-	
-	/* ****************************************************************
-	 * 			Atributos
-	 *****************************************************************/
+public class InterfazAlohandesApp extends JFrame implements ActionListener {
+    /* ****************************************************************
+     * 			Constantes
+     *****************************************************************/
+    /**
+     * Logger para escribir la traza de la ejecución
+     */
+    private static Logger log = Logger.getLogger(InterfazAlohandesApp.class.getName());
+
+    /**
+     * Ruta al archivo de configuración de la interfaz
+     */
+    private static final String CONFIG_INTERFAZ = "./src/main/resources/config/interfaceConfigApp.json";
+
+    /**
+     * Ruta al archivo de configuración de los nombres de tablas de la base de datos
+     */
+    private static final String CONFIG_TABLAS = "./src/main/resources/config/TablasBD_A.json";
+
+    /* ****************************************************************
+     * 			Atributos
+     *****************************************************************/
     /**
      * Objeto JSON con los nombres de las tablas de la base de datos que se quieren utilizar
      */
     private JsonObject tableConfig;
-    
+
     /**
      * Asociación a la clase principal del negocio.
      */
     private Parranderos parranderos;
     private Iter iter;
-    
-	/* ****************************************************************
-	 * 			Atributos de interfaz
-	 *****************************************************************/
+
+    /* ****************************************************************
+     * 			Atributos de interfaz
+     *****************************************************************/
     /**
      * Objeto JSON con la configuración de interfaz de la app.
      */
     private JsonObject guiConfig;
-    
+
     /**
      * Panel de despliegue de interacción para los requerimientos
      */
     private PanelDatos panelDatos;
-    
+
     /**
      * Menú de la aplicación
      */
     private JMenuBar menuBar;
 
-	/* ****************************************************************
-	 * 			Métodos
-	 *****************************************************************/
+    /* ****************************************************************
+     * 			Métodos
+     *****************************************************************/
+
     /**
      * Construye la ventana principal de la aplicación. <br>
      * <b>post:</b> Todos los componentes de la interfaz fueron inicializados.
      */
-    public InterfazAlohandesApp( )
-    {
+    public InterfazAlohandesApp() {
         // Carga la configuración de la interfaz desde un archivo JSON
-        guiConfig = openConfig ("Interfaz", CONFIG_INTERFAZ);
-        
-        // Configura la apariencia del frame que contiene la interfaz gráfica
-        configurarFrame ( );
-        if (guiConfig != null) 	   
-        {
-     	   crearMenu( guiConfig.getAsJsonArray("menuBar") );
-        }
-        
-        tableConfig = openConfig ("Tablas BD", CONFIG_TABLAS);
-        iter = new Iter (tableConfig);
-        
-    	String path = guiConfig.get("bannerPath").getAsString();
-        panelDatos = new PanelDatos ( );
+        guiConfig = openConfig("Interfaz", CONFIG_INTERFAZ);
 
-        setLayout (new BorderLayout());
-        add (new JLabel (new ImageIcon (path)), BorderLayout.NORTH );          
-        add( panelDatos, BorderLayout.CENTER );        
+        // Configura la apariencia del frame que contiene la interfaz gráfica
+        configurarFrame();
+        if (guiConfig != null) {
+            crearMenu(guiConfig.getAsJsonArray("menuBar"));
+        }
+
+        tableConfig = openConfig("Tablas BD", CONFIG_TABLAS);
+        iter = new Iter(tableConfig);
+
+        String path = guiConfig.get("bannerPath").getAsString();
+        panelDatos = new PanelDatos();
+
+        setLayout(new BorderLayout());
+        add(new JLabel(new ImageIcon(path)), BorderLayout.NORTH);
+        add(panelDatos, BorderLayout.CENTER);
     }
-    
-	/* ****************************************************************
-	 * 			Métodos de configuración de la interfaz
-	 *****************************************************************/
+
+    /* ****************************************************************
+     * 			Métodos de configuración de la interfaz
+     *****************************************************************/
+
     /**
      * Lee datos de configuración para la aplicació, a partir de un archivo JSON o con valores por defecto si hay errores.
      * @param tipo - El tipo de configuración deseada
@@ -139,57 +140,49 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
      * @return Un objeto JSON con la configuración del tipo especificado
      * 			NULL si hay un error en el archivo.
      */
-    private JsonObject openConfig (String tipo, String archConfig)
-    {
-    	JsonObject config = null;
-		try 
-		{
-			Gson gson = new Gson( );
-			FileReader file = new FileReader (archConfig);
-			JsonReader reader = new JsonReader ( file );
-			config = gson.fromJson(reader, JsonObject.class);
-			log.info ("Se encontró un archivo de configuración válido: " + tipo);
-		} 
-		catch (Exception e)
-		{
+    private JsonObject openConfig(String tipo, String archConfig) {
+        JsonObject config = null;
+        try {
+            Gson gson = new Gson();
+            FileReader file = new FileReader(archConfig);
+            JsonReader reader = new JsonReader(file);
+            config = gson.fromJson(reader, JsonObject.class);
+            log.info("Se encontró un archivo de configuración válido: " + tipo);
+        } catch (Exception e) {
 //			e.printStackTrace ();
-			log.info ("NO se encontró un archivo de configuración válido");			
-			JOptionPane.showMessageDialog(null, "No se encontró un archivo de configuración de interfaz válido: " + tipo, "Parranderos App", JOptionPane.ERROR_MESSAGE);
-		}	
+            log.info("NO se encontró un archivo de configuración válido");
+            JOptionPane.showMessageDialog(null, "No se encontró un archivo de configuración de interfaz válido: " + tipo, "Parranderos App", JOptionPane.ERROR_MESSAGE);
+        }
         return config;
     }
-    
+
     /**
      * Método para configurar el frame principal de la aplicación
      */
-    private void configurarFrame(  )
-    {
-    	int alto = 0;
-    	int ancho = 0;
-    	String titulo = "";	
-    	
-    	if ( guiConfig == null )
-    	{
-    		log.info ( "Se aplica configuración por defecto" );			
-			titulo = "Alohandes";
-			alto = 500;
-			ancho = 500;
-    	}
-    	else
-    	{
-			log.info ( "Se aplica configuración indicada en el archivo de configuración" );
-    		titulo = guiConfig.get("title").getAsString();
-			alto= guiConfig.get("frameH").getAsInt();
-			ancho = guiConfig.get("frameW").getAsInt();
-    	}
-    	
-        setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        setLocation (50,50);
-        setResizable( true );
-        setBackground( Color.WHITE );
+    private void configurarFrame() {
+        int alto = 0;
+        int ancho = 0;
+        String titulo = "";
 
-        setTitle( titulo );
-		setSize ( ancho, alto);        
+        if (guiConfig == null) {
+            log.info("Se aplica configuración por defecto");
+            titulo = "Alohandes";
+            alto = 500;
+            ancho = 500;
+        } else {
+            log.info("Se aplica configuración indicada en el archivo de configuración");
+            titulo = guiConfig.get("title").getAsString();
+            alto = guiConfig.get("frameH").getAsInt();
+            ancho = guiConfig.get("frameW").getAsInt();
+        }
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocation(50, 50);
+        setResizable(true);
+        setBackground(Color.WHITE);
+
+        setTitle(titulo);
+        setSize(ancho, alto);
     }
 
     /**
@@ -197,474 +190,421 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
      * Genera una barra de menú y los menús con sus respectivas opciones
      * @param jsonMenu - Arreglo Json con los menùs deseados
      */
-    private void crearMenu(  JsonArray jsonMenu )
-    {    	
-    	// Creación de la barra de menús
-        menuBar = new JMenuBar();       
-        for (JsonElement men : jsonMenu)
-        {
-        	// Creación de cada uno de los menús
-        	JsonObject jom = men.getAsJsonObject(); 
+    private void crearMenu(JsonArray jsonMenu) {
+        // Creación de la barra de menús
+        menuBar = new JMenuBar();
+        for (JsonElement men : jsonMenu) {
+            // Creación de cada uno de los menús
+            JsonObject jom = men.getAsJsonObject();
 
-        	String menuTitle = jom.get("menuTitle").getAsString();        	
-        	JsonArray opciones = jom.getAsJsonArray("options");
-        	
-        	JMenu menu = new JMenu( menuTitle);
-        	
-        	for (JsonElement op : opciones)
-        	{       	
-        		// Creación de cada una de las opciones del menú
-        		JsonObject jo = op.getAsJsonObject(); 
-        		String lb =   jo.get("label").getAsString();
-        		String event = jo.get("event").getAsString();
-        		
-        		JMenuItem mItem = new JMenuItem( lb );
-        		mItem.addActionListener( this );
-        		mItem.setActionCommand(event);
-        		
-        		menu.add(mItem);
-        	}       
-        	menuBar.add( menu );
-        }        
-        setJMenuBar ( menuBar );	
+            String menuTitle = jom.get("menuTitle").getAsString();
+            JsonArray opciones = jom.getAsJsonArray("options");
+
+            JMenu menu = new JMenu(menuTitle);
+
+            for (JsonElement op : opciones) {
+                // Creación de cada una de las opciones del menú
+                JsonObject jo = op.getAsJsonObject();
+                String lb = jo.get("label").getAsString();
+                String event = jo.get("event").getAsString();
+
+                JMenuItem mItem = new JMenuItem(lb);
+                mItem.addActionListener(this);
+                mItem.setActionCommand(event);
+
+                menu.add(mItem);
+            }
+            menuBar.add(menu);
+        }
+        setJMenuBar(menuBar);
     }
+
     /* EVENTOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    */
-	public void getOperadores(){
-		try
-		{
-			List <VOOperador> lista = iter.darVOOperadores();
-			String l = darLista(lista);
-			String resultado = "Operadores:" + l;
-			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
+     */
+    public void getOperadores() {
+        try {
+            List<VOOperador> lista = iter.darVOOperadores();
+            String l = darLista(lista);
+            String resultado = "Operadores:" + l;
+            panelDatos.actualizarInterfaz(resultado);
+            resultado += "\n Operación terminada";
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+
+    public void getClientes() {
+        try {
+            List<VOCliente> lista = iter.darVOClientes();
+            String l = darLista(lista);
+            String resultado = "Clientes:" + l;
+            panelDatos.actualizarInterfaz(resultado);
+            resultado += "\n Operación terminada";
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void getClientesFrecuentes() {
+        try {
+            List<VOCliente> lista = iter.darVOClientesFrecuentes();
+            String l = darLista(lista);
+            String resultado = "Clientes:" + l;
+            panelDatos.actualizarInterfaz(resultado);
+            resultado += "\n Operación terminada";
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void getOfertas() {
+        try {
+            List<VOOferta> lista = iter.darVOOfertas();
+            String l = darLista(lista);
+            String resultado = "Ofertas:" + l;
+            panelDatos.actualizarInterfaz(resultado);
+            resultado += "\n Operación terminada";
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void getOfertasNoDemandadas() {
+        try {
+            List<VOOferta> lista = iter.darVOOfertasNoDemandadas();
+            String l = darLista(lista);
+            String resultado = "Ofertas:" + l;
+            panelDatos.actualizarInterfaz(resultado);
+            resultado += "\n Operación terminada";
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void getOfertasPop() {
+        try {
+            List<VOOferta> lista = iter.darVOOfertasPop();
+            String l = darLista(lista);
+            String resultado = "Ofertas:" + l;
+            panelDatos.actualizarInterfaz(resultado);
+            resultado += "\n Operación terminada";
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void getGanaid() {
+        try {
+            String operadorid = JOptionPane.showInputDialog(this, "Id del operador", "Operador", JOptionPane.QUESTION_MESSAGE);
+
+            if (operadorid != null) {
+                long operador = Long.valueOf(operadorid);
+                List<GananciaOperador> lista = iter.cuantogana(operador);
+                String l = darLista(lista);
+                String resultado = "Ofertas:" + l;
+                panelDatos.actualizarInterfaz(resultado);
+                resultado += "\n Operación terminada";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+
+    public String darLista(List lista) {
+        String l = "\n";
+        int cont = 1;
+        for (int i = 0; i < lista.size(); i++) {
+            l = l + cont++ + ":   ";
+            l = l + lista.get(i) + "\n";
+        }
+        return l;
+    }
+
+    public void createReserva() {
+        try {
+            String clienteid = JOptionPane.showInputDialog(this, "Id del cliente que va a tener la reserva", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+            String cantidad = JOptionPane.showInputDialog(this, "Cantidad de espacios a reservar", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+            String ofertaid = JOptionPane.showInputDialog(this, "Id de la oferta que va a tenerreservar dicho cliente", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
+
+            if (clienteid != null && ofertaid != null) {
+                long oferta = Long.valueOf(ofertaid);
+                long cant = Long.valueOf(cantidad);
+                VOReservas tb = iter.ceateReserva(clienteid, oferta, cant);
+                if (tb == null) {
+                    throw new Exception("No se pudo crear la reserva, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
+                }
+                String resultado = "Reservas:\n\n";
+                resultado += "La reserva se ha creado exitosamente: " + tb;
+                resultado += "\n Operación terminada";
+                panelDatos.actualizarInterfaz(resultado);
+            } else {
+                panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void deleteReserva() {
+        try {
+            String clienteid = JOptionPane.showInputDialog(this, "Id del cliente que TIENE la reserva", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
+            String ofertaid = JOptionPane.showInputDialog(this, "Id de la oferta que va a tenerreservar dicho cliente", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
+            if (clienteid != null && ofertaid != null) {
+                long oferta = Long.valueOf(ofertaid);
+                long tbEliminados = iter.deleteReserva(clienteid, oferta);
+
+                String resultado = "En Reservas\n\n";
+                resultado += tbEliminados + " reserva eliminada\n";
+                resultado += "\n Operación terminada";
+                panelDatos.actualizarInterfaz(resultado);
+            } else {
+                panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void createOferta() {
+        try {
+            String numeroOferta = JOptionPane.showInputDialog(this, "Núemro de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+            String idOperador = JOptionPane.showInputDialog(this, "Id del operador que realiza la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+            String idLugar = JOptionPane.showInputDialog(this, "Id del lugar de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+            String lugar = JOptionPane.showInputDialog(this, "Lugar de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+            String habilidad = JOptionPane.showInputDialog(this, "¿La oferta está habilitada? responder si o no ", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
+
+            if (numeroOferta != null && idOperador != null && idLugar != null) {
+                long numoferta = Long.valueOf(numeroOferta);
+                long idOp = Long.valueOf(idOperador);
+                long idL = Long.valueOf(idLugar);
+                long hab = 0;
+
+                if (habilidad.equals("si") && habilidad.equals("sí")) {
+                    habilidad = "1";
+                    hab = Long.valueOf(habilidad);
+
+                }
+
+                VOOferta tb = iter.ceateOferta(numoferta, idOp, idL, lugar, hab);
+                if (tb == null) {
+                    throw new Exception("No se pudo crear la oferta, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
+                }
+                String resultado = "Oferta:\n\n";
+                resultado += "La oferta se ha creado exitosamente: " + tb;
+                resultado += "\n Operación terminada";
+                panelDatos.actualizarInterfaz(resultado);
+            } else {
+                panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void deleteOferta() {
+        try {
+            String numOferta = JOptionPane.showInputDialog(this, "Numero de la oferta a borrar", "Borrar Oferta", JOptionPane.QUESTION_MESSAGE);
+            if (numOferta != null) {
+                long oferta = Long.valueOf(numOferta);
+                long tbEliminados = iter.deleteOferta(oferta);
+
+                String resultado = "En Ofertas\n\n";
+                resultado += tbEliminados + " oferta eliminada\n";
+                resultado += "\n Operación terminada";
+
+                if (tbEliminados == -1) {
+                    resultado = "La oferta no se puede eliminar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
+                }
+                panelDatos.actualizarInterfaz(resultado);
+            } else {
+                panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    //Habilitación y deshabilitación de ofertas
+    public void habilitarOferta() {
+        try {
+            String numOferta = JOptionPane.showInputDialog(this, "Numero de la oferta que se desa habilitar", "Habilitar Oferta", JOptionPane.QUESTION_MESSAGE);
+            long numero = Long.valueOf(numOferta);
+
+
+            if (numOferta != null) {
+                long habilitada = iter.habilitarOferta(numero);
+                String resultado = "En Ofertas\n\n";
+                resultado += habilitada + " oferta habilitada\n";
+                resultado += "\n Operación terminada";
+                panelDatos.actualizarInterfaz(resultado);
+
+
+                if (habilitada == -1) {
+                    resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
+                }
+            } else {
+                panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void deshabilitarOferta() {
+        try {
+            String numOferta = JOptionPane.showInputDialog(this, "Numero de la oferta que se desa deshabilitar", "Deshabilitar Oferta", JOptionPane.QUESTION_MESSAGE);
+
+            if (numOferta != null) {
+                long numero = Long.valueOf(numOferta);
+                long deshabilitada = iter.deshabilitarOferta(numero);
+
+
+                String resultado = "En Ofertas\n\n";
+                resultado += deshabilitada + " oferta deshabilitada\n";
+                resultado += "\n Operación terminada";
+                panelDatos.actualizarInterfaz(resultado);
+
+                if (deshabilitada == -1) {
+                    resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
+                }
+            } else {
+                panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+
+    }
+
+    public void usoAlohandes() {
+        try {
+            List<VOCliente> listaCli = iter.darVOClientes();
+            List<VOOperador> listaOp = iter.darVOOperadores();
+            int total = listaCli.size() + listaOp.size();
+            int cli = listaCli.size() * 100 / total;
+            int op = listaOp.size() * 100 / total;
+            String l = ("_______________________________________________________________________ \n" +
+                    "|TOTAL DE USUARIOS: " + total + "---------->100%____________________________________ \n" +
+                    "|_____________________________________________________________________ \n" +
+                    "|USUARIOS CLIENTE: " + listaCli.size() + "----------> " + cli + "%___________________________________ \n" +
+                    "|_____________________________________________________________________ \n" +
+                    "|USUARIOS OPERADORES: " + listaOp.size() + "----------> " + op + "%_________________________ \n" +
+                    "|_____________________________________________________________________ \n");
+            String resultado = "Uso alojandes:\n" + l;
+            panelDatos.actualizarInterfaz(resultado);
+            resultado += "\n Operación terminada";
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
+    }
+
+    public void usoCliente() {
+        try {
+            String idCliente = JOptionPane.showInputDialog(this, "ID del cliente", "ID cliente", JOptionPane.QUESTION_MESSAGE);
+
+            if (idCliente != null) {
+
+                List<VOReservas> r = iter.buscarReservaPorCliente(idCliente);
+                if (r == null) {
+                    throw new Exception("No se encontrar este cliente");
+                }
+                String l = darLista(r);
+
+                String resultado = "Reservas:\n\n";
+                resultado += "Las reservas del usuario" + idCliente + " son: " + l;
+                resultado += "\n Operación terminada";
+
+                if (l.isEmpty() || r.size() == 0) {
+                    resultado = "Este clienete no tiene reservas registradas";
+                }
+                panelDatos.actualizarInterfaz(resultado);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
 
-
-	public void getClientes(){
-		try
-		{
-			List <VOCliente> lista = iter.darVOClientes();
-			String l = darLista(lista);
-			String resultado = "Clientes:" + l;
-			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void getClientesFrecuentes(){
-		try
-		{
-			List <VOCliente> lista = iter.darVOClientesFrecuentes();
-			String l = darLista(lista);
-			String resultado = "Clientes:" + l;
-			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void getOfertas(){
-		try
-		{
-			List <VOOferta> lista = iter.darVOOfertas();
-			String l = darLista(lista);
-			String resultado = "Ofertas:" + l;
-			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void getOfertasNoDemandadas(){
-		try
-		{
-			List <VOOferta> lista = iter.darVOOfertasNoDemandadas();
-			String l = darLista(lista);
-			String resultado = "Ofertas:" + l;
-			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void getOfertasPop(){
-		try
-		{
-			List <VOOferta> lista = iter.darVOOfertasPop();
-			String l = darLista(lista);
-			String resultado = "Ofertas:" + l;
-			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void getGanaid() {
+	public void r10() {
 		try {
-			String operadorid = JOptionPane.showInputDialog (this, "Id del operador", "Operador", JOptionPane.QUESTION_MESSAGE);
+            String fechai = JOptionPane.showInputDialog(this, "Fecha inicial", "Fecha inicial", JOptionPane.QUESTION_MESSAGE);
+            String fechaf = JOptionPane.showInputDialog(this, "Fecha final", "Fecha final", JOptionPane.QUESTION_MESSAGE);
 
-			if ( operadorid != null) {
-				long operador = Long.valueOf(operadorid);
-				List <GananciaOperador> lista = iter.cuantogana(operador);
-				String l = darLista(lista);
-				String resultado = "Ofertas:" + l;
-				panelDatos.actualizarInterfaz(resultado);
-				resultado += "\n Operación terminada";
-			}
-		}
-		catch (Exception e)
-		{
+            if (fechai != null && fechaf != null) {
+                List<VOCliente> lista1 = iter.darClientesref1(fechai, fechaf);
+                List<VOCliente> lista2 = iter.darClientesref2(fechai, fechaf);
+                List<VOCliente> lista3 = iter.darClientesref3(fechai, fechaf);
+                String a = darLista(lista1);
+                String b = darLista(lista2);
+                String c = darLista(lista3);
+                String resultado = "por Clientes: " + "\n" + a + "\n" + "por oferta: " + "\n" + b + "\n" + "por alojamiento: " + "\n" + c + "\n";
+                panelDatos.actualizarInterfaz(resultado);
+                resultado += "\n Operación terminada";
+            }
+		} catch (Exception e) {
 			e.printStackTrace();
 			String resultado = generarMensajeError(e);
 			panelDatos.actualizarInterfaz(resultado);
 		}
 	}
-
-
-
-	public String darLista(List lista)
-	{
-		String l = "\n";
-		int cont = 1;
-		for(int i=0;i<lista.size();i++){
-			l = l + cont++ +":   ";
-			l = l + lista.get(i) + "\n";
-		}
-		return l;
-	}
-
-	public void createReserva(){
-		try
-		{
-			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que va a tener la reserva", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
-			String cantidad = JOptionPane.showInputDialog (this, "Cantidad de espacios a reservar", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
-			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Crear Reserva", JOptionPane.QUESTION_MESSAGE);
-
-			if (clienteid != null && ofertaid != null)
-			{
-				long oferta = Long.valueOf(ofertaid);
-				long cant = Long.valueOf(cantidad);
-				VOReservas tb = iter.ceateReserva (clienteid, oferta, cant);
-				if (tb == null)
-				{
-					throw new Exception ("No se pudo crear la reserva, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
-				}
-				String resultado = "Reservas:\n\n";
-				resultado += "La reserva se ha creado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
-				panelDatos.actualizarInterfaz(resultado);
-			}
-			else
-			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void deleteReserva( )
-	{
-		try
-		{
-			String clienteid = JOptionPane.showInputDialog (this, "Id del cliente que TIENE la reserva", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
-			String ofertaid = JOptionPane.showInputDialog (this, "Id de la oferta que va a tenerreservar dicho cliente", "Borrar Reserva", JOptionPane.QUESTION_MESSAGE);
-			if (clienteid != null && ofertaid != null)
-			{
-				long oferta = Long.valueOf (ofertaid);
-				long tbEliminados = iter.deleteReserva (clienteid, oferta);
-
-				String resultado = "En Reservas\n\n";
-				resultado += tbEliminados + " reserva eliminada\n";
-				resultado += "\n Operación terminada";
-				panelDatos.actualizarInterfaz(resultado);
-			}
-			else
-			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void createOferta(){
-		try
-		{
-			String numeroOferta = JOptionPane.showInputDialog (this, "Núemro de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
-			String idOperador = JOptionPane.showInputDialog (this, "Id del operador que realiza la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
-			String idLugar = JOptionPane.showInputDialog (this, "Id del lugar de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
-			String lugar = JOptionPane.showInputDialog (this, "Lugar de la oferta", "Crear Oferta", JOptionPane.QUESTION_MESSAGE);
-			String habilidad = JOptionPane.showInputDialog (this, "¿La oferta está habilitada? responder si o no ","Crear Oferta", JOptionPane.QUESTION_MESSAGE);
-
-			if (numeroOferta != null && idOperador != null && idLugar!=null)
-			{
-				long numoferta = Long.valueOf(numeroOferta);
-				long idOp = Long.valueOf(idOperador);
-				long idL = Long.valueOf(idLugar);
-				long hab=0;
-
-				if(habilidad.equals("si") && habilidad.equals("sí"))
-				{
-					habilidad="1";
-					hab = Long.valueOf(habilidad);
-
-				}
-
-				VOOferta tb = iter.ceateOferta(numoferta,idOp,idL,lugar,hab);
-				if (tb == null)
-				{
-					throw new Exception ("No se pudo crear la oferta, asegurese de que el ID de el cliente y el ID de la oderta son correctos");
-				}
-				String resultado = "Oferta:\n\n";
-				resultado += "La oferta se ha creado exitosamente: " + tb;
-				resultado += "\n Operación terminada";
-				panelDatos.actualizarInterfaz(resultado);
-			}
-			else
-			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void deleteOferta( )
-	{
-		try
-		{
-			String numOferta = JOptionPane.showInputDialog (this, "Numero de la oferta a borrar", "Borrar Oferta", JOptionPane.QUESTION_MESSAGE);
-			if (numOferta != null )
-			{
-				long oferta = Long.valueOf (numOferta);
-				long tbEliminados = iter.deleteOferta (oferta);
-
-				String resultado = "En Ofertas\n\n";
-				resultado += tbEliminados + " oferta eliminada\n";
-				resultado += "\n Operación terminada";
-
-				if (tbEliminados == -1){
-					resultado = "La oferta no se puede eliminar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
-				}
-				panelDatos.actualizarInterfaz(resultado);
-			}
-			else
-			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-	//Habilitación y deshabilitación de ofertas
-	public void habilitarOferta()
-	{
-		try
-		{
-			String numOferta=JOptionPane.showInputDialog (this, "Numero de la oferta que se desa habilitar", "Habilitar Oferta", JOptionPane.QUESTION_MESSAGE);
-			long numero =Long.valueOf(numOferta);
-
-
-			if (numOferta!=null)
-			{
-				long habilitada =iter.habilitarOferta(numero);
-				String resultado = "En Ofertas\n\n";
-				resultado += habilitada + " oferta habilitada\n";
-				resultado += "\n Operación terminada";
-				panelDatos.actualizarInterfaz(resultado);
-
-
-
-				if (habilitada == -1){
-					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
-				}
-			}
-			else
-			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-			}
-
-
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void deshabilitarOferta()
-	{
-		try
-		{
-			String numOferta=JOptionPane.showInputDialog (this, "Numero de la oferta que se desa deshabilitar", "Deshabilitar Oferta", JOptionPane.QUESTION_MESSAGE);
-
-			if (numOferta!=null)
-			{
-				long numero =Long.valueOf(numOferta);
-				long deshabilitada =iter.deshabilitarOferta(numero);
-
-
-				String resultado = "En Ofertas\n\n";
-				resultado += deshabilitada + " oferta deshabilitada\n";
-				resultado += "\n Operación terminada";
-				panelDatos.actualizarInterfaz(resultado);
-
-				if (deshabilitada == -1){
-					resultado = "La oferta no se puede habilitar por que un cliente la ha resrevado \n (RESTRICCIÓN DE ITEGRIDAD)";
-				}
-			}
-			else
-			{
-				panelDatos.actualizarInterfaz("Operación cancelada por el usuario");
-			}
-
-
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-
-	}
-	public void usoAlohandes(){
-		try
-		{
-			List <VOCliente> listaCli = iter.darVOClientes();
-			List <VOOperador> listaOp = iter.darVOOperadores();
-			int total = listaCli.size()+listaOp.size();
-			int cli = listaCli.size()*100/total;
-			int op = listaOp.size()*100/total;
-			String l = ("_______________________________________________________________________ \n" +
-					"|TOTAL DE USUARIOS: "+total+"---------->100%____________________________________ \n" +
-					"|_____________________________________________________________________ \n" +
-					"|USUARIOS CLIENTE: "+listaCli.size()+"----------> "+cli+"%___________________________________ \n" +
-					"|_____________________________________________________________________ \n" +
-					"|USUARIOS OPERADORES: "+listaOp.size()+"----------> "+op+"%_________________________ \n" +
-					"|_____________________________________________________________________ \n");
-			String resultado = "Uso alojandes:\n" + l;
-			panelDatos.actualizarInterfaz(resultado);
-			resultado += "\n Operación terminada";
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
-	public void usoCliente(){
-		try{
-			String idCliente = JOptionPane.showInputDialog (this, "ID del cliente", "ID cliente", JOptionPane.QUESTION_MESSAGE);
-
-			if (idCliente != null) {
-
-				List<VOReservas> r = iter.buscarReservaPorCliente(idCliente);
-				if (r == null) {
-					throw new Exception("No se encontrar este cliente");
-				}
-				String l = darLista(r);
-
-				String resultado = "Reservas:\n\n";
-				resultado += "Las reservas del usuario"+ idCliente+" son: " + l;
-				resultado += "\n Operación terminada";
-
-				if(l.isEmpty()||r.size()==0){
-					resultado = "Este clienete no tiene reservas registradas";
-				}
-				panelDatos.actualizarInterfaz(resultado);
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
-	}
-
 
 	/**
 	 * Muestra el porcentaje de ocupación de las ofertas de Alohandes
 	 */
 
-	public void darPorcentajeDeOcupacion()
-	{
+    public void darPorcentajeDeOcupacion() {
 
-		try
-		{
-			long porcentaje = iter.darIndiceOcupacion();
-			String resultado = "Uso alojandes:\n" + porcentaje;
-			resultado += "\n Operación terminada";
-			panelDatos.actualizarInterfaz(resultado);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			String resultado = generarMensajeError(e);
-			panelDatos.actualizarInterfaz(resultado);
-		}
+        try {
+            long porcentaje = iter.darIndiceOcupacion();
+            String resultado = "Uso alojandes:\n" + porcentaje;
+            resultado += "\n Operación terminada";
+            panelDatos.actualizarInterfaz(resultado);
+        } catch (Exception e) {
+            e.printStackTrace();
+            String resultado = generarMensajeError(e);
+            panelDatos.actualizarInterfaz(resultado);
+        }
 
-	}
+    }
 
-	 /* ****************************************************************
-	 * 			CRUD de TipoBebida
-	 *****************************************************************/
+    /* ****************************************************************
+     * 			CRUD de TipoBebida
+     *****************************************************************/
     /**
      * Adiciona un tipo de bebida con la información dada por el usuario
      * Se crea una nueva tupla de tipoBebida en la base de datos, si un tipo de bebida con ese nombre no existía
@@ -790,63 +730,60 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 //    }
 
 
-	/* ****************************************************************
-	 * 			Métodos administrativos
-	 *****************************************************************/
-	/**
-	 * Muestra el log de Parranderos
-	 */
-	public void mostrarLogParranderos ()
-	{
-		mostrarArchivo ("parranderos.log");
-	}
-	
-	/**
-	 * Muestra el log de datanucleus
-	 */
-	public void mostrarLogDatanuecleus ()
-	{
-		mostrarArchivo ("datanucleus.log");
-	}
-	
-	/**
-	 * Limpia el contenido del log de parranderos
-	 * Muestra en el panel de datos la traza de la ejecución
-	 */
-	public void limpiarLogParranderos ()
-	{
-		// Ejecución de la operación y recolección de los resultados
-		boolean resp = limpiarArchivo ("parranderos.log");
+    /* ****************************************************************
+     * 			Métodos administrativos
+     *****************************************************************/
 
-		// Generación de la cadena de caracteres con la traza de la ejecución de la demo
-		String resultado = "\n\n************ Limpiando el log  ************ \n";
-		resultado += "Archivo " + (resp ? "limpiado exitosamente" : "NO PUDO ser limpiado !!");
-		resultado += "\nLimpieza terminada";
+    /**
+     * Muestra el log de Parranderos
+     */
+    public void mostrarLogParranderos() {
+        mostrarArchivo("parranderos.log");
+    }
 
-		panelDatos.actualizarInterfaz(resultado);
-	}
-	
-	/**
-	 * Limpia el contenido del log de datanucleus
-	 * Muestra en el panel de datos la traza de la ejecución
-	 */
-	public void limpiarLogDatanucleus ()
-	{
-		// Ejecución de la operación y recolección de los resultados
-		boolean resp = limpiarArchivo ("datanucleus.log");
+    /**
+     * Muestra el log de datanucleus
+     */
+    public void mostrarLogDatanuecleus() {
+        mostrarArchivo("datanucleus.log");
+    }
 
-		// Generación de la cadena de caracteres con la traza de la ejecución de la demo
-		String resultado = "\n\n************ Limpiando el log de datanucleus ************ \n";
-		resultado += "Archivo " + (resp ? "limpiado exitosamente" : "NO PUDO ser limpiado !!");
-		resultado += "\nLimpieza terminada";
+    /**
+     * Limpia el contenido del log de parranderos
+     * Muestra en el panel de datos la traza de la ejecución
+     */
+    public void limpiarLogParranderos() {
+        // Ejecución de la operación y recolección de los resultados
+        boolean resp = limpiarArchivo("parranderos.log");
 
-		panelDatos.actualizarInterfaz(resultado);
-	}
-	
-	/**
-	 * Limpia todas las tuplas de todas las tablas de la base de datos de parranderos
-	 * Muestra en el panel de datos el número de tuplas eliminadas de cada tabla
-	 */
+        // Generación de la cadena de caracteres con la traza de la ejecución de la demo
+        String resultado = "\n\n************ Limpiando el log  ************ \n";
+        resultado += "Archivo " + (resp ? "limpiado exitosamente" : "NO PUDO ser limpiado !!");
+        resultado += "\nLimpieza terminada";
+
+        panelDatos.actualizarInterfaz(resultado);
+    }
+
+    /**
+     * Limpia el contenido del log de datanucleus
+     * Muestra en el panel de datos la traza de la ejecución
+     */
+    public void limpiarLogDatanucleus() {
+        // Ejecución de la operación y recolección de los resultados
+        boolean resp = limpiarArchivo("datanucleus.log");
+
+        // Generación de la cadena de caracteres con la traza de la ejecución de la demo
+        String resultado = "\n\n************ Limpiando el log de datanucleus ************ \n";
+        resultado += "Archivo " + (resp ? "limpiado exitosamente" : "NO PUDO ser limpiado !!");
+        resultado += "\nLimpieza terminada";
+
+        panelDatos.actualizarInterfaz(resultado);
+    }
+
+    /**
+     * Limpia todas las tuplas de todas las tablas de la base de datos de parranderos
+     * Muestra en el panel de datos el número de tuplas eliminadas de cada tabla
+     */
 //	public void limpiarBD ()
 //	{
 //		try
@@ -875,207 +812,183 @@ public class InterfazAlohandesApp extends JFrame implements ActionListener
 //		}
 //	}
 //
-	/**
-	 * Muestra la presentación general del proyecto
-	 */
-	public void mostrarPresentacionGeneral ()
-	{
-		mostrarArchivo ("data/00-ST-ParranderosJDO.pdf");
-	}
-	
-	/**
-	 * Muestra el modelo conceptual de Parranderos
-	 */
-	public void mostrarModeloConceptual ()
-	{
-		mostrarArchivo ("data/Modelo Conceptual Parranderos.pdf");
-	}
-	
-	/**
-	 * Muestra el esquema de la base de datos de Parranderos
-	 */
-	public void mostrarEsquemaBD ()
-	{
-		mostrarArchivo ("data/Esquema BD Parranderos.pdf");
-	}
-	
-	/**
-	 * Muestra el script de creación de la base de datos
-	 */
-	public void mostrarScriptBD ()
-	{
-		mostrarArchivo ("data/EsquemaParranderos.sql");
-	}
-	
-	/**
-	 * Muestra la arquitectura de referencia para Parranderos
-	 */
-	public void mostrarArqRef ()
-	{
-		mostrarArchivo ("data/ArquitecturaReferencia.pdf");
-	}
-	
-	/**
-	 * Muestra la documentación Javadoc del proyectp
-	 */
-	public void mostrarJavadoc ()
-	{
-		mostrarArchivo ("doc/index.html");
-	}
-	
-	/**
+
+    /**
+     * Muestra la presentación general del proyecto
+     */
+    public void mostrarPresentacionGeneral() {
+        mostrarArchivo("data/00-ST-ParranderosJDO.pdf");
+    }
+
+    /**
+     * Muestra el modelo conceptual de Parranderos
+     */
+    public void mostrarModeloConceptual() {
+        mostrarArchivo("data/Modelo Conceptual Parranderos.pdf");
+    }
+
+    /**
+     * Muestra el esquema de la base de datos de Parranderos
+     */
+    public void mostrarEsquemaBD() {
+        mostrarArchivo("data/Esquema BD Parranderos.pdf");
+    }
+
+    /**
+     * Muestra el script de creación de la base de datos
+     */
+    public void mostrarScriptBD() {
+        mostrarArchivo("data/EsquemaParranderos.sql");
+    }
+
+    /**
+     * Muestra la arquitectura de referencia para Parranderos
+     */
+    public void mostrarArqRef() {
+        mostrarArchivo("data/ArquitecturaReferencia.pdf");
+    }
+
+    /**
+     * Muestra la documentación Javadoc del proyectp
+     */
+    public void mostrarJavadoc() {
+        mostrarArchivo("doc/index.html");
+    }
+
+    /**
      * Muestra la información acerca del desarrollo de esta apicación
      */
-    public void acercaDe ()
-    {
-		String resultado = "\n\n ************************************\n\n";
-		resultado += " * Universidad	de	los	Andes	(Bogotá	- Colombia)\n";
-		resultado += " * Departamento	de	Ingeniería	de	Sistemas	y	Computación\n";
-		resultado += " * \n";
-		resultado += " * \n";		
-		resultado += " * Curso:  Sistemas Transaccionales\n";
-		resultado += " * Proyecto: Iteracion\n";
-		resultado += " * \n";
-		resultado += " * \n";
-		resultado += " * \n";
-		resultado += " * \n";
-		resultado += " * c.otalora & mg.torres\n";
-		resultado += "\n ************************************\n\n";
+    public void acercaDe() {
+        String resultado = "\n\n ************************************\n\n";
+        resultado += " * Universidad	de	los	Andes	(Bogotá	- Colombia)\n";
+        resultado += " * Departamento	de	Ingeniería	de	Sistemas	y	Computación\n";
+        resultado += " * \n";
+        resultado += " * \n";
+        resultado += " * Curso:  Sistemas Transaccionales\n";
+        resultado += " * Proyecto: Iteracion\n";
+        resultado += " * \n";
+        resultado += " * \n";
+        resultado += " * \n";
+        resultado += " * \n";
+        resultado += " * c.otalora & mg.torres\n";
+        resultado += "\n ************************************\n\n";
 
-		panelDatos.actualizarInterfaz(resultado);		
+        panelDatos.actualizarInterfaz(resultado);
     }
-    
 
-	/* ****************************************************************
-	 * 			Métodos privados para la presentación de resultados y otras operaciones
-	 *****************************************************************/
+
+    /* ****************************************************************
+     * 			Métodos privados para la presentación de resultados y otras operaciones
+     *****************************************************************/
+
     /**
      * Genera una cadena de caracteres con la lista de los tipos de bebida recibida: una línea por cada tipo de bebida
      * @param lista - La lista con los tipos de bebida
      * @return La cadena con una líea para cada tipo de bebida recibido
      */
-    private String listarTiposBebida(List<VOTipoBebida> lista)
-    {
-    	String resp = "Los tipos de bebida existentes son:\n";
-    	int i = 1;
-        for (VOTipoBebida tb : lista)
-        {
-        	resp += i++ + ". " + tb.toString() + "\n";
+    private String listarTiposBebida(List<VOTipoBebida> lista) {
+        String resp = "Los tipos de bebida existentes son:\n";
+        int i = 1;
+        for (VOTipoBebida tb : lista) {
+            resp += i++ + ". " + tb.toString() + "\n";
         }
         return resp;
-	}
+    }
 
     /**
      * Genera una cadena de caracteres con la descripción de la excepcion e, haciendo énfasis en las excepcionsde JDO
      * @param e - La excepción recibida
      * @return La descripción de la excepción, cuando es javax.jdo.JDODataStoreException, "" de lo contrario
      */
-	private String darDetalleException(Exception e) 
-	{
-		String resp = "";
-		if (e.getClass().getName().equals("javax.jdo.JDODataStoreException"))
-		{
-			JDODataStoreException je = (javax.jdo.JDODataStoreException) e;
-			return je.getNestedExceptions() [0].getMessage();
-		}
-		return resp;
-	}
+    private String darDetalleException(Exception e) {
+        String resp = "";
+        if (e.getClass().getName().equals("javax.jdo.JDODataStoreException")) {
+            JDODataStoreException je = (javax.jdo.JDODataStoreException) e;
+            return je.getNestedExceptions()[0].getMessage();
+        }
+        return resp;
+    }
 
-	/**
-	 * Genera una cadena para indicar al usuario que hubo un error en la aplicación
-	 * @param e - La excepción generada
-	 * @return La cadena con la información de la excepción y detalles adicionales
-	 */
-	private String generarMensajeError(Exception e) 
-	{
-		String resultado = "************ Error en la ejecución\n";
-		resultado += e.getLocalizedMessage() + ", " + darDetalleException(e);
-		resultado += "\n\nRevise datanucleus.log y parranderos.log para más detalles";
-		return resultado;
-	}
+    /**
+     * Genera una cadena para indicar al usuario que hubo un error en la aplicación
+     * @param e - La excepción generada
+     * @return La cadena con la información de la excepción y detalles adicionales
+     */
+    private String generarMensajeError(Exception e) {
+        String resultado = "************ Error en la ejecución\n";
+        resultado += e.getLocalizedMessage() + ", " + darDetalleException(e);
+        resultado += "\n\nRevise datanucleus.log y parranderos.log para más detalles";
+        return resultado;
+    }
 
-	/**
-	 * Limpia el contenido de un archivo dado su nombre
-	 * @param nombreArchivo - El nombre del archivo que se quiere borrar
-	 * @return true si se pudo limpiar
-	 */
-	private boolean limpiarArchivo(String nombreArchivo) 
-	{
-		BufferedWriter bw;
-		try 
-		{
-			bw = new BufferedWriter(new FileWriter(new File (nombreArchivo)));
-			bw.write ("");
-			bw.close ();
-			return true;
-		} 
-		catch (IOException e) 
-		{
+    /**
+     * Limpia el contenido de un archivo dado su nombre
+     * @param nombreArchivo - El nombre del archivo que se quiere borrar
+     * @return true si se pudo limpiar
+     */
+    private boolean limpiarArchivo(String nombreArchivo) {
+        BufferedWriter bw;
+        try {
+            bw = new BufferedWriter(new FileWriter(new File(nombreArchivo)));
+            bw.write("");
+            bw.close();
+            return true;
+        } catch (IOException e) {
 //			e.printStackTrace();
-			return false;
-		}
-	}
+            return false;
+        }
+    }
 
-	/**
-	 * Abre el archivo dado como parámetro con la aplicación por defecto del sistema
-	 * @param nombreArchivo - El nombre del archivo que se quiere mostrar
-	 */
-	private void mostrarArchivo (String nombreArchivo)
-	{
-		try
-		{
-			Desktop.getDesktop().open(new File(nombreArchivo));
-		}
-		catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+    /**
+     * Abre el archivo dado como parámetro con la aplicación por defecto del sistema
+     * @param nombreArchivo - El nombre del archivo que se quiere mostrar
+     */
+    private void mostrarArchivo(String nombreArchivo) {
+        try {
+            Desktop.getDesktop().open(new File(nombreArchivo));
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 
-	/* ****************************************************************
-	 * 			Métodos de la Interacción
-	 *****************************************************************/
+    /* ****************************************************************
+     * 			Métodos de la Interacción
+     *****************************************************************/
+
     /**
      * Método para la ejecución de los eventos que enlazan el menú con los métodos de negocio
      * Invoca al método correspondiente según el evento recibido
      * @param pEvento - El evento del usuario
      */
     @Override
-	public void actionPerformed(ActionEvent pEvento)
-	{
-		String evento = pEvento.getActionCommand( );		
-        try 
-        {
-			Method req = InterfazAlohandesApp.class.getMethod ( evento );
-			req.invoke ( this );
-		} 
-        catch (Exception e) 
-        {
-			e.printStackTrace();
-		} 
-	}
-    
-	/* ****************************************************************
-	 * 			Programa principal
-	 *****************************************************************/
+    public void actionPerformed(ActionEvent pEvento) {
+        String evento = pEvento.getActionCommand();
+        try {
+            Method req = InterfazAlohandesApp.class.getMethod(evento);
+            req.invoke(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /* ****************************************************************
+     * 			Programa principal
+     *****************************************************************/
+
     /**
      * Este método ejecuta la aplicación, creando una nueva interfaz
      * @param args Arreglo de argumentos que se recibe por línea de comandos
      */
-    public static void main( String[] args )
-    {
-        try
-        {
-        	
+    public static void main(String[] args) {
+        try {
+
             // Unifica la interfaz para Mac y para Windows.
-            UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName( ) );
-            InterfazAlohandesApp interfaz = new InterfazAlohandesApp( );
-            interfaz.setVisible( true );
-        }
-        catch( Exception e )
-        {
-            e.printStackTrace( );
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+            InterfazAlohandesApp interfaz = new InterfazAlohandesApp();
+            interfaz.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

@@ -98,6 +98,40 @@ public class Iter {
         return voCli;
     }
 
+    public List<VOCliente> darClientesref1(String fechai, String fechaf)
+    {
+        log.info ("Generando los VO de clientes referidos por cliente");
+        List<VOCliente> voCli = new LinkedList<VOCliente> ();
+        for (Cliente to : pp.darClientesRef1 ( fechai,  fechaf))
+        {
+            voCli.add (to);
+        }
+        log.info ("Generando los VO de clientes referidos por cliente : " + voCli.size() + " existentes");
+        return voCli;
+    }
+    public List<VOCliente> darClientesref2(String fechai, String fechaf)
+    {
+        log.info ("Generando los VO de clientes referidos por oferta");
+        List<VOCliente> voCli = new LinkedList<VOCliente> ();
+        for (Cliente to : pp.darClientesRef2 ( fechai,  fechaf))
+        {
+            voCli.add (to);
+        }
+        log.info ("Generando los VO de clientes referidos por oferta : " + voCli.size() + " existentes");
+        return voCli;
+    }
+    public List<VOCliente> darClientesref3(String fechai, String fechaf)
+    {
+        log.info ("Generando los VO de clientes referidos por alojamiento");
+        List<VOCliente> voCli = new LinkedList<VOCliente> ();
+        for (Cliente to : pp.darClientesRef3 ( fechai,  fechaf))
+        {
+            voCli.add (to);
+        }
+        log.info ("Generando los VO de clientes referidos por alojamiento : " + voCli.size() + " existentes");
+        return voCli;
+    }
+
     public List<VOOferta> darVOOfertas()
     {
         log.info ("Generando los VO de oferta");

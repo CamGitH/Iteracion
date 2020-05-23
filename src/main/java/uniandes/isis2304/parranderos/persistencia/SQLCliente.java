@@ -94,4 +94,23 @@ public class SQLCliente
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
 	}
+
+	public List<Cliente> darClientesRef1 (PersistenceManager pm, String fechai, String fechaf)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * from CLIENTE reservas WHERE reservas.idcliente=cliente.id AND reservas.fechainicial >= '1-DIC-2018' AND reservas.fechafinal <='31-DIC-2020'" +
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+	public List<Cliente> darClientesRef2 (PersistenceManager pm, String fechai, String fechaf)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * from(SELECT idcliente FROM reservas GROUP BY (idcliente) having count(*)>1)Order BY idcliente DESC");
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+	public List<Cliente> darClientesRef3 (PersistenceManager pm, String fechai, String fechaf)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * from(SELECT idcliente FROM reservas GROUP BY (idcliente) having count(*)>1)Order BY idcliente DESC");
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
 }

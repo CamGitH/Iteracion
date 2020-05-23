@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fbbd3964-6a43-4c24-bbc1-cc90a9eeb3bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parranderos.log" beforeDir="false" afterPath="$PROJECT_DIR$/parranderos.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLCliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +114,7 @@
       <workItem from="1587933943372" duration="2563000" />
       <workItem from="1588362211259" duration="2066000" />
       <workItem from="1588540384940" duration="3911000" />
+      <workItem from="1590252874594" duration="2964000" />
     </task>
     <task id="LOCAL-00001" summary="ITER 3">
       <created>1587325534673</created>
@@ -238,14 +241,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="239" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585006959520" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1588378307868">
+    <state x="147" y="65" key="MergeDialog" timestamp="1590253542008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1588378307868" />
-    <state x="473" y="119" key="MultipleFileMergeDialog" timestamp="1588378316398">
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1590253542008" />
+    <state x="473" y="119" key="MultipleFileMergeDialog" timestamp="1590253542030">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="473" y="119" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1588378316398" />
+    <state x="473" y="119" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1590253542030" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1585086168523">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -258,14 +261,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588382506061" />
-    <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588540402043">
+    <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590253062382">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="444" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588540402043" />
-    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588382412557">
+    <state x="444" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590253062382" />
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590255523893">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588382412557" />
+    <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1590255523893" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1584992616036">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
