@@ -126,5 +126,12 @@ public class SQLOferta
 		return (long) q.executeUnique();
 		
 	}
+	
+	public long consultarFuncionamiento(PersistenceManager pm, long num)
+	{
+		Query q=pm.newQuery(SQL, "SELECT * FROM OFERTA, RESERVAS WHERE RESERVAS.OFERTAID=OFERTA.NUMOFERTA ORDER BY RESERVAS.CANTIDAD");
+		q.setParameters(num);
+		return (long) q.executeUnique();
+	}
 
 }

@@ -86,4 +86,16 @@ public class SQLOperador
 		q.setResultClass(Operador.class);
 		return (List<Operador>) q.executeList();
 	}
+	
+	public List<Operador> datosOperadorConGanancia (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT operador.id, operador.nombre, operador.tipo\r\n" + 
+				"FROM OPERADOR, GANANCIAOPERADOR\r\n" + 
+				"WHERE \r\n" + 
+				"OPERADOR.ID= gananciaoperador.idoperador\r\n" + 
+				"ORDER BY gananciaoperador.ganancia\r\n" 
+				);
+		q.setResultClass(Operador.class);
+		return (List<Operador>) q.executeList();
+	}
 }

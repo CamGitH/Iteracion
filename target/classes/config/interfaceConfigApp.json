@@ -51,7 +51,15 @@
 				{
 					"label": "Ofertas ops. (RFC7)",
 					"event": "getOfertaPop"
+				},
+				
+				{
+				"label": "Consultar consumo en Alohandes (RF10)",
+					"event": "r10"
+				
 				}
+				
+				
 				
 			]
 		},
