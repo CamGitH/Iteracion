@@ -120,4 +120,27 @@ public class SQLCliente
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
 	}
+
+	public List<Cliente> darClientesr13 (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "select * from Cliente, reservas, oferta WHERE oferta.numoferta=RESERVAS.OFERTAID AND RESERVA.IDCLIENTE=CLIENTE.ID ");
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+	
+	public List<Cliente> darClientesr13Costoso (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM CLIENTE, OFERTA, RESERVAS WHERE oferta.numoferta=RESERVAS.OFERTAID AND RESERVAS.IDCLIENTE=CLIENTE.ID AND OFERTA.PRECIO>150");
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+	
+	public List<Cliente> darClientesr13Suite (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM CLIENTE, OFERTA, RESERVAS WHERE oferta.numoferta=RESERVAS.OFERTAID AND RESERVAS.IDCLIENTE=CLIENTE.ID AND OFERTA.TIPOLUGAR='suite'");
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+	
+	
 }

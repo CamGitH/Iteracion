@@ -133,5 +133,12 @@ public class SQLOferta
 		q.setParameters(num);
 		return (long) q.executeUnique();
 	}
+	
+	public List<Oferta> darOfertasRF12 (PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM OFERTA, RESERVAS WHERE RESERVAS.OFERTAID=OFERTA.NUMOFERTA ORDER BY RESERVAS.CANTIDAD");
+		q.setResultClass(Oferta.class);
+		return (List<Oferta>) q.executeList();
+	}
 
 }

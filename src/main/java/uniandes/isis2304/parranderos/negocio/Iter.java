@@ -144,6 +144,30 @@ public class Iter {
         return voCli;
     }
 
+    public List<VOOperador> darOpsr12()
+    {
+        log.info ("Generando los VO de operadores r12");
+        List<VOOperador> voCli = new LinkedList<VOOperador> ();
+        for (Operador to : pp.darOpr12 ())
+        {
+            voCli.add (to);
+        }
+        log.info ("Generando los VO de operadores r12 : " + voCli.size() + " existentes");
+        return voCli;
+    }
+
+    public List<VOCliente> darClientesr13()
+    {
+        log.info ("Generando los VO de clientes r11");
+        List<VOCliente> voCli = new LinkedList<VOCliente> ();
+        for (Cliente to : pp.darClientesr13 ())
+        {
+            voCli.add (to);
+        }
+        log.info ("Generando los VO de clientes r11 : " + voCli.size() + " existentes");
+        return voCli;
+    }
+
     public List<VOOferta> darVOOfertas()
     {
         log.info ("Generando los VO de oferta");

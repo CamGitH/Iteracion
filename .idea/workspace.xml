@@ -4,11 +4,11 @@
     <list default="true" id="fbbd3964-6a43-4c24-bbc1-cc90a9eeb3bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datanucleus.log" beforeDir="false" afterPath="$PROJECT_DIR$/datanucleus.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parranderos.log" beforeDir="false" afterPath="$PROJECT_DIR$/parranderos.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/negocio/Iter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLOperador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uniandes/isis2304/parranderos/persistencia/SQLOperador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/interfazApp/InterfazAlohandesApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/negocio/Iter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/negocio/Iter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uniandes/isis2304/parranderos/persistencia/PersistenciaIter.class" afterDir="false" />
@@ -123,6 +123,7 @@
       <workItem from="1588362211259" duration="2066000" />
       <workItem from="1588540384940" duration="3911000" />
       <workItem from="1590252874594" duration="5963000" />
+      <workItem from="1590260337763" duration="1560000" />
     </task>
     <task id="LOCAL-00001" summary="ITER 3">
       <created>1587325534673</created>
@@ -224,22 +225,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="296" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1590255899702" />
-    <state width="1493" height="281" key="GridCell.Tab.0.bottom" timestamp="1590259102986">
+    <state width="1493" height="281" key="GridCell.Tab.0.bottom" timestamp="1590260404396">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590259102986" />
-    <state width="1493" height="281" key="GridCell.Tab.0.center" timestamp="1590259102986">
+    <state width="1493" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590260404396" />
+    <state width="1493" height="281" key="GridCell.Tab.0.center" timestamp="1590260404391">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="281" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590259102986" />
-    <state width="1493" height="281" key="GridCell.Tab.0.left" timestamp="1590259102986">
+    <state width="1493" height="281" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590260404391" />
+    <state width="1493" height="281" key="GridCell.Tab.0.left" timestamp="1590260404391">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="281" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590259102986" />
-    <state width="1493" height="281" key="GridCell.Tab.0.right" timestamp="1590259102986">
+    <state width="1493" height="281" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590260404391" />
+    <state width="1493" height="281" key="GridCell.Tab.0.right" timestamp="1590260404391">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="281" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590259102986" />
+    <state width="1493" height="281" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590260404391" />
     <state width="1493" height="239" key="GridCell.Tab.1.bottom" timestamp="1585006959520">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -276,10 +277,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1590255907386" />
-    <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590253062382">
+    <state x="444" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590260360386">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="444" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590253062382" />
+    <state x="444" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590260360386" />
     <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590255523893">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
